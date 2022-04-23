@@ -15,9 +15,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route path="/goods" element={<Goods/>}></Route>
+          
           <Route path="/Car" element={<Car/>}></Route>
           <Route path="/Phone" element={<Phone/>}></Route>
+          <Route path="/goods" element={<Goods/>}></Route>
+          
           <Route path="/goods/clothes" element={<Clothes/>}></Route>
           <Route path="/goods/accessories" element={<Accessories/>}></Route>
           <Route path="/goods/phonecase" element={<PhoneCase/>}></Route>
