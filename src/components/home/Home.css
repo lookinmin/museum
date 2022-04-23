@@ -37,6 +37,7 @@ body{
 
 .doorCar{
   width: 250px;
+  transform: rotateY(45deg);
 }
 
 .doorCar:hover{
@@ -45,6 +46,7 @@ body{
           animation: rotate-center 1.3s linear both;
           animation-iteration-count: infinite;
           animation-delay: 0;
+          transform: rotateY(45deg);
 }
 
 @-webkit-keyframes rotate-center {
@@ -60,11 +62,11 @@ body{
 @keyframes rotate-center {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+            transform: rotate(0) rotateY(45deg);
   }
   100% {
     -webkit-transform: rotate(720deg);
-            transform: rotate(720deg);
+            transform: rotate(720deg) rotateY(45deg);
   }
 }
 
