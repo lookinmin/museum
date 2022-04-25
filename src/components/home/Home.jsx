@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import "./Home.css";
 import { Link, NavLink } from "react-router-dom";
+import axios from 'axios';
+
 
 export const Home = () => {
   const [s1, sets1] = useState({});
@@ -22,6 +24,7 @@ export const Home = () => {
       animationDelay: 0
     })
   }
+  
   return (
     <div className='background'>
       <div className='container'>

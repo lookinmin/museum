@@ -1,0 +1,115 @@
+.wrapper{
+  padding: 1rem 15rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.HeWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+
+.topBar{
+  display: flex;
+  position: fixed;
+  flex-flow: row nowrap;
+  top: 50px; 
+  align-items: center;
+}
+
+#logo{
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#logoPic{
+  position: fixed;
+  left: 46.5%;
+}
+
+.secondBar{
+  display: flex;
+  position: fixed;
+  flex-flow: column nowrap;
+  top: 160px;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.NavTo{
+  text-decoration: none;
+  color: black;
+}
+
+.NavTo:hover{
+  color: blue;
+  font-size: 16px;
+}
+
+h2{
+  margin: 0 !important;
+}
+
+/*-------------for Header-----------*/
+
+.container{
+  height: 800px;
+  margin-top: 300px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#inlineTitle{
+  display: flex;
+  flex-flow: row-reverse;
+  padding-right: 100px !important;
+  font-size: 30px;
+}
+
+.showcase{
+  display: grid;
+  height: 700px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 2px solid blue;
+  margin: 40px 70px;
+}
+
+
+
+/*-------------for Footer-----------*/
+.FoWrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px 150px;
+}
+
+.FoWrapper p{
+  margin: 0 !important;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+#footerLogo{
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.l1{
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.l2{
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.l3{
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+
+
+
