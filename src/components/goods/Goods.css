@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YdestreetB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .wrapper{
   padding: 1rem 15rem;
   display: flex;
@@ -14,11 +28,12 @@
   display: flex;
   position: fixed;
   flex-flow: row nowrap;
-  top: 50px; 
+  top: 70px; 
   align-items: center;
 }
 
 #logo{
+  font-family: 'LeferiPoint-WhiteObliqueA';
   font-size: 40px;
   font-weight: 600;
 }
@@ -32,7 +47,7 @@
   display: flex;
   position: fixed;
   flex-flow: column nowrap;
-  top: 160px;
+  top: 180px;
   gap: 20px;
   font-size: 15px;
 }
@@ -40,25 +55,32 @@
 .NavTo{
   text-decoration: none;
   color: black;
+  font-family: 'LeferiPoint-WhiteObliqueA';
 }
 
 .NavTo:hover{
+  cursor: pointer;
   color: blue;
-  font-size: 16px;
+  font-size: 23px;
 }
 
-h2{
+.wrapper h2{
   margin: 0 !important;
+}
+
+#logoContainer:hover{
+  cursor: pointer;
 }
 
 /*-------------for Header-----------*/
 
-.container{
+.mainContainer{
   height: 800px;
   margin-top: 300px;
   margin-bottom: 100px;
   display: flex;
   flex-flow: column nowrap;
+  width: 1423px;
 }
 
 #inlineTitle{
@@ -66,15 +88,90 @@ h2{
   flex-flow: row-reverse;
   padding-right: 100px !important;
   font-size: 30px;
+  font-family: 'YdestreetB';
 }
 
 .showcase{
   display: grid;
   height: 700px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  border: 2px solid blue;
-  margin: 40px 70px;
+  grid-template-rows: repeat(2, 1fr);
+  border-top: 2px solid black;
+  margin: 20px 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-gap: 40px;
+}
+
+.item{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding-top: 60px;
+  align-items: center;
+  width: 387px;
+}
+
+.item:hover{
+  cursor: pointer;
+}
+
+.itemPic{
+  height: 230px;
+  justify-self: center;
+}
+
+.itemPic:nth-child(1):hover{
+ -webkit-filter: blur(3px);
+}
+
+.itemText{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-self: flex-end;
+  padding-top: 20px;
+  width: 320px;
+  justify-content: space-around;
+}
+
+.itemName{
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.itemPrice{
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#item1{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#item2{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+#item3{
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+#item4{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+#item5{
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+#item5 #nowItem{
+  width: 340px;
 }
 
 
@@ -84,29 +181,39 @@ h2{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 40px 150px;
+  width: 1423px;
+  margin-top: 70px;
 }
 
 .FoWrapper p{
   margin: 0 !important;
   padding-bottom: 5px;
-  font-size: 14px;
+  font-size: 15px;
 }
 #footerLogo{
+  font-family: 'LeferiPoint-WhiteObliqueA';
   grid-row: 1/2;
   grid-column: 1/2;
 }
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');* { 
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
 .l1{
+  font-family: Pretendard;
   grid-row: 2/3;
   grid-column: 1/2;
 }
 
 .l2{
+  font-family: Pretendard;
   grid-row: 2/3;
   grid-column: 2/3;
 }
 
 .l3{
+  font-family: Pretendard;
   grid-row: 2/3;
   grid-column: 3/4;
 }
