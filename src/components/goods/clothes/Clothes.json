@@ -4,74 +4,74 @@
             "Name": "Audi hooded windbreaker",
             "ID": "0201",
             "Price": "70,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/AUDI/pic1.png",
+            "Img2":"./pic/clothes/AUDI/pic2.PNG",
+            "Img3":"./pic/clothes/AUDI/pic3.PNG",
+            "Img4":"./pic/clothes/AUDI/pic4.PNG"
         }, {
             "Name": "Audi hooded jumper",
             "ID": "0202",
             "Price": "65,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/AUDI2/pic1.PNG",
+            "Img2":"./pic/clothes/AUDI2/pic2.PNG",
+            "Img3":"./pic/clothes/AUDI2/pic3.PNG",
+            "Img4":"./pic/clothes/AUDI2/pic4.PNG"
         }, {
             "Name": "Bentley jersey",
             "ID": "0203",
             "Price": "80,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/Bentley/pic1.PNG",
+            "Img2":"./pic/clothes/Bentley/pic2.PNG",
+            "Img3":"./pic/clothes/Bentley/pic3.PNG",
+            "Img4":"./pic/clothes/Bentley/pic4.PNG"
         }, {
             "Name": "Benz golf collar shirt",
             "ID": "0204",
             "Price": "75,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/BENZ PK/pic1.PNG",
+            "Img2":"./pic/clothes/BENZ PK/pic2.PNG",
+            "Img3":"./pic/clothes/BENZ PK/pic3.PNG",
+            "Img4":"./pic/clothes/BENZ PK/pic4.PNG"
         }, {
             "Name": "Benz T-shirt short-sleeved",
             "ID": "0205",
             "Price": "78,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/BENZ PK2/pic1.PNG",
+            "Img2":"./pic/clothes/BENZ PK2/pic2.PNG",
+            "Img3":"./pic/clothes/BENZ PK2/pic3.PNG",
+            "Img4":"./pic/clothes/BENZ PK2/pic4.PNG"
         }, {
             "Name": "BMW hood jersey",
             "ID": "0206",
             "Price": "73,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/BMW jersey/pic1.PNG",
+            "Img2":"./pic/clothes/BMW jersey/pic2.PNG",
+            "Img3":"./pic/clothes/BMW jersey/pic3.PNG",
+            "Img4":"./pic/clothes/BMW jersey/pic4.PNG"
         }, {
             "Name": "BMW jersey",
             "ID": "0207",
             "Price": "71,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/BMW jersey2/pic1.PNG",
+            "Img2":"./pic/clothes/BMW jersey2/pic2.PNG",
+            "Img3":"./pic/clothes/BMW jersey2/pic3.PNG",
+            "Img4":"./pic/clothes/BMW jersey2/pic4.PNG"
         }, {
             "Name": "volkswagen jersey",
             "ID": "0208",
             "Price": "64,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/volkswagen/pic1.PNG",
+            "Img2":"./pic/clothes/volkswagen/pic2.PNG",
+            "Img3":"./pic/clothes/volkswagen/pic3.PNG",
+            "Img4":"./pic/clothes/volkswagen/pic4.PNG"
         }, {
             "Name": "Volvo jersey",
             "ID": "0209",
             "Price": "68,000",
-            "Img1":"pic1.PNG",
-            "Img2":"pic2.PNG",
-            "Img3":"pic3.PNG",
-            "Img4":"pic4.PNG"
+            "Img1":"./pic/clothes/Volvo/pic1.PNG",
+            "Img2":"./pic/clothes/Volvo/pic2.PNG",
+            "Img3":"./pic/clothes/Volvo/pic3.PNG",
+            "Img4":"./pic/clothes/Volvo/pic4.PNG"
         }
     ]
 }
