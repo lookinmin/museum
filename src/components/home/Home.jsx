@@ -1,10 +1,6 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
 import "./Home.css";
-import { Link, NavLink } from "react-router-dom";
-import axios from 'axios';
-
-
 
 export const Home = () => {
   const [zoom, setzoom] = useState({
@@ -12,8 +8,10 @@ export const Home = () => {
     transform: "perspective(500px) rotateY(0deg) scale(1.3)"
   });
   const [carportal,setcarportal]=useState({})
+  const [phoneportal,setphoneportal]=useState({})
   const is_diif = useRef([0, 0])
   const is_aning = useRef(true);
+  const [hoverable,sethoverable] = useState(["car_hover","phone_hover"]);
   const chg_zoom = (e) => {//마우스 위치에 따른 동적인 움직임
     if (is_aning.current) {
     }
@@ -48,44 +46,76 @@ export const Home = () => {
   }
   const end_zoomani = () => {
     is_aning.current = false;
+    sethoverable(["portal_car","portal_phone"])
   }
-  const movehall = () => {
-    setzoom({
-      transformOrigin: "50% 50%",
-      transform: "scale(10)",
-      transition: "5s"
-    })
-    setTimeout(() => {
-      window.location.href = "/goods"
-    }, 2000);
-  }
-  const enter_portal=(e)=>{
-      var mouse_x = e.clientX / window.innerWidth * 100//마우스 위치 퍼센트로
-      var mouse_y = e.clientY / window.innerHeight * 100
-      var rotate_angle = (mouse_x - 50)/2 //y축 기준 회전각 -6~6
-      is_aning.current=true
+  const movehall = () => {//굿즈 페이지로 이동
+    if(is_aning.current){
 
+    }else{
       setzoom({
-        transformOrigin: mouse_x.toFixed(1) + "% " + mouse_y.toFixed(1) + "%",
-        transform: "perspective(500px) rotateY(" + rotate_angle + "deg) scale(5)",
-        transition: "2s"
+        transformOrigin: "50% 50%",
+        transform: "scale(15)",
+        transition: "5s"
       })
-      setcarportal({
-        transform: "perspective(500px) rotateY(30deg) scale(1)",
-        transition: "2s"
-      })
+      is_aning.current = true;
       setTimeout(() => {
         window.location.href = "/goods"
-      }, 1300);
+      }, 2000);
+    }
+  }
+  const enter_portal=(e)=>{//car와 phone 포탈이동
+      var mouse_x = e.clientX / window.innerWidth * 100//마우스 위치 퍼센트로
+      var rotate_angle = (mouse_x - 50)/2 //y축 기준 회전각 -6~6
+      is_aning.current=true
+      if(rotate_angle>0){
+        console.log(rotate_angle)
+        setzoom({
+          transformOrigin: "76% 50%",
+          transform: "perspective(500px) rotateY(10deg) scale(5)",
+          transition: "2s"
+        })
+        setphoneportal({
+          transform: "perspective(500px) rotateY(-30deg) scale(1)",
+          transition: "2s"
+        })
+        setTimeout(() => {
+          window.location.href = "/phone"
+        }, 1300);
+      }else{
+        console.log(rotate_angle)
+        setzoom({
+          transformOrigin: "25.7% 50%",
+          transform: "perspective(500px) rotateY(-10deg) scale(5)",
+          transition: "2s"
+        })
+        setcarportal({
+          transform: "perspective(500px) rotateY(30deg) scale(1)",
+          transition: "2s"
+        })
+        setTimeout(() => {
+          window.location.href = "/car"
+        }, 1300);
+      }
+      
   }
   
   return (
     <div onMouseOut={(ec)=>{ init_zoom(ec) }} onMouseMove={(e) => { chg_zoom(e) }} className='homepage'>
       <div onAnimationEnd={end_zoomani} className='hall' style={zoom}>
-        <div id='portal_car'onClick={(e)=>{enter_portal(e)} } style={carportal}>
+        <div id={hoverable[0]} onClick={(e)=>{enter_portal(e)} } style={carportal}>
+        {/* <div className='sign'>
+          car history
+        </div> */}
           <div id="inner_car">
             <img  className='up_portal' src='./pic/Home/door.png' />
-            <img  className='doorPhone down_portal' src='./pic/Home/door.png' />
+            <img  className='down_portal' src='./pic/Home/door.png' />
+          </div>
+        </div>
+
+        <div id={hoverable[1]} onClick={(e)=>{enter_portal(e)} } style={phoneportal}>
+          <div id="inner_phone">
+            <img  className='up_portal' src='./pic/Home/door.png' />
+            <img  className='down_portal' src='./pic/Home/door.png' />
           </div>
         </div>
 
@@ -96,6 +126,5 @@ export const Home = () => {
         </div>
       </div>
     </div>
-
   )
 }
