@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { useState } from 'react'
 import { Clothes } from './clothes/Clothes.jsx';
 import { Accessories } from './accessories/Accessories.jsx';
-import { PhoneCase } from './phonecase/PhoneCase';
+import { PhoneCase } from './phonecase/PhoneCase.jsx';
 import { Pay } from './pay/Pay';
 
 export const GoodsBody = (props) => {
