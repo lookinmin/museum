@@ -1,50 +1,101 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useState } from 'react';
 import "./Home.css";
 import { Link, NavLink } from "react-router-dom";
 import axios from 'axios';
 
 
+
 export const Home = () => {
-  const [s1, sets1] = useState({});
-  const [s2, sets2] = useState({});
+  const [zoom, setzoom] = useState({
+    transformOrigin: "50% 50%",
+    transform: "perspective(500px) rotateY(0deg) scale(1.3)"
+  });
+  const [carportal,setcarportal]=useState({})
+  const is_diif = useRef([0, 0])
+  const is_aning = useRef(true);
+  const chg_zoom = (e) => {//마우스 위치에 따른 동적인 움직임
+    if (is_aning.current) {
+    }
+    else {
+      var mouse_x = e.clientX / window.innerWidth * 100//마우스 위치 퍼센트로
+      var mouse_y = e.clientY / window.innerHeight * 100
+      var rotate_angle = (mouse_x - 50) / 83.34//y축 기준 회전각 -6~6
 
+      if (is_diif.current[0] == mouse_x.toFixed(0) && is_diif.current[1] == mouse_y.toFixed(0)) {//x좌표(1) y좌표(1)이 같다면?
+      } else {//둘중 하나라도 바뀐다면 확대지점좌표와 y축 기준 회전각 변환
+        setzoom({
+          transformOrigin: mouse_x.toFixed(1) + "% " + mouse_y.toFixed(1) + "%",
+          transform: "perspective(500px) rotateY(" + rotate_angle + "deg) scale(1.3)",
+          transition: "0.5s"
+        })
+      }
+      is_diif.current = [mouse_x.toFixed(0), mouse_y.toFixed(0)]//움직인인 후의 x좌표와 y좌표를 저장
+    }
 
-  const changestyle=()=>{
-    sets1({
-      cursor: "pointer",
-      animation: "rotate-center 1.1s linear both",
-      animationIterationCount: "infinite",
-      animationDelay: 0
+  }
+  const init_zoom = (e) => {//마우스가 브라우저를 벗어나면 확대지점 및 회전각 초기화
+    if (is_aning.current) {
+    } else {
+      if(e.clientX>1800){
+        setzoom({
+          transformOrigin: "50% 50%",
+          transform: "perspective(500px) rotateY(0deg) scale(1.3)",
+          transition: "0.5s"
+        })
+      }
+    }
+  }
+  const end_zoomani = () => {
+    is_aning.current = false;
+  }
+  const movehall = () => {
+    setzoom({
+      transformOrigin: "50% 50%",
+      transform: "scale(10)",
+      transition: "5s"
     })
-    sets2({
-      cursor: "pointer",
-      animation: "rotate-center 1.0s linear both",
-      animationIterationCount: "infinite",
-      animationDelay: 0
-    })
+    setTimeout(() => {
+      window.location.href = "/goods"
+    }, 2000);
+  }
+  const enter_portal=(e)=>{
+      var mouse_x = e.clientX / window.innerWidth * 100//마우스 위치 퍼센트로
+      var mouse_y = e.clientY / window.innerHeight * 100
+      var rotate_angle = (mouse_x - 50)/2 //y축 기준 회전각 -6~6
+      is_aning.current=true
+
+      setzoom({
+        transformOrigin: mouse_x.toFixed(1) + "% " + mouse_y.toFixed(1) + "%",
+        transform: "perspective(500px) rotateY(" + rotate_angle + "deg) scale(5)",
+        transition: "2s"
+      })
+      setcarportal({
+        transform: "perspective(500px) rotateY(30deg) scale(1)",
+        transition: "2s"
+      })
+      setTimeout(() => {
+        window.location.href = "/goods"
+      }, 1300);
   }
   
   return (
-    <div className='background'>
-      <div className='container'>
-        {/* <div className="toCar">
-          <NavLink to="/car" title="자동차 역사관">
-            <img id='doorCar' src='./pic/Home/door.png' />
-          </NavLink>
-        </div> */}
-        <div onMouseOver={changestyle}  className="toPhone">
-          <NavLink to="/phone" title="자동차 역사관">
-            <img style={s1} className='doorPhone' src='./pic/Home/door.png' />
-            <img style={s2} className='doorPhone' src='./pic/Home/door.png' />
-          </NavLink>
+    <div onMouseOut={(ec)=>{ init_zoom(ec) }} onMouseMove={(e) => { chg_zoom(e) }} className='homepage'>
+      <div onAnimationEnd={end_zoomani} className='hall' style={zoom}>
+        <div id='portal_car'onClick={(e)=>{enter_portal(e)} } style={carportal}>
+          <div id="inner_car">
+            <img  className='up_portal' src='./pic/Home/door.png' />
+            <img  className='doorPhone down_portal' src='./pic/Home/door.png' />
+          </div>
         </div>
-        <div className="toGoods">
-          <NavLink to="/goods" title="자동차 역사관">
+
+        <div className="toGoods" >
+          <div onClick={movehall} title="자동차 역사관">
             <img src='./pic/Home/box.png' />
-          </NavLink>
+          </div>
         </div>
       </div>
     </div>
+
   )
 }
