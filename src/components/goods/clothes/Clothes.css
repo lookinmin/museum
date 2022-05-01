@@ -6,6 +6,7 @@
   margin: 20px 70px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 50px;
 }
 
 .clothesShowcase .list{
@@ -17,7 +18,15 @@
 }
 
 .clothesShowcase .list .clItem{
-  width: 120px;
+  width: 230px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.clothesShowcase .list .clItem .itemPic{
+  height: 190px;
 }
 
 .clothesShowcase .nowOn{
@@ -25,8 +34,9 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin-left: 50px;
 }
 
 .clothesShowcase .nowOn #nowItemPic{
-  width: 280px;
+  width: 300px;
 }
