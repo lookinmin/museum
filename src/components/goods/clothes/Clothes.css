@@ -1,0 +1,32 @@
+.clothesShowcase{
+  display: grid;
+  grid-template-columns: 80% 20%;
+  height: 900px;
+  border-top: 2px solid black;
+  margin: 20px 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.clothesShowcase .list{
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.clothesShowcase .list .clItem{
+  width: 120px;
+}
+
+.clothesShowcase .nowOn{
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.clothesShowcase .nowOn #nowItemPic{
+  width: 280px;
+}
