@@ -83,7 +83,7 @@
   width: 1423px;
 }
 
-#inlineTitle{
+.inlineTitle{
   display: flex;
   flex-flow: row-reverse;
   padding-right: 100px !important;
