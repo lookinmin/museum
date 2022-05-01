@@ -1,0 +1,76 @@
+{
+    "phoneCase": [
+        {
+            "Name": "bmw",
+            "ID": "0301",
+            "Price": "20,000",
+            "Img1": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "circuit",
+            "ID": "0302",
+            "Price": "23,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG"]
+        }, {
+            "Name": "F1",
+            "ID": "0303",
+            "Price": "22,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "Lambo",
+            "ID": "0304",
+            "Price": "25,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "Lincoln",
+            "ID": "0305",
+            "Price": "24,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "masserati",
+            "ID": "0306",
+            "Price": "27,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "porsche",
+            "ID": "0307",
+            "Price": "26,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "sportsCar",
+            "ID": "0308",
+            "Price": "25,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "volkswagen",
+            "ID": "0309",
+            "Price": "23,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "flip1",
+            "ID": "0401",
+            "Price": "20,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "galaxy",
+            "ID": "0402",
+            "Price": "23,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG"]
+        }, {
+            "Name": "iphone1",
+            "ID": "0403",
+            "Price": "22,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "iphone2",
+            "ID": "0404",
+            "Price": "25,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }, {
+            "Name": "iphone3",
+            "ID": "0405",
+            "Price": "24,000",
+            "Img": ["pic1.PNG", "pic2.PNG", "pic3.PNG", "pic4.PNG"]
+        }
+    ]
+
+}
