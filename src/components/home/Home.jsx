@@ -1,6 +1,10 @@
 import React, { useRef } from 'react'
 import { useState } from 'react';
 import "./Home.css";
+import { Link, NavLink } from "react-router-dom";
+import axios from 'axios';
+
+
 
 export const Home = () => {
   const [zoom, setzoom] = useState({
@@ -74,6 +78,7 @@ export const Home = () => {
         window.location.href = "/goods"
       }, 1300);
   }
+  
   return (
     <div onMouseOut={(ec)=>{ init_zoom(ec) }} onMouseMove={(e) => { chg_zoom(e) }} className='homepage'>
       <div onAnimationEnd={end_zoomani} className='hall' style={zoom}>

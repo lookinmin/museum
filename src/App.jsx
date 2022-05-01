@@ -8,21 +8,19 @@ import {Phone} from "./components/phone/Phone"
 import {Clothes} from "./components/goods/clothes/Clothes"
 import {Accessories} from "./components/goods/accessories/Accessories"
 import {PhoneCase} from "./components/goods/phonecase/PhoneCase"
+import {VideoStart} from './components/home/VideoStart'
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path='/' element={<VideoStart/>}></Route>
           
           <Route path="/Car" element={<Car/>}></Route>
           <Route path="/Phone" element={<Phone/>}></Route>
           <Route path="/goods" element={<Goods/>}></Route>
-          
-          <Route path="/goods/clothes" element={<Clothes/>}></Route>
-          <Route path="/goods/accessories" element={<Accessories/>}></Route>
-          <Route path="/goods/phonecase" element={<PhoneCase/>}></Route>
         </Routes>
       </div>
     </Router>
