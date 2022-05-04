@@ -5,9 +5,6 @@ import {Home} from "./components/home/Home"
 import {Goods} from "./components/goods/Goods"
 import {Car} from "./components/car/Car"
 import {Phone} from "./components/phone/Phone"
-import {Clothes} from "./components/goods/clothes/Clothes"
-import {Accessories} from "./components/goods/accessories/Accessories"
-import {PhoneCase} from "./components/goods/phonecase/PhoneCase"
 import {VideoStart} from './components/home/VideoStart'
 
 function App() {

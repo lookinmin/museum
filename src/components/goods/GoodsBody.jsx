@@ -1,9 +1,7 @@
 import React, { Suspense } from 'react'
 import { useState } from 'react'
-import { Clothes } from './clothes/Clothes.jsx';
-import { Accessories } from './accessories/Accessories.jsx';
-import { PhoneCase } from './phonecase/PhoneCase.jsx';
 import { Pay } from './pay/Pay';
+import { GoodsInner } from './GoodsInner.jsx';
 
 export const GoodsBody = (props) => {
 
@@ -57,15 +55,15 @@ export const GoodsBody = (props) => {
     )
   }else if(props.props == 1){
     return(
-      <Clothes/>
+      <GoodsInner props={props.props}/>
     )
   }else if(props.props == 2){
     return(
-      <PhoneCase/>
+      <GoodsInner props={props.props}/>
     )
   }else if(props.props == 3){
     return(
-      <Accessories/>
+      <GoodsInner props={props.props}/>
     )
   }
   
