@@ -1,7 +1,7 @@
 {
     "Clothes": [
         {
-            "Name": "Audi hooded windbreaker",
+            "Name": "Audi Hooded Windbreaker",
             "ID": "0201",
             "Price": "70,000",
             "Img1":"./pic/clothes/AUDI/pic1.png",
@@ -9,7 +9,7 @@
             "Img3":"./pic/clothes/AUDI/pic3.PNG",
             "Img4":"./pic/clothes/AUDI/pic4.PNG"
         }, {
-            "Name": "Audi hooded jumper",
+            "Name": "Audi Hooded Jumper",
             "ID": "0202",
             "Price": "65,000",
             "Img1":"./pic/clothes/AUDI2/pic1.PNG",
@@ -17,7 +17,7 @@
             "Img3":"./pic/clothes/AUDI2/pic3.PNG",
             "Img4":"./pic/clothes/AUDI2/pic4.PNG"
         }, {
-            "Name": "Bentley jersey",
+            "Name": "Bentley Jersey",
             "ID": "0203",
             "Price": "80,000",
             "Img1":"./pic/clothes/Bentley/pic1.PNG",
@@ -25,7 +25,7 @@
             "Img3":"./pic/clothes/Bentley/pic3.PNG",
             "Img4":"./pic/clothes/Bentley/pic4.PNG"
         }, {
-            "Name": "Benz golf collar shirt",
+            "Name": "Benz Golf Collar Shirt",
             "ID": "0204",
             "Price": "75,000",
             "Img1":"./pic/clothes/BENZ PK/pic1.PNG",
@@ -33,7 +33,7 @@
             "Img3":"./pic/clothes/BENZ PK/pic3.PNG",
             "Img4":"./pic/clothes/BENZ PK/pic4.PNG"
         }, {
-            "Name": "Benz T-shirt short-sleeved",
+            "Name": "Benz T-Shirt Short-Sleeved",
             "ID": "0205",
             "Price": "78,000",
             "Img1":"./pic/clothes/BENZ PK2/pic1.PNG",
@@ -41,7 +41,7 @@
             "Img3":"./pic/clothes/BENZ PK2/pic3.PNG",
             "Img4":"./pic/clothes/BENZ PK2/pic4.PNG"
         }, {
-            "Name": "BMW hood jersey",
+            "Name": "BMW Hood Jersey",
             "ID": "0206",
             "Price": "73,000",
             "Img1":"./pic/clothes/BMW jersey/pic1.PNG",
@@ -57,7 +57,7 @@
             "Img3":"./pic/clothes/BMW jersey2/pic3.PNG",
             "Img4":"./pic/clothes/BMW jersey2/pic4.PNG"
         }, {
-            "Name": "volkswagen jersey",
+            "Name": "Volkswagen Jersey",
             "ID": "0208",
             "Price": "64,000",
             "Img1":"./pic/clothes/volkswagen/pic1.PNG",
@@ -65,7 +65,7 @@
             "Img3":"./pic/clothes/volkswagen/pic3.PNG",
             "Img4":"./pic/clothes/volkswagen/pic4.PNG"
         }, {
-            "Name": "Volvo jersey",
+            "Name": "Volvo Jersey",
             "ID": "0209",
             "Price": "68,000",
             "Img1":"./pic/clothes/Volvo/pic1.PNG",
