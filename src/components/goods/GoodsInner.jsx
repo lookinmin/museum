@@ -4,6 +4,7 @@ import "./Inner.css"
 import ClothesData from "./Clothes.json";
 import CaseData from "./PhoneCase.json";
 import AcceData from "./Accessories.json";
+import { Detail } from './detail/Detail';
 
 export const GoodsInner = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
@@ -32,14 +33,21 @@ export const GoodsInner = (props) => {
 
   const list = itemlist.map((item)=> {
     return(
-      <div className='clItem' onMouseOver={() => {
+      <div className='clItem' 
+        onMouseOver={() => {
         setPic(item.Img1)
         setItemName(item.Name)
         setItemPrice(item.Price)}} 
         onMouseOut={() => { 
         setPic(pic1)
         setItemName("Diamonds Shop")
-        setItemPrice("100,000")}} 
+        setItemPrice("100,000")}}
+        
+        onClick = {() => {
+          return(
+            <Detail props = {item.ID}/>
+          )
+        }}
         key={item.ID}>
           <img className='itemPic' src={item.Img1} alt={item.Name}/>
           <div className="itemText">

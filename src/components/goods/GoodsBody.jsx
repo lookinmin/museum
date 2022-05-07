@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import { useState } from 'react'
 import { Pay } from './pay/Pay';
 import { GoodsInner } from './GoodsInner.jsx';
+import { Link } from 'react-router-dom';
 
 export const GoodsBody = (props) => {
 
@@ -12,13 +13,19 @@ export const GoodsBody = (props) => {
   const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
   const pic5 = "./pic/Home/diamond.png";
 
+  const goDetail = (e) => {
+    console.log(e);
+    window.location.href = `/detail/${e}`
+  }
+
   if(props.props == 0){
     return (
       <div>
         <h2 className='inlineTitle'>Best Products</h2>
           <div className="showcase">
             <Suspense fallback={<h2>is Loading</h2>}>
-              <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}>
+              <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}
+                onClick={()=>goDetail("0105")}>
                 <img className='itemPic' src={pic1} alt='벤즈 향수'/>
                 <div className="itemText">
                   <p className='itemName'>BENZ Man EDT 100ML</p>

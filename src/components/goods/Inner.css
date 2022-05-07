@@ -25,6 +25,10 @@
   align-items: center;
 }
 
+.clothesShowcase .list .clItem:hover{
+  cursor: pointer;
+}
+
 .clothesShowcase .list .clItem .itemPic{
   height: 190px;
 }
