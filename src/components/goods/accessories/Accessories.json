@@ -74,32 +74,32 @@
 
         }, {
 
-            "Name": "AUDI",
+            "Name": "AUDI Logo",
             "ID": "0109",
             "Price": "3,000",
             "Img": ".Accessories/Wapen/pic1.png"
         }, {
-            "Name": "Bentley",
+            "Name": "Bentley Logo",
             "ID": "0110",
             "Price": "5,000",
             "Img": ".Accessories/Wapen/pic2.png"
         }, {
-            "Name": "BMW",
+            "Name": "BMW Logo",
             "ID": "0111",
             "Price": "4,000",
             "Img": ".Accessories/Wapen/pic6.png"
         }, {
-            "Name": "Hyundai",
+            "Name": "Hyundai Logo",
             "ID": "0112",
             "Price": "2,000",
             "Img": ".Accessories/Wapen/pic5.png"
         }, {
-            "Name": "Porshe",
+            "Name": "Porshe Logo",
             "ID": "0113",
             "Price": "3,000",
             "Img": ".Accessories/Wapen/pic3.png"
         }, {
-            "Name": "Volkswagen",
+            "Name": "Volkswagen Logo",
             "ID": "0114",
             "Price": "2,500",
             "Img": ".Accessories/Wapen/pic4.png"
