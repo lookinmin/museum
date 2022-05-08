@@ -92,7 +92,6 @@
 
 .showcase{
   display: grid;
-  height: 700px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   border-top: 2px solid black;

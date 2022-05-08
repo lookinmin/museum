@@ -1,7 +1,6 @@
 .clothesShowcase{
   display: grid;
   grid-template-columns: 80% 20%;
-  height: 900px;
   border-top: 2px solid black;
   margin: 20px 70px;
   padding-left: 20px;

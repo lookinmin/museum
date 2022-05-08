@@ -9,7 +9,7 @@ export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
   const pic1 = "./pic/Accessories/perfume/Benz/pic1.png";
   const pic2 = "./pic/Accessories/Ring/pic2.png";
-  const pic3 = "./pic/PhoneCase/phoneCase/masserati/pic3.png";
+  const pic3 = "./pic/PhoneCase/masserati/pic3.png";
   const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
   const pic5 = "./pic/Home/diamond.png";
 

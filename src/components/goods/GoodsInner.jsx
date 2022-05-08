@@ -11,6 +11,7 @@ export const GoodsInner = (props) => {
   const [itemName, setItemName] = useState("Diamonds Shop");
   const [itemPrice, setItemPrice] = useState("100,000");
   const [itemlist, setItemList] = useState([]);
+  const [title, setTitle] = useState("Diamonds");
   const pic1 = "./pic/Home/diamond.png";
 
   const filterClo = Object.values(ClothesData);
@@ -25,12 +26,15 @@ export const GoodsInner = (props) => {
   useEffect(()=> {
     if(props.props === 1){
       setItemList(filterClo[0]);
+      setTitle("Clothes");
     }
     else if(props.props === 2){
       setItemList(filterCase[0]);
+      setTitle("Phone Case");
     }
     else{
       setItemList(filterAcce[0]);
+      setTitle("Accessories");
     }
   }, [props.props])
 
@@ -61,7 +65,7 @@ export const GoodsInner = (props) => {
 
   return (
     <div>
-      <h2 className='inlineTitle'>Products : Clothes</h2>
+      <h2 className='inlineTitle'>Products : {title}</h2>
       <div className="clothesShowcase">
         <div className="list">
           {list}
