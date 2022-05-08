@@ -17,6 +17,11 @@ export const GoodsInner = (props) => {
   const filterCase = Object.values(CaseData);
   const filterAcce = Object.values(AcceData);
 
+  const goDetail = (e) => {
+    console.log(e);
+    window.location.href = `/detail/${e}`
+  }
+
   useEffect(()=> {
     if(props.props === 1){
       setItemList(filterClo[0]);
@@ -43,11 +48,7 @@ export const GoodsInner = (props) => {
         setItemName("Diamonds Shop")
         setItemPrice("100,000")}}
         
-        onClick = {() => {
-          return(
-            <Detail props = {item.ID}/>
-          )
-        }}
+        onClick={()=>goDetail(item.ID)}
         key={item.ID}>
           <img className='itemPic' src={item.Img1} alt={item.Name}/>
           <div className="itemText">
