@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Clothes } from './clothes/Clothes.jsx';
 import { Accessories } from './accessories/Accessories.jsx';
 import { PhoneCase } from './phonecase/PhoneCase.jsx';
+import { Pay } from './pay/Pay';
 
 export const GoodsBody = (props) => {
 
@@ -48,7 +49,7 @@ export const GoodsBody = (props) => {
                 </div>
               </div>
               <div className="item" id='item5'> 
-                <img id='nowItem' src={pic} alt='item1'/>
+                <img id='nowItem' src={pic}/>
               </div>
             </Suspense>
           </div>
