@@ -38,8 +38,13 @@
   flex-flow: column nowrap;
   justify-content: center;
   margin-left: 50px;
+  position: fixed;
+  top: 40%;
+  left: 1350px;
 }
 
 .clothesShowcase .nowOn #nowItemPic{
-  width: 300px;
+  width: 250px;
+  align-self: center;
+  margin-top: 20px;
 }
