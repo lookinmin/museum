@@ -65,7 +65,7 @@ export const GoodsInner = (props) => {
 
   return (
     <div>
-      <h2 className='inlineTitle'>Products : {title}</h2>
+      <h2 className='inlineTitle'>PRODUCTS : {title}</h2>
       <div className="clothesShowcase">
         <div className="list">
           {list}

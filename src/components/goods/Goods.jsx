@@ -5,9 +5,9 @@ import { Footer } from './Footer';
 import { GoodsBody } from './GoodsBody';
 
 export const Goods = () => {
-  const [txtColor1, setTxtColor1] = useState("black");
-  const [txtColor2, setTxtColor2] = useState("black");
-  const [txtColor3, setTxtColor3] = useState("black");
+  const [txtColor1, setTxtColor1] = useState("white");
+  const [txtColor2, setTxtColor2] = useState("white");
+  const [txtColor3, setTxtColor3] = useState("white");
   const [pageNum, setPageNum] = useState(0);
 
   return (
