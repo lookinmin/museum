@@ -2,29 +2,196 @@ body {
     height: 937px !important;
     padding: auto 0;
     height: fit-content;
+    overflow: hidden;
 }
 
 .carContainer {
-    height: fit-content !important;
-    /* padding: 200px 0 100px 0; */
+    height: 937px;
+    display: grid;
+    align-items: center;
+    margin-left: -60px;
 }
 
 .carWrapper {
     height: 937px;
-    background-image: url('../../../public/pic/Car/road3.png');
+    width: 8000px;
+    background-image: url('../../../public/pic/Car/road.png');
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 #car {
     position: relative;
-    width: 350px;
-    height: 170px;
-    top: 300px;
+    width: 300px;
+    height: 150px;
+    top: 400px;
     left: 50px;
     background-image: url('../../../public/pic/Car/car4.png');
     background-size: cover;
     background-repeat: no-repeat;
-    transform: rotate(0deg);
+    transform: scale(0.5) rotate(0deg);
+}
+
+.roadSign:hover{
+    cursor: pointer;
+}
+
+.roadSign1{
+    position: relative;
+    top: 120px;
+    left: 1340px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign2{
+    position: relative;
+    top: 50px;
+    left: 1740px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign3{
+    position: relative;
+    top: -500px;
+    left: 2140px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign4{
+    position: relative;
+    top: -620px;
+    left: 2540px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign5{
+    position: relative;
+    top: -1200px;
+    left: 2940px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign6{
+    position: relative;
+    top: -1300px;
+    left: 3340px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign7{
+    position: relative;
+    top: -1800px;
+    left: 3740px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign8{
+    position: relative;
+    top: -1820px;
+    left: 4140px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign9{
+    position: relative;
+    top: -2300px;
+    left: 4540px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign10{
+    position: relative;
+    top: -2360px;
+    left: 4940px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign11{
+    position: relative;
+    top: -2880px;
+    left: 5340px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign12{
+    position: relative;
+    top: -3000px;
+    left: 5740px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign13{
+    position: relative;
+    top: -3585px;
+    left: 6140px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign14{
+    position: relative;
+    top: -3690px;
+    left: 6540px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign15{
+    position: relative;
+    top: -4210px;
+    left: 6940px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
+}
+
+.roadSign16{
+    position: relative;
+    top: -4240px;
+    left: 7340px;
+    width: 180px;
+    height: 300px;
+    transform: scale(0.6);
+    background-image: url('../../../public/pic/Car/roadSign.png');
 }

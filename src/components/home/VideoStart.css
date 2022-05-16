@@ -1,12 +1,13 @@
 body {
     margin: 0 !important;
-    /* height: 937px !important; */
+    height: 937px !important;
   }
   
   .effectContainer {
     width: 100%;
     height: 100%;
     background: black;
+    overflow: hidden;
   }
 
   .fade-out-box {
@@ -20,7 +21,7 @@ body {
     -o-animation: fadeout 0.3s;
     /* Opera */
     animation-fill-mode: forwards;
-    animation-delay: 2.7s;
+    animation-delay: 3s;
   }
   
   @keyframes fadeout {
