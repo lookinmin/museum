@@ -5,10 +5,8 @@ import {Home} from "./components/home/Home"
 import {Goods} from "./components/goods/Goods"
 import {Car} from "./components/car/Car"
 import {Phone} from "./components/phone/Phone"
-import {Clothes} from "./components/goods/clothes/Clothes"
-import {Accessories} from "./components/goods/accessories/Accessories"
-import {PhoneCase} from "./components/goods/phonecase/PhoneCase"
 import {VideoStart} from './components/home/VideoStart'
+import {Detail} from './components/goods/detail/Detail'
 
 function App() {
   return (
@@ -21,6 +19,7 @@ function App() {
           <Route path="/Car" element={<Car/>}></Route>
           <Route path="/Phone" element={<Phone/>}></Route>
           <Route path="/goods" element={<Goods/>}></Route>
+          <Route path={`${/detail/}:id`} element={<Detail/>}></Route>
         </Routes>
       </div>
     </Router>

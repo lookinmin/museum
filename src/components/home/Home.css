@@ -7,6 +7,14 @@ body {
   width: 1920px;
   overflow: hidden;
 }
+.homepage .sign{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  font-size: 50px;
+  color: wheat;
+  text-shadow: 100px 100px 100px orange;
+}
 .hall {
   background-image: url("../../../public/pic/Home/hall.jpg");
   background-repeat: no-repeat;
@@ -23,11 +31,20 @@ body {
   height: 550px;
   width: 550px;
   transform: perspective(500px) rotateY(50deg) scale(0.3);
-  animation: bigger linear 2s;
-  transition: 1s;
+  animation: bigger_car linear 2s;
 }
 #portal_car:hover{
   transform: perspective(500px) rotateY(50deg) scale(0.6);
+  transition: 1s;
+}
+#car_hover{
+  position: absolute;
+  left: 15%;
+  top: 20%;
+  height: 550px;
+  width: 550px;
+  transform: perspective(500px) rotateY(50deg) scale(0.3);
+  animation: bigger_car linear 2s;
   transition: 1s;
 }
 #inner_car {
@@ -49,6 +66,9 @@ body {
   animation-iteration-count: infinite;
 }
 .down_portal{
+  position: absolute;
+  left: 0%;
+  top: 0%;
   cursor: pointer;
   animation: rotate-center 1.1s linear both;
   animation-iteration-count: infinite;
@@ -60,11 +80,47 @@ body {
   height: 100px;
   width: 100px;
 }
-.doorPhone {
+.toGoods :hover{
+  cursor: pointer;
+}
+/*------------------phone 포탈------------------*/
+#portal_phone{
   position: absolute;
+  left: 57%;
+  top: 20%;
+  height: 550px;
+  width: 550px;
+  transform: perspective(500px) rotateY(-50deg) scale(0.3);
+  animation: bigger_phone linear 2s;
+  transition: 1s;
+}
+#portal_phone:hover{
+  transform: perspective(500px) rotateY(-50deg) scale(0.6);
+  transition: 1s;
+}
+#phone_hover{
+  position: absolute;
+  left: 57%;
+  top: 20%;
+  height: 550px;
+  width: 550px;
+  transform: perspective(500px) rotateY(-50deg) scale(0.3);
+  animation: bigger_phone linear 2s;
+  transition: 1s;
+}
+#inner_phone {
+  position: absolute;
+  height: 550px;
+  width: 550px;
   left: 0%;
   top: 0%;
+  transition: 2s;
+  background-image: url(../../../public/pic/Home/tmp.png);
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
 }
+/*-----------------------*/
 
 @keyframes rotate-center {
   0% {
@@ -82,11 +138,19 @@ body {
     transform: perspective(500px) rotateY(0deg) scale(1.3) ;
   }
 }
-@keyframes bigger {
+@keyframes bigger_car {
   0% {
     transform:  perspective(500px) rotateY(50deg) scale(0) ;
   }
   100% {
     transform:  perspective(500px) rotateY(50deg) scale(0.3) ;
+  }
+}
+@keyframes bigger_phone {
+  0% {
+    transform:  perspective(500px) rotateY(-50deg) scale(0) ;
+  }
+  100% {
+    transform:  perspective(500px) rotateY(-50deg) scale(0.3) ;
   }
 }

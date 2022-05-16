@@ -1,0 +1,50 @@
+.clothesShowcase{
+  display: grid;
+  grid-template-columns: 80% 20%;
+  border-top: 2px solid black;
+  margin: 20px 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+
+.clothesShowcase .list{
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+
+.clothesShowcase .list .clItem{
+  width: 230px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.clothesShowcase .list .clItem:hover{
+  cursor: pointer;
+}
+
+.clothesShowcase .list .clItem .itemPic{
+  height: 190px;
+}
+
+.clothesShowcase .nowOn{
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-left: 50px;
+  position: fixed;
+  top: 40%;
+  left: 1350px;
+}
+
+.clothesShowcase .nowOn #nowItemPic{
+  width: 250px;
+  align-self: center;
+  margin-top: 20px;
+}

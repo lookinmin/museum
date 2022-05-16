@@ -1,17 +1,22 @@
 import React, { Suspense } from 'react'
 import { useState } from 'react'
-import { Clothes } from './clothes/Clothes';
-import { Accessories } from './accessories/Accessories';
-import { PhoneCase } from './phonecase/PhoneCase';
+import { Pay } from './pay/Pay';
+import { GoodsInner } from './GoodsInner.jsx';
+import { Link } from 'react-router-dom';
 
 export const GoodsBody = (props) => {
 
   const [pic, setPic] = useState("./pic/Home/diamond.png");
   const pic1 = "./pic/Accessories/perfume/Benz/pic1.png";
   const pic2 = "./pic/Accessories/Ring/pic2.png";
-  const pic3 = "./pic/PhoneCase/carCase/masserati/pic3.jpg";
-  const pic4 = "./pic/clothes/BENZ PK2/A1.jpg";
+  const pic3 = "./pic/PhoneCase/masserati/pic3.png";
+  const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
   const pic5 = "./pic/Home/diamond.png";
+
+  const goDetail = (e) => {
+    console.log(e);
+    window.location.href = `/detail/${e}`
+  }
 
   if(props.props == 0){
     return (
@@ -19,7 +24,8 @@ export const GoodsBody = (props) => {
         <h2 className='inlineTitle'>Best Products</h2>
           <div className="showcase">
             <Suspense fallback={<h2>is Loading</h2>}>
-              <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}>
+              <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}
+                onClick={()=>goDetail("0105")}>
                 <img className='itemPic' src={pic1} alt='벤즈 향수'/>
                 <div className="itemText">
                   <p className='itemName'>BENZ Man EDT 100ML</p>
@@ -48,7 +54,7 @@ export const GoodsBody = (props) => {
                 </div>
               </div>
               <div className="item" id='item5'> 
-                <img id='nowItem' src={pic} alt='item1'/>
+                <img id='nowItem' src={pic}/>
               </div>
             </Suspense>
           </div>
@@ -56,15 +62,15 @@ export const GoodsBody = (props) => {
     )
   }else if(props.props == 1){
     return(
-      <Clothes/>
+      <GoodsInner props={props.props}/>
     )
   }else if(props.props == 2){
     return(
-      <PhoneCase/>
+      <GoodsInner props={props.props}/>
     )
   }else if(props.props == 3){
     return(
-      <Accessories/>
+      <GoodsInner props={props.props}/>
     )
   }
   

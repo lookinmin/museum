@@ -11,12 +11,24 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'LeferiPoint-BlackObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .wrapper{
   padding: 1rem 15rem;
   display: flex;
   flex-flow: column nowrap;
+  background-color: #0f0f0f;
+  color : white;
 }
+
+/*주황 : ff7e00 */
+/*회색 : 474644 */
+
 
 .HeWrapper{
   display: flex;
@@ -33,9 +45,8 @@
 }
 
 #logo{
-  font-family: 'LeferiPoint-WhiteObliqueA';
-  font-size: 40px;
-  font-weight: 600;
+  font-family: 'LeferiPoint-BlackObliqueA';
+  font-size: 50px;
 }
 
 #logoPic{
@@ -52,9 +63,20 @@
   font-size: 15px;
 }
 
+.thirdBar{
+  display: flex;
+  position: fixed;
+  flex-flow: column nowrap;
+  top: 150px;
+  left: 1465px;
+  gap: 20px;
+  font-size: 15px;
+  align-items: flex-end;
+}
+
 .NavTo{
   text-decoration: none;
-  color: black;
+  color: white;
   font-family: 'LeferiPoint-WhiteObliqueA';
 }
 
@@ -75,7 +97,6 @@
 /*-------------for Header-----------*/
 
 .mainContainer{
-  height: 800px;
   margin-top: 300px;
   margin-bottom: 100px;
   display: flex;
@@ -88,15 +109,14 @@
   flex-flow: row-reverse;
   padding-right: 100px !important;
   font-size: 30px;
-  font-family: 'YdestreetB';
+  font-family: 'LeferiPoint-BlackObliqueA';
 }
 
 .showcase{
   display: grid;
-  height: 700px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  border-top: 2px solid black;
+  border-top: 2px solid white;
   margin: 20px 70px;
   padding-left: 20px;
   padding-right: 20px;
@@ -110,6 +130,16 @@
   padding-top: 60px;
   align-items: center;
   width: 387px;
+}
+
+.item::after{
+  content: "";
+  display: block;
+  width: 60px;
+  align-self: flex-start;
+  border-left: 1px solid #bcbcbc;
+  border-bottom: 1px solid #bcbcbc;
+  margin: 5px 50px;
 }
 
 .item:hover{
