@@ -22,11 +22,13 @@
   padding: 1rem 15rem;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #474644;
+  background-color: #0f0f0f;
   color : white;
 }
 
-/*주황 : ff7e00*/
+/*주황 : ff7e00 */
+/*회색 : 474644 */
+
 
 .HeWrapper{
   display: flex;
@@ -59,6 +61,17 @@
   top: 180px;
   gap: 20px;
   font-size: 15px;
+}
+
+.thirdBar{
+  display: flex;
+  position: fixed;
+  flex-flow: column nowrap;
+  top: 150px;
+  left: 1465px;
+  gap: 20px;
+  font-size: 15px;
+  align-items: flex-end;
 }
 
 .NavTo{
@@ -117,6 +130,16 @@
   padding-top: 60px;
   align-items: center;
   width: 387px;
+}
+
+.item::after{
+  content: "";
+  display: block;
+  width: 60px;
+  align-self: flex-start;
+  border-left: 1px solid #bcbcbc;
+  border-bottom: 1px solid #bcbcbc;
+  margin: 5px 50px;
 }
 
 .item:hover{

@@ -8,6 +8,7 @@ export const Goods = () => {
   const [txtColor1, setTxtColor1] = useState("white");
   const [txtColor2, setTxtColor2] = useState("white");
   const [txtColor3, setTxtColor3] = useState("white");
+  const [txtColor4, setTxtColor4] = useState("white")
   const [pageNum, setPageNum] = useState(0);
 
   return (
@@ -46,6 +47,21 @@ export const Goods = () => {
               setTxtColor1("black")
               setTxtColor2("black") 
               setTxtColor3("blue")}}>Accessories</h2>
+        </div>
+
+        <div className="thirdBar">
+          <h2 className="NavTo" id='goAbout' style={{color : txtColor4}} 
+              onClick={() => {
+              setPageNum(1) 
+              setTxtColor1("blue")
+              setTxtColor2("black")
+              setTxtColor3("black")}}>About</h2>
+          <h2 className="NavTo" id='goContact' style={{color : txtColor4}} 
+              onClick={() => {
+              setPageNum(1) 
+              setTxtColor1("blue")
+              setTxtColor2("black")
+              setTxtColor3("black")}}>Contact</h2>
         </div>
       </div>
       <div className='mainContainer'>
