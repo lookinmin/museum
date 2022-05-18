@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'LeferiPoint-BlackObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.DetailWrapper{
+  display: flex;
+  margin: 20px 200px;
+  flex-flow: column nowrap;
+}
+
+.DetailWrapper .topBar{
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+
+.DetailWrapper .topBar .logoContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: 'LeferiPoint-BlackObliqueA';
+}
+
+.DetailWrapper .topBar .logoContainer :hover{
+  cursor: pointer;
+}

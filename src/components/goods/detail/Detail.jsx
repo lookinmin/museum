@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ClothesData from "../Clothes.json"
 import CaseData from "../PhoneCase.json"
+import "./Detail.css";
 import AcceData from "../Accessories.json"
 
 export const Detail = () => {
@@ -51,7 +52,15 @@ export const Detail = () => {
   }, []);
 
   return (
-    <div>Detail{ num }
+    <div className='DetailWrapper'>
+
+      <div className="topBar">
+        <div className="logoContainer">
+          <h2>Diamonds Shop</h2>
+          <img src='../pic/Home/diamond.png' alt='로고' height="24px" />
+        </div>
+        
+      </div>
       <h2>{Name}</h2>
       <img src={`../${img1}`}/>
     </div>

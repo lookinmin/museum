@@ -1,8 +1,6 @@
 body {
     height: 937px !important;
-    padding: auto 0;
-    height: fit-content;
-    overflow: hidden;
+
 }
 
 .carContainer {
@@ -10,6 +8,9 @@ body {
     display: grid;
     align-items: center;
     margin-left: -60px;
+    padding: auto 0;
+    height: fit-content;
+    overflow: hidden;
 }
 
 .carWrapper {

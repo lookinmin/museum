@@ -22,8 +22,8 @@
   padding: 1rem 15rem;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #0f0f0f;
-  color : white;
+  background-color: #ffffff;
+  color : black;
 }
 
 /*주황 : ff7e00 */
@@ -76,7 +76,7 @@
 
 .NavTo{
   text-decoration: none;
-  color: white;
+  color: black;
   font-family: 'LeferiPoint-WhiteObliqueA';
 }
 
@@ -116,7 +116,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  border-top: 2px solid white;
+  border-top: 2px solid black;
   margin: 20px 70px;
   padding-left: 20px;
   padding-right: 20px;
