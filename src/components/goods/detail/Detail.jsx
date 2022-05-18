@@ -17,6 +17,7 @@ export const Detail = () => {
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
   const [img4, setImg4] = useState("");
+  const [exp, setExp] = useState("");
   const [cID, setID] = useState("");
 
   const filterClo = Object.values(ClothesData);
@@ -37,6 +38,7 @@ export const Detail = () => {
       setImg2(data[0].Img2);
       setImg3(data[0].Img3);
       setImg4(data[0].Img4);
+      setExp(data[0].Exp);
     }else if (200 < num < 300){
       let data = filterClo[0].filter((e => e.ID === id))
       setID(data[0].ID);
@@ -46,7 +48,7 @@ export const Detail = () => {
       setImg2(data[0].Img2)
       setImg3(data[0].Img3)
       setImg4(data[0].Img4)
-      console.log(img1)
+      setExp(data[0].Exp);
     }else{
       let data = filterCase[0].filter((e => e.ID === id))
       setID(data[0].ID);
@@ -56,6 +58,7 @@ export const Detail = () => {
       setImg2(data[0].Img2)
       setImg3(data[0].Img3)
       setImg4(data[0].Img4)
+      setExp(data[0].Exp);
     }
   }, []);
 
@@ -128,7 +131,7 @@ export const Detail = () => {
           <p>KRW {Price}</p>
           {MakeSize(cID)}
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>Product Explanation</p>
-          <p>많이많이 사주세요</p>
+          <p>{exp}</p>
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>BUY</p>
           <Button variant="outline-secondary" className="btnBuy">BUY NOW</Button>
           <Button variant="outline-secondary">ADD TO CART</Button>
