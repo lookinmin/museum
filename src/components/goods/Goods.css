@@ -78,6 +78,7 @@
   text-decoration: none;
   color: black;
   font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 22px;
 }
 
 .NavTo:hover{
@@ -212,6 +213,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 40px 150px;
   width: 1423px;
+  height: 150px;
   margin-top: 70px;
 }
 
@@ -224,6 +226,7 @@
   font-family: 'LeferiPoint-WhiteObliqueA';
   grid-row: 1/2;
   grid-column: 1/2;
+  align-self: center
 }
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');* { 

@@ -14,7 +14,6 @@ export const GoodsBody = (props) => {
   const pic5 = "./pic/Home/diamond.png";
 
   const goDetail = (e) => {
-    console.log(e);
     window.location.href = `/detail/${e}`
   }
 

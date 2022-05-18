@@ -7,6 +7,7 @@ import {Car} from "./components/car/Car"
 import {Phone} from "./components/phone/Phone"
 import {VideoStart} from './components/home/VideoStart'
 import {Detail} from './components/goods/detail/Detail'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
