@@ -39,7 +39,7 @@ export const Detail = () => {
       setImg3(data[0].Img3);
       setImg4(data[0].Img4);
       setExp(data[0].Exp);
-    }else if (200 < num < 300){
+    }else if (200 < num && num < 300){
       let data = filterClo[0].filter((e => e.ID === id))
       setID(data[0].ID);
       setName(data[0].Name)
@@ -49,7 +49,7 @@ export const Detail = () => {
       setImg3(data[0].Img3)
       setImg4(data[0].Img4)
       setExp(data[0].Exp);
-    }else{
+    }else if(300 < num){
       let data = filterCase[0].filter((e => e.ID === id))
       setID(data[0].ID);
       setName(data[0].Name)

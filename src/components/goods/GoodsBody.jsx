@@ -3,9 +3,10 @@ import { useState } from 'react'
 import { Pay } from './pay/Pay';
 import { GoodsInner } from './GoodsInner.jsx';
 import { Link } from 'react-router-dom';
+import { About } from './about/About';
+import { Chart } from './about/Chart';
 
 export const GoodsBody = (props) => {
-
   const [pic, setPic] = useState("./pic/Home/diamond.png");
   const pic1 = "./pic/Accessories/perfume/Benz/pic1.png";
   const pic2 = "./pic/Accessories/Ring/pic2.png";
@@ -14,7 +15,7 @@ export const GoodsBody = (props) => {
   const pic5 = "./pic/Home/diamond.png";
 
   const goDetail = (e) => {
-    window.location.href = `/detail/${e}`
+    window.location.href = `/detail/${e}`;
   }
 
   if(props.props == 0){
@@ -70,6 +71,14 @@ export const GoodsBody = (props) => {
   }else if(props.props == 3){
     return(
       <GoodsInner props={props.props}/>
+    )
+  }else if(props.props == 4){
+    return (
+      <About/>
+    )
+  }else if(props.props == 5){
+    return (
+      <Chart/>
     )
   }
   
