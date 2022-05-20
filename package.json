@@ -20,7 +20,9 @@
     "react-scripts": "5.0.0",
     "react-scroll-wheel-handler": "^2.1.0",
     "three": "^0.140.2",
-    "web-vitals": "^2.1.4"
+    "uuid-by-string": "^3.0.7",
+    "web-vitals": "^2.1.4",
+    "wouter": "^2.8.0-alpha.2"
   },
   "scripts": {
     "start": "react-scripts start",
