@@ -4,25 +4,141 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'YdestreetB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .DetailWrapper{
   display: flex;
-  margin: 20px 200px;
+  margin: 0 200px;
+  height: 937px !important;
   flex-flow: column nowrap;
 }
 
-.DetailWrapper .topBar{
+.DetailWrapper .DtopBar{
   display: flex;
   flex-flow: row nowrap;
-
+  position: fixed;
+  width: 1503px;
+  height: 80px;
+  align-items: center;
+  border-bottom: 2px dotted black;
+  margin-top: 10px;
 }
 
-.DetailWrapper .topBar .logoContainer{
-  display: flex;
-  flex-flow: row nowrap;
-  font-family: 'LeferiPoint-BlackObliqueA';
+.Dmenu{
+  margin-left: 120px;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 25px;
 }
 
-.DetailWrapper .topBar .logoContainer :hover{
+.Dmenu:hover{
   cursor: pointer;
+  color: blue;
+}
+
+#DF{
+  margin-left: 250px;
+}
+.DetailWrapper .DtopBar .DlogoContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#Dtitle{
+  font-family: 'LeferiPoint-BlackObliqueA';
+  font-size: 35px;
+}
+
+.DetailWrapper .DtopBar .DlogoContainer :hover{
+  cursor: pointer;
+}
+
+.Dcontent{
+  margin-top: 100px;
+  display: grid;
+  height: 900px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Dpic{
+  justify-self: center;
+  align-self: center;
+}
+
+.Dinfo{
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 5px double gray;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.Dinfo h2{
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  margin-bottom: 50px;
+}
+
+.Dinfo p{
+  font-family: 'GmarketSansMedium';
+}
+
+.sizeTable{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: left;
+}
+
+#underlineSize{
+  border-bottom: 1px solid black;
+  width: min-content;
+}
+
+.sizes{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+
+.sizes p{
+  margin: 0 !important;
+  border: 1px solid lightgray;
+  width: 34px;
+  height: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'GmarketSansMedium';
+  padding-top: 3px;
+}
+
+.sizes p:hover{
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.btnBuy{
+  margin-bottom: 20px;
 }

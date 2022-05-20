@@ -5,11 +5,13 @@ import { Footer } from './Footer';
 import { GoodsBody } from './GoodsBody';
 
 export const Goods = () => {
-  const [txtColor1, setTxtColor1] = useState("white");
-  const [txtColor2, setTxtColor2] = useState("white");
-  const [txtColor3, setTxtColor3] = useState("white");
-  const [txtColor4, setTxtColor4] = useState("white")
+  const [txtColor1, setTxtColor1] = useState("black");
+  const [txtColor2, setTxtColor2] = useState("black");
+  const [txtColor3, setTxtColor3] = useState("black");
+  const [txtColor4, setTxtColor4] = useState("black");
+  const [txtColor5, setTxtColor5] = useState("black");
   const [pageNum, setPageNum] = useState(0);
+
 
   return (
     <div className="wrapper">
@@ -21,6 +23,8 @@ export const Goods = () => {
               setTxtColor1("black")
               setTxtColor2("black")
               setTxtColor3("black")
+              setTxtColor4("black")
+              setTxtColor5("black")
             }}>
             <h2 id='logo'>Diamonds Shop</h2>
             <img src='./pic/Home/diamond.png' alt='로고' height="24px" />
@@ -34,34 +38,44 @@ export const Goods = () => {
             setPageNum(1) 
             setTxtColor1("blue")
             setTxtColor2("black")
-            setTxtColor3("black")}}>Clothes</h2>
+            setTxtColor3("black")
+            setTxtColor4("black")
+            setTxtColor5("black")}}>Clothes</h2>
           <h2 className="NavTo" id='goPhoneCase' style={{color : txtColor2}} 
             onClick={() => {
               setPageNum(2)
               setTxtColor1("black")
               setTxtColor2("blue")
-              setTxtColor3("black")}}>Phone Case</h2>
+              setTxtColor3("black")
+              setTxtColor4("black")
+              setTxtColor5("black")}}>Phone Case</h2>
           <h2 className="NavTo" id='goAcces' style={{color : txtColor3}} 
             onClick={() => {
               setPageNum(3)
               setTxtColor1("black")
               setTxtColor2("black") 
-              setTxtColor3("blue")}}>Accessories</h2>
+              setTxtColor3("blue")
+              setTxtColor4("black")
+              setTxtColor5("black")}}>Accessories</h2>
         </div>
 
         <div className="thirdBar">
           <h2 className="NavTo" id='goAbout' style={{color : txtColor4}} 
               onClick={() => {
-              setPageNum(1) 
-              setTxtColor1("blue")
+              setPageNum(4) 
+              setTxtColor1("black")
               setTxtColor2("black")
-              setTxtColor3("black")}}>About</h2>
-          <h2 className="NavTo" id='goContact' style={{color : txtColor4}} 
+              setTxtColor3("black")
+              setTxtColor4("blue")
+              setTxtColor5("black")}}>About</h2>
+          <h2 className="NavTo" id='goContact' style={{color : txtColor5}} 
               onClick={() => {
-              setPageNum(1) 
-              setTxtColor1("blue")
+              setPageNum(5) 
+              setTxtColor1("black")
               setTxtColor2("black")
-              setTxtColor3("black")}}>Contact</h2>
+              setTxtColor3("black")
+              setTxtColor4("black")
+              setTxtColor5("blue")}}>Chart</h2>
         </div>
       </div>
       <div className='mainContainer'>

@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'KOHIBaeumOTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/KOHIBaeumOTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* { 
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+
+.AboutWrapper{
+  padding-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+
+#mainPic{
+  -webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation-delay: 0.4s;
+  position: relative;
+  z-index: 1;
+  border-top: 2px solid gray;
+  padding-top: 50px;
+}
+
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+
+.AboutWrapper h2{
+  padding-bottom: 20px;
+
+}
+
+.AboutWrapper img{
+  align-self: center;
+}
+
+.AboutWrapper h5{
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-weight: 550;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#Atitle{
+  margin-top: 50px !important;
+  font-family: 'KOHIBaeumOTF';
+  align-self: center;
+  font-size: 40px;
+}
+
+#AteamName{
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  text-align: right !important;
+}
+
+.AboutWrapper h3{
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  border-bottom: 1px solid;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.showMembers{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.memberInfo{
+  padding: 20px;
+  border: 2px solid gray;
+  background-color: rgb(158, 158, 158);
+}
+
+.memberInfo img{
+  border: 1px solid rgb(94, 94, 94);
+  padding: 10px;
+}
+
+.memberInfo h4{
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  text-align: center;
+  margin-top: 15px;
+  border-bottom: 2px dotted gray;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.memberInfo p{
+  margin: 0;
+  text-align: right;
+  font-family: Pretendard
+}
+
