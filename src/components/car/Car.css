@@ -1,0 +1,9 @@
+#CarContainer{
+  width: 100vw;
+  height: 937px !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* color: white;
+  user-select: none; */
+}
