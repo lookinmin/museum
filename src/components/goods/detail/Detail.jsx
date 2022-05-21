@@ -6,6 +6,7 @@ import "./Detail.css";
 import AcceData from "../Accessories.json"
 import { Footer } from '../Footer';
 import { Button } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel'
 
 export const Detail = () => {
 
@@ -171,7 +172,20 @@ export const Detail = () => {
 
       <div className="Dcontent">
         <div className="Dpic">
-          <img src={`../${img1}`} width="400px"/>
+          <Carousel fade style={{width : "450px"}} controls="true">
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img1}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img2}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img3}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img4}`}/>
+            </Carousel.Item>
+          </Carousel>
         </div>
         <div className="Dinfo">
           <h2>{Name}</h2>
