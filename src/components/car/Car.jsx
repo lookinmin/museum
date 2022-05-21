@@ -67,9 +67,9 @@ export const Car = () => {
     {
       position: [0.0, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/car4.png",
-      img: "./pic/Car/car4.png",
-      name: "Car6"
+      url: "./pic/Home/hall.jpg",
+      img: "./pic/Home/hall.jpg",
+      name: "home"
     },
     {
       position: [1.15, 0, -1.0],
@@ -140,12 +140,12 @@ export const Car = () => {
     <>
       <div
         id="CarContainer"
-        onMouseMove={(e) => {
-          chg_zoom(e);
-        }}
-        onMouseOut={(ec) => {
-          init_zoom(ec);
-        }}
+        // onMouseMove={(e) => {
+        //   chg_zoom(e);
+        // }}
+        // onMouseOut={(ec) => {
+        //   init_zoom(ec);
+        // }}
       >
 
           <Suspense fallback={null} id="CarContainer">
