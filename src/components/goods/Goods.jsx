@@ -12,6 +12,9 @@ export const Goods = () => {
   const [txtColor5, setTxtColor5] = useState("black");
   const [pageNum, setPageNum] = useState(0);
 
+  const goCart = () => {
+    window.location.href = `/cart`
+  }
 
   return (
     <div className="wrapper">
@@ -60,6 +63,9 @@ export const Goods = () => {
         </div>
 
         <div className="thirdBar">
+          <img id="cart" src='./pic/about/cart.png' width="35px" onClick={
+            () => goCart()
+          }/>
           <h2 className="NavTo" id='goAbout' style={{color : txtColor4}} 
               onClick={() => {
               setPageNum(4) 
@@ -76,6 +82,7 @@ export const Goods = () => {
               setTxtColor3("black")
               setTxtColor4("black")
               setTxtColor5("blue")}}>Chart</h2>
+          
         </div>
       </div>
       <div className='mainContainer'>

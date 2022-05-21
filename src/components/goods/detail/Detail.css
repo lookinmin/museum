@@ -27,7 +27,6 @@
 .DetailWrapper{
   display: flex;
   margin: 0 200px;
-  height: 937px !important;
   flex-flow: column nowrap;
 }
 
@@ -43,9 +42,13 @@
 }
 
 .Dmenu{
-  margin-left: 120px;
+  margin-left: 90px;
   font-family: 'LeferiPoint-WhiteObliqueA';
   font-size: 25px;
+}
+
+#toCart{
+  padding-bottom: 15px;
 }
 
 .Dmenu:hover{
@@ -110,7 +113,7 @@
   justify-content: left;
 }
 
-#underlineSize{
+.underlineSize{
   border-bottom: 1px solid black;
   width: min-content;
 }
@@ -141,4 +144,29 @@
 
 .btnBuy{
   margin-bottom: 20px;
+}
+
+.choosePhone{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.models{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+
+.models p{
+  margin: 0 !important;
+  border: 1px solid lightgray;
+  width: fit-content;
+  padding: 8px 5px 5px 5px;
+  align-items: center;
+  font-family: 'GmarketSansMedium';
+}
+
+.models p:hover{
+  cursor: pointer;
+  background-color: lightgray;
 }

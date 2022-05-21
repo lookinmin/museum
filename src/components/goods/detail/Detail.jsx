@@ -5,8 +5,6 @@ import CaseData from "../PhoneCase.json"
 import "./Detail.css";
 import AcceData from "../Accessories.json"
 import { Footer } from '../Footer';
-import { GoodsInner } from '../GoodsInner';
-import { GoodsBody } from '../GoodsBody';
 import { Button } from 'react-bootstrap';
 
 export const Detail = () => {
@@ -19,6 +17,16 @@ export const Detail = () => {
   const [img4, setImg4] = useState("");
   const [exp, setExp] = useState("");
   const [cID, setID] = useState("");
+
+  const [size1, setSize1] = useState("white");
+  const [size2, setSize2] = useState("white");
+  const [size3, setSize3] = useState("white");
+  const [size4, setSize4] = useState("white");
+  const [size5, setSize5] = useState("white");
+
+  const [model1, setModel1] = useState("white");
+  const [model2, setModel2] = useState("white");
+  const [model3, setModel3] = useState("white");
 
   const filterClo = Object.values(ClothesData);
   const filterCase = Object.values(CaseData);
@@ -62,64 +70,103 @@ export const Detail = () => {
     }
   }, []);
 
+
   const MakeSize = (e) => {
     var a = parseInt(e);
-    console.log(a)
     if(200 < a && a < 300){
       return(
         <div className="sizeTable">
-          <p id='underlineSize'>SIZE</p>
+          <p className='underlineSize'>SIZE</p>
           <div className="sizes">
-            <p>XS</p>
-            <p>S</p>
-            <p>M</p>
-            <p>L</p>
-            <p>XL</p>
+            <p style={{backgroundColor : size1}} onClick={()=> {
+            setSize1("lightgray")
+            setSize2("white")
+            setSize3("white")
+            setSize4("white")
+            setSize5("white")}}>XS</p>
+            <p style={{backgroundColor : size2}} onClick={()=> {
+            setSize1("white")
+            setSize2("lightgray")
+            setSize3("white")
+            setSize4("white")
+            setSize5("white")}}>S</p>
+            <p style={{backgroundColor : size3}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("lightgray")
+            setSize4("white")
+            setSize5("white")}}>M</p>
+            <p style={{backgroundColor : size4}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("white")
+            setSize4("lightgray")
+            setSize5("white")}}>L</p>
+            <p style={{backgroundColor : size5}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("white")
+            setSize4("white")
+            setSize5("lightgray")}}>XL</p>
           </div>
         </div>
       )
     }
-    else{
+    else if (300 < a){
       return(
-        <h2>NO</h2>
+        <div className="choosePhone">
+          <p className='underlineSize'>Model</p>
+          <div className="models">
+            <p style={{backgroundColor : model1}} onClick={()=> {
+            setModel1("lightgray")
+            setModel2("white")
+            setModel3("white")
+            }}>Galaxy</p>
+            <p style={{backgroundColor : model2}} onClick={()=> {
+            setModel1("white")
+            setModel2("lightgray")
+            setModel3("white")
+            }}>IPhone</p>
+            <p style={{backgroundColor : model3}} onClick={()=> {
+            setModel1("white")
+            setModel2("white")
+            setModel3("lightgray")
+            }}>etc</p>
+          </div>
+        </div>
       )
     }
   }
 
-  const goMenu = (e) => {
-    console.log(e)
-    if (e === 1){
-      return(
-        window.location.href = `/goods`
-      )
-    }else if(e === 2){
-      return(
-        window.location.href = `/goods`
-      )
-    }else if(e === 3){
-      return(
-        window.location.href = `/goods`
-      )
-    }else {
-      return(
-        window.location.href = `/goods`
-      )
-    }
+  const goMenu = () => {
+    return(
+      window.location.href = `/goods`
+    )
   }
+
+  const addCart = () => {
+    alert(`${Name} has been added to cart.`);
+  }
+
+  const goCart = () => {
+    window.location.href = `/cart`
+  }
+
 
   return (
     <div className='DetailWrapper'>
 
       <div className="DtopBar">
-        <div className="DlogoContainer" onClick={() => {goMenu(1)}}>
+        <div className="DlogoContainer" onClick={() => {goMenu()}}>
           <h2 id='Dtitle'>Diamonds Shop</h2>
           <img src='../pic/Home/diamond.png' alt='로고' height="24px" style={{marginBottom : "40px"}} />
         </div>
         
-        <h3 className='Dmenu' id='DF' onClick={() => goMenu(1)}>Main</h3>
-        <h3 className='Dmenu' onClick={() => goMenu(2)}>Clothes</h3>
-        <h3 className='Dmenu' onClick={() => goMenu(3)}>Phone Case</h3>
-        <h3 className='Dmenu' onClick={() => goMenu(4)}>Accessories</h3>
+        <h3 className='Dmenu' id='DF' onClick={() => goMenu()}>Main</h3>
+        <h3 className='Dmenu' onClick={() => goMenu()}>Clothes</h3>
+        <h3 className='Dmenu' onClick={() => goMenu()}>Phone Case</h3>
+        <h3 className='Dmenu' onClick={() => goMenu()}>Accessories</h3>
+        <img className='Dmenu' id='toCart' src="../pic/about/cart.png" width="30px" onClick={() => goCart()}/>
       </div>
 
       <div className="Dcontent">
@@ -128,18 +175,15 @@ export const Detail = () => {
         </div>
         <div className="Dinfo">
           <h2>{Name}</h2>
-          <p>KRW {Price}</p>
+          <p style={{marginBottom : "40px"}}>KRW {Price}</p>
           {MakeSize(cID)}
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>Product Explanation</p>
-          <p>{exp}</p>
+          <p style={{width : "400px"}}>{exp}</p>
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>BUY</p>
           <Button variant="outline-secondary" className="btnBuy">BUY NOW</Button>
-          <Button variant="outline-secondary">ADD TO CART</Button>
+          <Button variant="outline-secondary" onClick = {() => addCart()}>ADD TO CART</Button>
         </div>
       </div>
-  
-     
-
       <Footer/>
     </div>
   )

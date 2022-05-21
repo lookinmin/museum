@@ -77,6 +77,14 @@
   z-index: 2;
 }
 
+.thirdBar #cart{
+
+}
+
+.thirdBar #cart:hover{
+  cursor: pointer;
+}
+
 .NavTo{
   text-decoration: none;
   color: black;

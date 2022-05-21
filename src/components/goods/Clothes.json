@@ -1,34 +1,7 @@
 {
     "Clothes": [
         {
-            "Name": "Audi Men's Hooded Windbreaker",
-            "ID": "0201",
-            "Price": "130,000",
-            "Exp":"This is a basic lightweight jacket for men that can be worn in various outdoor activities and daily life. It has a packable function, so it is easy to store and waterproof using a hand pocket.",
-            "Img1":"./pic/clothes/AUDI/pic1.png",
-            "Img2":"./pic/clothes/AUDI/pic2.PNG",
-            "Img3":"./pic/clothes/AUDI/pic3.PNG",
-            "Img4":"./pic/clothes/AUDI/pic4.PNG"
-        }, {
-            "Name": "Descent Swiss (Audi) Ski Original Short Down Jacket",
-            "ID": "0202",
-            "Price": "426,000",
-            "Exp":"A 2L material with excellent waterproof and waterproof functions was applied as a down jacket with color and pen short length. A more duck-down jacket composed of 80% fluff and 20% feather",
-            "Img1":"./pic/clothes/AUDI2/pic1.PNG",
-            "Img2":"./pic/clothes/AUDI2/pic2.PNG",
-            "Img3":"./pic/clothes/AUDI2/pic3.PNG",
-            "Img4":"./pic/clothes/AUDI2/pic4.PNG"
-        }, {
-            "Name": "Bentley Jersey",
-            "ID": "0203",
-            "Price": "119,000",
-            "Exp":"It is a jacket with a foxy silhouette and big logo printing that takes into account activity, and it uses silk materials inside to add warmth.",
-            "Img1":"./pic/clothes/Bentley/pic1.PNG",
-            "Img2":"./pic/clothes/Bentley/pic2.PNG",
-            "Img3":"./pic/clothes/Bentley/pic3.PNG",
-            "Img4":"./pic/clothes/Bentley/pic4.PNG"
-        }, {
-            "Name": "Benz PK Polo Golf Collar Shirt",
+            "Name": "BENZ PK T-Shirt",
             "ID": "0204",
             "Price": "75,000",
             "Exp":"It is a cotton PK polo short-sleeved T-shirt that contains the DNA of golf and suggests a high-end field look for young and free golfers.",
@@ -37,7 +10,7 @@
             "Img3":"./pic/clothes/BENZ PK/pic3.PNG",
             "Img4":"./pic/clothes/BENZ PK/pic4.PNG"
         }, {
-            "Name": "Benz T-Shirt Short-Sleeved",
+            "Name": "BENZ PK T-Shirt",
             "ID": "0205",
             "Price": "78,000",
             "Exp":"Basic golf shirt made of functional material with pawning print and nylon functional material to prevent white see-through",
@@ -46,7 +19,35 @@
             "Img3":"./pic/clothes/BENZ PK2/pic3.PNG",
             "Img4":"./pic/clothes/BENZ PK2/pic4.PNG"
         }, {
-            "Name": "BMW Men's Hood Tech Short Jacket",
+            "Name": "FERRARI T-shirt",
+            "ID": "0208",
+            "Price": "128,000",
+            "Exp":"An embroidered version of the unmistakable Prancing Horse is emblazoned on the back of this versatile T-shirt, which is made in Italy using a high performance technical cotton blend fabric.",
+            "Img1":"./pic/clothes/Ferrari PK/pic1.PNG",
+            "Img2":"./pic/clothes/Ferrari PK/pic2.PNG",
+            "Img3":"./pic/clothes/Ferrari PK/pic3.PNG",
+            "Img4":"./pic/clothes/Ferrari PK/pic4.PNG"
+            
+        }, {
+            "Name": "AUDI Hood WindBreaker",
+            "ID": "0201",
+            "Price": "130,000",
+            "Exp":"This is a basic lightweight jacket for men that can be worn in various outdoor activities and daily life. It has a packable function, so it is easy to store and waterproof using a hand pocket.",
+            "Img1":"./pic/clothes/AUDI/pic1.png",
+            "Img2":"./pic/clothes/AUDI/pic2.PNG",
+            "Img3":"./pic/clothes/AUDI/pic3.PNG",
+            "Img4":"./pic/clothes/AUDI/pic4.PNG"
+        }, {
+            "Name": "AUDI Original Jacket",
+            "ID": "0202",
+            "Price": "426,000",
+            "Exp":"A 2L material with excellent waterproof and waterproof functions was applied as a down jacket with color and pen short length. A more duck-down jacket composed of 80% fluff and 20% feather",
+            "Img1":"./pic/clothes/AUDI2/pic1.PNG",
+            "Img2":"./pic/clothes/AUDI2/pic2.PNG",
+            "Img3":"./pic/clothes/AUDI2/pic3.PNG",
+            "Img4":"./pic/clothes/AUDI2/pic4.PNG"
+        }, {
+            "Name": "BMW Hooded Tech Jacket",
             "ID": "0206",
             "Price": "79,000",
             "Exp":"Based on strong durability, you can create a four-season street mood and have a fit that fits your body with a slim fit.",
@@ -55,7 +56,7 @@
             "Img3":"./pic/clothes/BMW jersey/pic3.PNG",
             "Img4":"./pic/clothes/BMW jersey/pic4.PNG"
         }, {
-            "Name": "Men’s recycled scuba sweatshirt with Ferrari logo",
+            "Name": "FERRARI SweatShirt",
             "ID": "0207",
             "Price": "132,000",
             "Exp":"It is a Ferrari brand short-sleeved shirt with a trendy color and a casual fit. Also, it is lightweight using high-quality fabric",
@@ -64,16 +65,16 @@
             "Img3":"./pic/clothes/Ferrari sweater/pic3.PNG",
             "Img4":"./pic/clothes/Ferrari sweater/pic4.PNG"
         }, {
-            "Name": "Organic cotton T-shirt with Ferrari logo",
-            "ID": "0208",
-            "Price": "128,000",
-            "Exp":"An embroidered version of the unmistakable Prancing Horse is emblazoned on the back of this versatile T-shirt, which is made in Italy using a high performance technical cotton blend fabric.",
-            "Img1":"./pic/clothes/Ferrari PK/pic1.PNG",
-            "Img2":"./pic/clothes/Ferrari PK/pic2.PNG",
-            "Img3":"./pic/clothes/Ferrari PK/pic3.PNG",
-            "Img4":"./pic/clothes/Ferrari PK/pic4.PNG"
+            "Name": "BENTLEY Men's Jersey",
+            "ID": "0203",
+            "Price": "119,000",
+            "Exp":"It is a jacket with a foxy silhouette and big logo printing that takes into account activity, and it uses silk materials inside to add warmth.",
+            "Img1":"./pic/clothes/Bentley/pic1.PNG",
+            "Img2":"./pic/clothes/Bentley/pic2.PNG",
+            "Img3":"./pic/clothes/Bentley/pic3.PNG",
+            "Img4":"./pic/clothes/Bentley/pic4.PNG"
         }, {
-            "Name": "Volvo Jersey",
+            "Name": "VOLVO Jersey",
             "ID": "0209",
             "Price": "118,000",
             "Exp":"This windbreaker stands out with carefully crafted details that underline its comfort, including the fully recycled water-resistant fabric, raglan sleeves and contrasting mesh lining for breathability.",

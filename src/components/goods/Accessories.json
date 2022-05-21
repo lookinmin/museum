@@ -4,31 +4,31 @@
             "Name": "Benz Men's Perfume MB Man ",
             "ID": "0101",
             "Price": "69,000",
-            "Img1": ".Accessories/BenZ/pic1.png",
-            "Img2": ".Accessories/BenZ/pic2.png",
-            "Img3": ".Accessories/BenZ/pic3.png",
-            "Img4": ".Accessories/BenZ/pic4.png"
+            "Img1": "./pic/Accessories/Perfume/BenZ/pic1.png",
+            "Img2": "./pic/Accessories/Perfume/BenZ/pic2.png",
+            "Img3": "./pic/Accessories/Perfume/BenZ/pic3.png",
+            "Img4": "./pic/Accessories/Perfume/BenZ/pic4.png"
         }, {
             "Name": "Light Essence By Ferrari For Men",
             "ID": "0102",
             "Price": "56,000",
-            "Img1": ".Accessories/Ferrari/pic1.png",
-            "Img2": ".Accessories/Ferrari/pic2.png",
-            "Img3": ".Accessories/Ferrari/pic3.png",
-            "Img4": ".Accessories/Ferrari/pic4.png"
+            "Img1": "./pic/Accessories/Perfume/Ferrari/pic1.png",
+            "Img2": "./pic/Accessories/Perfume/Ferrari/pic2.png",
+            "Img3": "./pic/Accessories/Perfume/Ferrari/pic3.png",
+            "Img4": "./pic/Accessories/Perfume/Ferrari/pic4.png"
         }, {
             "Name": "Tonino Lamborghini Invincible EDT",
             "ID": "0103",
             "Price": "50,000",
-            "Img1": ".Accessories/Lambo/pic1.png",
-            "Img2": ".Accessories/Lambo/pic2.png",
-            "Img3": ".Accessories/Lambo/pic3.png",
-            "Img4": ".Accessories/Lambo/pic4.png"
+            "Img1": "./pic/Accessories/Perfume/Lambo/pic1.png",
+            "Img2": "./pic/Accessories/Perfume/Lambo/pic2.png",
+            "Img3": "./pic/Accessories/Perfume/Lambo/pic3.png",
+            "Img4": "./pic/Accessories/Perfume/Lambo/pic4.png"
         }, {
 
-            "Name": "Ring",
+            "Name": "BENZ Sliver Ring",
             "ID": "0104",
-            "Price": "40,000",
+            "Price": "224,000",
             "Img1": ".Accessories/Ring/pic1.png",
             "Img2": ".Accessories/Ring/pic2.png",
             "Img3": ".Accessories/Ring/pic3.png",

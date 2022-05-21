@@ -1,0 +1,16 @@
+.CartWrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 200px;
+}
+
+.CtopBar{
+  display: flex;
+  flex-flow: row nowrap;
+  position: fixed;
+  width: 1503px;
+  height: 80px;
+  align-items: center;
+  border-bottom: 2px dotted black;
+  margin-top: 10px;
+}

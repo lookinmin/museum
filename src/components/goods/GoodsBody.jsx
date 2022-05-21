@@ -5,6 +5,7 @@ import { GoodsInner } from './GoodsInner.jsx';
 import { Link } from 'react-router-dom';
 import { About } from './about/About';
 import { Chart } from './about/Chart';
+import { Route } from 'react-router-dom';
 
 export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
@@ -32,21 +33,24 @@ export const GoodsBody = (props) => {
                   <p className='itemPrice'>KRW 104,000</p>
                 </div>
               </div>
-              <div className="item" id='item2' onMouseOver={() => setPic(pic2)} onMouseOut={() => setPic(pic5)}>
+              <div className="item" id='item2' onMouseOver={() => setPic(pic2)} onMouseOut={() => setPic(pic5)}
+                onClick={()=>goDetail("0104")}>
                 <img className='itemPic' src={pic2} alt='벤츠 반지'/>
                 <div className="itemText">
                   <p className='itemName'>BENZ Sliver Ring</p>
                   <p className='itemPrice'>KRW 224,000</p>
                 </div>
               </div>
-              <div className="item" id='item3' onMouseOver={() => setPic(pic3)} onMouseOut={() => setPic(pic5)}>
+              <div className="item" id='item3' onMouseOver={() => setPic(pic3)} onMouseOut={() => setPic(pic5)}
+                onClick={()=>goDetail("0306")}>
                 <img className='itemPic' src={pic3} alt='마세라티 폰케이스'/>
                 <div className="itemText">
-                  <p className='itemName'>MASERATI IPhone Case</p>
+                  <p className='itemName'>MASERATI Logo Case</p>
                   <p className='itemPrice'>KRW 88,000</p>
                 </div>
               </div>
-              <div className="item" id='item4' onMouseOver={() => setPic(pic4)} onMouseOut={() => setPic(pic5)}>
+              <div className="item" id='item4' onMouseOver={() => setPic(pic4)} onMouseOut={() => setPic(pic5)}
+                onClick={()=>goDetail("0205")}>
                 <img className='itemPic' src={pic4} alt='벤츠 PK티'/>
                 <div className="itemText">
                   <p className='itemName'>BENZ PK T-shirts</p>
@@ -81,6 +85,4 @@ export const GoodsBody = (props) => {
       <Chart/>
     )
   }
-  
-  
 }
