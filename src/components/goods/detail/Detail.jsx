@@ -37,6 +37,10 @@ export const Detail = () => {
 
   var num = parseInt(id)
 
+  const goPay = (e) =>{
+    window.location.href = `/pay/${e}`
+  }
+
   useEffect(()=> {
     if (num < 200){
       let data = filterAcce[0].filter((e => e.ID === id))
@@ -172,7 +176,7 @@ export const Detail = () => {
 
       <div className="Dcontent">
         <div className="Dpic">
-          <Carousel fade style={{width : "450px"}} controls="true">
+          <Carousel variant="dark" style={{width : "450px"}} controls="true">
             <Carousel.Item interval="3000">
               <img className="d-block w-100" src={`../${img1}`}/>
             </Carousel.Item>
@@ -194,7 +198,7 @@ export const Detail = () => {
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>Product Explanation</p>
           <p style={{width : "400px"}}>{exp}</p>
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>BUY</p>
-          <Button variant="outline-secondary" className="btnBuy">BUY NOW</Button>
+          <Button variant="outline-secondary" className="btnBuy" onClick={()=> goPay(cID)}>BUY NOW</Button>
           <Button variant="outline-secondary" onClick = {() => addCart()}>ADD TO CART</Button>
         </div>
       </div>
