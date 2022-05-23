@@ -9,7 +9,7 @@ import {
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
-
+import carData from "../car/carHistory.json";
 export const CarInfo = ({ images }) => {
   return (
     <Canvas
@@ -20,7 +20,7 @@ export const CarInfo = ({ images }) => {
       <Environment preset="city" />
       <group position={[0, -0.5, 0]}>
         <Frames images={images} />
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+        <mesh rotation={[-Math.PI / 2, 0, 0]} >
           <planeGeometry args={[50, 50]} />
           <MeshReflectorMaterial
             blur={[300, 100]}
@@ -51,6 +51,7 @@ const ToHall = (path, setLocation) => {
 
 const ClickFrame = (current, object, setLocation) => {
   setLocation(current === object ? "/car" : "/car/" + object.name);
+  console.log(object.parent.num) // -1면 home
 };
 
 function Frames({images, q = new THREE.Quaternion(), p = new THREE.Vector3()}) {
@@ -58,13 +59,12 @@ function Frames({images, q = new THREE.Quaternion(), p = new THREE.Vector3()}) {
   const [, params] = useRoute("/car/:id");
   const [, setLocation] = useLocation();
   var click;
+  var cnt = 1;
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
-    console.log(params?.id);
     if (click) {
-      click.parent.updateWorldMatrix(true, true);
-      click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
       click.parent.getWorldQuaternion(q);
+      p.set(0, 0.5, 1.25)
     } else {
       p.set(0, 0.5, 5.45); //초기 시점 좌표
     }
@@ -83,10 +83,11 @@ function Frames({images, q = new THREE.Quaternion(), p = new THREE.Vector3()}) {
       )}
       onPointerMissed={() => setLocation("/car")}
     >
-      {images.map(
-        (props) => 
-          <Frame key={props.url} {...props} /> 
-      )}
+      {
+        images.map(
+          (props) => 
+            <Frame key={props.url} {...props} /> )
+      }
     </group>
   );
 }
