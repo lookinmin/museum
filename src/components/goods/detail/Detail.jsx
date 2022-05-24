@@ -143,10 +143,28 @@ export const Detail = () => {
     }
   }
 
-  const goMenu = () => {
-    return(
-      window.location.href = `/goods`
-    )
+  const goMenu = (e) => {
+    switch (e){
+      case 1:
+        return(
+          window.location.href = `/goods`
+        )
+      case 2:
+        return(
+          window.location.href = `/goods#/clothes`
+        )
+      case 3:
+        return(
+          window.location.href = `/goods#/phonecase`
+        )
+      case 4:
+        return(
+          window.location.href = `/goods#/accessories`
+        )
+
+    }
+
+    
   }
 
   const addCart = () => {
@@ -162,20 +180,21 @@ export const Detail = () => {
     <div className='DetailWrapper'>
 
       <div className="DtopBar">
-        <div className="DlogoContainer" onClick={() => {goMenu()}}>
+        <div className="DlogoContainer" onClick={() => {goMenu(1)}}>
           <h2 id='Dtitle'>Diamonds Shop</h2>
           <img src='../pic/Home/diamond.png' alt='로고' height="24px" style={{marginBottom : "40px"}} />
         </div>
         
-        <h3 className='Dmenu' id='DF' onClick={() => goMenu()}>Main</h3>
-        <h3 className='Dmenu' onClick={() => goMenu()}>Clothes</h3>
-        <h3 className='Dmenu' onClick={() => goMenu()}>Phone Case</h3>
-        <h3 className='Dmenu' onClick={() => goMenu()}>Accessories</h3>
+        <h3 className='Dmenu' id='DF' onClick={() => goMenu(1)}>Main</h3>
+        <h3 className='Dmenu' onClick={() => goMenu(2)}>Clothes</h3>
+        <h3 className='Dmenu' onClick={() => goMenu(3)}>Phone Case</h3>
+        <h3 className='Dmenu' onClick={() => goMenu(4)}>Accessories</h3>
         <img className='Dmenu' id='toCart' src="../pic/about/cart.png" width="30px" onClick={() => goCart()}/>
       </div>
 
       <div className="Dcontent">
         <div className="Dpic">
+          
           <Carousel variant="dark" style={{width : "450px"}} controls="true">
             <Carousel.Item interval="3000">
               <img className="d-block w-100" src={`../${img1}`}/>
@@ -190,6 +209,13 @@ export const Detail = () => {
               <img className="d-block w-100" src={`../${img4}`}/>
             </Carousel.Item>
           </Carousel>
+
+          <div className="picList">
+            <img src={`../${img1}`} width="350px"/>
+            <img src={`../${img2}`} width="350px"/>
+            <img src={`../${img3}`} width="350px"/>
+            <img src={`../${img4}`} width="350px"/>
+          </div>
         </div>
         <div className="Dinfo">
           <h2>{Name}</h2>

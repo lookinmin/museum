@@ -78,13 +78,33 @@
 .Dcontent{
   margin-top: 100px;
   display: grid;
-  height: 900px;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .Dpic{
   justify-self: center;
   align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.picList{
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 100px;
+}
+
+.picList img{
+  border-bottom: 2px dotted gray;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.picList img:hover{
 }
 
 .Dinfo{
@@ -96,6 +116,9 @@
   border-radius: 20px;
   padding: 50px;
   margin-top: 50px;
+  position: fixed;
+  top: 120px;
+  left: 1050px;
 }
 
 .Dinfo h2{

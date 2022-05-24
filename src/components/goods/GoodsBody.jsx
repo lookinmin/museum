@@ -2,14 +2,12 @@ import React, { Suspense } from 'react'
 import { useState } from 'react'
 import { Pay } from './pay/Pay';
 import { GoodsInner } from './GoodsInner.jsx';
-import { Link } from 'react-router-dom';
 import { About } from './about/About';
 import { Chart } from './about/Chart';
-import { Route } from 'react-router-dom';
 
 export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
-  const pic1 = "./pic/Accessories/perfume/Benz/pic1.png";
+  const pic1 = "./pic/Accessories/perfume/Ferrari/pic1.png";
   const pic2 = "./pic/Accessories/Ring/pic2.png";
   const pic3 = "./pic/PhoneCase/masserati/pic3.png";
   const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
@@ -26,18 +24,18 @@ export const GoodsBody = (props) => {
           <div className="showcase">
             <Suspense fallback={<h2>is Loading</h2>}>
               <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}
-                onClick={()=>goDetail("0105")}>
+                onClick={()=>goDetail("0102")}>
                 <img className='itemPic' src={pic1} alt='벤즈 향수'/>
                 <div className="itemText">
-                  <p className='itemName'>BENZ Man EDT 100ML</p>
-                  <p className='itemPrice'>KRW 104,000</p>
+                  <p className='itemName'>FERRARI For Man 100ml</p>
+                  <p className='itemPrice'>KRW 89,000</p>
                 </div>
               </div>
               <div className="item" id='item2' onMouseOver={() => setPic(pic2)} onMouseOut={() => setPic(pic5)}
                 onClick={()=>goDetail("0104")}>
                 <img className='itemPic' src={pic2} alt='벤츠 반지'/>
                 <div className="itemText">
-                  <p className='itemName'>BENZ Sliver Ring</p>
+                  <p className='itemName'>BENZ Silver Ring</p>
                   <p className='itemPrice'>KRW 224,000</p>
                 </div>
               </div>
