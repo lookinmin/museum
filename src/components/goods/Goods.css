@@ -22,7 +22,7 @@
   padding: 1rem 15rem;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #bbbbbb;
+  background-color: #fff;
   color : black;
 }
 
@@ -75,6 +75,14 @@
   font-size: 15px;
   align-items: flex-end;
   z-index: 2;
+}
+
+.thirdBar #cart{
+
+}
+
+.thirdBar #cart:hover{
+  cursor: pointer;
 }
 
 .NavTo{
@@ -141,7 +149,6 @@
   display: block;
   width: 40px;
   align-self: flex-start;
-  border-bottom: 1px solid #bcbcbc;
   margin: 2px 50px;
 }
 

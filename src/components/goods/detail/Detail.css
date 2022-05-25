@@ -27,7 +27,6 @@
 .DetailWrapper{
   display: flex;
   margin: 0 200px;
-  height: 937px !important;
   flex-flow: column nowrap;
 }
 
@@ -43,9 +42,13 @@
 }
 
 .Dmenu{
-  margin-left: 120px;
+  margin-left: 90px;
   font-family: 'LeferiPoint-WhiteObliqueA';
   font-size: 25px;
+}
+
+#toCart{
+  padding-bottom: 15px;
 }
 
 .Dmenu:hover{
@@ -75,13 +78,33 @@
 .Dcontent{
   margin-top: 100px;
   display: grid;
-  height: 900px;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .Dpic{
   justify-self: center;
   align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.picList{
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 100px;
+}
+
+.picList img{
+  border-bottom: 2px dotted gray;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.picList img:hover{
 }
 
 .Dinfo{
@@ -93,6 +116,9 @@
   border-radius: 20px;
   padding: 50px;
   margin-top: 50px;
+  position: fixed;
+  top: 120px;
+  left: 1050px;
 }
 
 .Dinfo h2{
@@ -110,7 +136,7 @@
   justify-content: left;
 }
 
-#underlineSize{
+.underlineSize{
   border-bottom: 1px solid black;
   width: min-content;
 }
@@ -141,4 +167,29 @@
 
 .btnBuy{
   margin-bottom: 20px;
+}
+
+.choosePhone{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.models{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+
+.models p{
+  margin: 0 !important;
+  border: 1px solid lightgray;
+  width: fit-content;
+  padding: 8px 5px 5px 5px;
+  align-items: center;
+  font-family: 'GmarketSansMedium';
+}
+
+.models p:hover{
+  cursor: pointer;
+  background-color: lightgray;
 }

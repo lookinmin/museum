@@ -61,78 +61,74 @@ export const Car = () => {
       position: [-1.15, 0, -1.0],
       rotation: [0, 0, 0],
       url: "./pic/Car/2.gasolincar.png",
-      img: "./pic/Car/2.gasolincar.png",
-      name: "Car5"
+      // img: "./pic/Car/2.gasolincar.png",
+      // name: "Car5"
+      num: 4
     },
     {
       position: [0.0, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/car4.png",
-      img: "./pic/Car/car4.png",
-      name: "Car6"
+      url: "./pic/Home/hall.jpg",
+      // img: "./pic/Home/hall.jpg",
+      // name: "home"
+      num: -1
     },
     {
       position: [1.15, 0, -1.0],
       rotation: [0, 0, 0],
       url: "./pic/Car/3.fordTmodel.png",
-      img: "./pic/Car/3.fordTmodel.png",
-      name: "Car7"
+      num : 5
     },
     // Left
     {
       position: [-1.75, 0, 0.25],
       rotation: [0, Math.PI / 2.5, 0],
       url: "./pic/Car/4.modelA.png",
-      img: "./pic/Car/4.modelA.png",
-      name: "Car4"
+      num : 3
     },
     {
       position: [-2.15, 0, 1.4],
       rotation: [0, Math.PI / 2.5, 0],
       url: "./pic/Car/5.Rakll.png",
-      img: "./pic/Car/5.Rakll.png",
-      name: "Car3"
+      num : 2
     },
     {
       position: [-2.5, 0, 2.55],
       rotation: [0, Math.PI / 2.5, 0],
       url: "./pic/Car/6.sitroang.png",
-      img: "./pic/Car/6.sitroang.png",
-      name: "Car2"
+      num : 1
     },
     {
       position: [-2.8, 0, 3.7],
       rotation: [0, Math.PI / 2.5, 0],
       url: "./pic/Car/7.firstdisel.png",
-      img: "./pic/Car/7.firstdisel.png",
-      name: "Car1"
+      num : 0
     },
 
-    // // Right
+    // Right
     {
       position: [1.75, 0, 0.25],
       rotation: [0, -Math.PI / 2.5, 0],
       url: "./pic/Car/8.jeep.png",
-      img: "./pic/Car/8.jeep.png",
-      name: "Car8"
+      num : 6
     },
     {
       position: [2.15, 0, 1.40],
       rotation: [0, -Math.PI / 2.5, 0],
       url: pexel(911738),
-      name: "Car9"
+      num : 7
     },
     {
       position: [2.5, 0, 2.55],
       rotation: [0, -Math.PI / 2.5, 0],
       url: pexel(1738986),
-      name: "Car10"
+      num : 8
     },
     {
       position: [2.8, 0, 3.7],
       rotation: [0, -Math.PI / 2.5, 0],
       url: pexel(7319158),
-      name: "Car11"
+      num : 9
     },
   ];
 
@@ -140,12 +136,12 @@ export const Car = () => {
     <>
       <div
         id="CarContainer"
-        onMouseMove={(e) => {
-          chg_zoom(e);
-        }}
-        onMouseOut={(ec) => {
-          init_zoom(ec);
-        }}
+        // onMouseMove={(e) => {
+        //   chg_zoom(e);
+        // }}
+        // onMouseOut={(ec) => {
+        //   init_zoom(ec);
+        // }}
       >
 
           <Suspense fallback={null} id="CarContainer">
