@@ -3,6 +3,7 @@
         {
             "Name": "Benz Men's Perfume MB Man ",
             "ID": "0101",
+            "Exp":"The cool and sweet pear and geranium meet with deep and sophisticated woody to add modernity and have a luxurious design that resembles Mercedes.",
             "Price": "69,000",
             "Img1": ".Accessories/BenZ/pic1.png",
             "Img2": ".Accessories/BenZ/pic2.png",
@@ -11,6 +12,7 @@
         }, {
             "Name": "Light Essence By Ferrari For Men",
             "ID": "0102",
+            "Exp":"It is a popular perfume with its subtle and sophisticated scent and refreshing design.",
             "Price": "56,000",
             "Img1": ".Accessories/Ferrari/pic1.png",
             "Img2": ".Accessories/Ferrari/pic2.png",
@@ -19,6 +21,7 @@
         }, {
             "Name": "Tonino Lamborghini Invincible EDT",
             "ID": "0103",
+            "Exp":"It is a representative perfume of Lamborghini with a cool yet masculine scent.",
             "Price": "50,000",
             "Img1": ".Accessories/Lambo/pic1.png",
             "Img2": ".Accessories/Lambo/pic2.png",
@@ -26,8 +29,9 @@
             "Img4": ".Accessories/Lambo/pic4.png"
         }, {
 
-            "Name": "Ring",
+            "Name": "Mercedes-Benz Ring",
             "ID": "0104",
+            "Exp":"It consists of 70% and 30% synthetic metals and is fashionable with Benz's simple yet sophisticated design.",
             "Price": "40,000",
             "Img1": ".Accessories/Ring/pic1.png",
             "Img2": ".Accessories/Ring/pic2.png",
@@ -36,6 +40,7 @@
         }, {
             "Name": "PhoneNum KeyRing",
             "ID": "0105",
+            "Exp":"It is made of synthetic leather with a basic design and you can write down your cell phone number.",
             "Price": "5,000",
             "Img1": ".Accessories/PhoneNum/pic1.png",
             "Img2": ".Accessories/PhoneNum/pic2.png",
@@ -44,6 +49,7 @@
         }, {
             "Name": "Benz Las Vegas Key Ring",
             "ID": "0106",
+            "Exp":"It is a smart key that can be used for all cars of Benz, and it is fashionable because it has a touchable and cute design.",
             "Price": "96,000",
             "Img1": ".Accessories/Benz/pic1.png",
             "Img2": ".Accessories/Benz/pic2.png",
@@ -53,27 +59,30 @@
 
             "Name": "Leather Prancing Horse keychain",
             "ID": "0107",
+            "Exp":"It consists of Ferrari's logo and keychain, which are made of 100% cowhide, and has a luxurious image in its own red color.",
             "Price": "173,000",
             "Img1": ".Accessories/Wapen/pic1.png",
             "Img2": ".Accessories/Wapen/pic2.png",
             "Img3": ".Accessories/Wapen/pic3.png",
             "Img4": ".Accessories/Wapen/pic4.png"
         }, {
-            "Name": "Hyundai Pony Plastic Model Toy Car",
+            "Name": "Bride Racing Wallet",
             "ID": "0108",
-            "Price": "19,900",
-            "Img1": ".Accessories/PONY/pic1.png",
-            "Img2": ".Accessories/PONY/pic2.png",
-            "Img3": ".Accessories/PONY/pic3.png",
-            "Img4": ".Accessories/PONY/pic4.png"
+            "Exp":"It is made of authentic racing seat fabric material on the outside and features a beautiful black leather on the inside.",
+            "Price": "42,900",
+            "Img1": ".Accessories/Wallets/BrideRacing/pic1.png",
+            "Img2": ".Accessories/Wallets/BrideRacing/pic2.png",
+            "Img3": ".Accessories/Wallets/BrideRacing/pic3.png",
+            "Img4": ".Accessories/Wallets/BrideRacing/pic4.png"
         }, {
-            "Name": "Moring Figure",
+            "Name": "Legend Car Logo Wallet",
             "ID": "0109",
-            "Price": "25,000",
-            "Img1": ".Accessories/Moring/pic1.png",
-            "Img2": ".Accessories/Moring/pic2.png",
-            "Img3": ".Accessories/Moring/pic3.png",
-            "Img4": ".Accessories/Moring/pic4.png"
+            "Exp":"made of environmentally-friendly leather-like material, with plenty of storage for cash, credit cards, and whatever you keep in your wallet!",
+            "Price": "41,000",
+            "Img1": ".Accessories/Wallets/CarDesing/pic1.png",
+            "Img2": ".Accessories/Wallets/CarDesing/pic2.png",
+            "Img3": ".Accessories/Wallets/CarDesing/pic3.png",
+            "Img4": ".Accessories/Wallets/CarDesing/pic4.png"
         }
 
     ]

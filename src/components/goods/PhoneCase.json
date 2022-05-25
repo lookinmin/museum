@@ -1,13 +1,13 @@
 {
     "phoneCase": [
         {
-            "Name": "Bmw Logo Case",
+            "Name": "Car Printing Case",
             "ID": "0301",
             "Price": "20,000",
-            "Img1": ".PhoneCase/bmw/pic1.PNG",
-            "Img2": ".PhoneCase/bmw/pic2.PNG",
-            "Img3": ".PhoneCase/bmw/pic3.PNG",
-            "Img4": ".PhoneCase/bmw/pic4.PNG"
+            "Img1": ".PhoneCase/Car Printing/pic1.PNG",
+            "Img2": ".PhoneCase/Car Printing/pic2.PNG",
+            "Img3": ".PhoneCase/Car Printing/pic3.PNG",
+            "Img4": ".PhoneCase/Car Printing/pic4.PNG"
         }, {
             "Name": "Korea Circuit Case",
             "ID": "0302",
@@ -57,13 +57,13 @@
             "Img3": ".PhoneCase/porsche/pic3.PNG",
             "Img4": ".PhoneCase/porsche/pic4.PNG"
         }, {
-            "Name": "SportsCar Case",
+            "Name": "Thisisneverthat Case",
             "ID": "0308",
             "Price": "25,000",
-            "Img1": ".PhoneCase/sportsCar/pic1.PNG",
-            "Img2": ".PhoneCase/sportsCar/pic2.PNG",
-            "Img3": ".PhoneCase/sportsCar/pic3.PNG",
-            "Img4": ".PhoneCase/sportsCar/pic4.PNG"
+            "Img1": ".PhoneCase/Thisisneverthat/pic1.PNG",
+            "Img2": ".PhoneCase/Thisisneverthat/pic2.PNG",
+            "Img3": ".PhoneCase/Thisisneverthat/pic3.PNG",
+            "Img4": ".PhoneCase/Thisisneverthat/pic4.PNG"
         }, {
             "Name": "Volkswagen Logo Case",
             "ID": "0309",
@@ -97,7 +97,7 @@
             "Img3": ".PhoneCase/iphone1/pic3.PNG",
             "Img4": ".PhoneCase/iphone1/pic4.PNG"
         }, {
-            "Name": "Iphone Case Moroogi",
+            "Name": "Iphone Case",
             "ID": "0404",
             "Price": "25,000",
             "Img1": ".PhoneCase/iphone2/pic1.PNG",
