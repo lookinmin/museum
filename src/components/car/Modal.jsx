@@ -10,7 +10,7 @@ export const Modal = ({modalClick}) => {
   return (
     <div className='modalContainer'>
       <div className='modalExit'>
-        <img src="/pic/Car/cancel.png" alt="" onClick={Click}/>
+        <img src="/pic/Car/car4.png" alt="" onClick={Click}/>
       </div>
       <div></div>
     </div>
