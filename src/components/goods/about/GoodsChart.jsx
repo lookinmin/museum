@@ -31,7 +31,6 @@ export const GoodsChart = () => {
 
   return (
     <div className="ContactWrapper">
-      <h2>Product Chart</h2>
       <Chart
         chartType="PieChart"
         width="900px"

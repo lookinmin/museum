@@ -67,8 +67,6 @@ export const Pay = () => {
     $("#btnVoucher").on('click', () => {
       alert("Your Voucher is certified well!");
     })
-
-  
   }, []);
 
 

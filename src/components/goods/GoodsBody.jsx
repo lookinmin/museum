@@ -37,7 +37,7 @@ export const GoodsBody = (props) => {
                 onClick={()=>goDetail("0104")}>
                 <img className='itemPic' src={pic2} alt='벤츠 반지'/>
                 <div className="itemText">
-                  <p className='itemName'>BENZ Silver Ring</p>
+                  <p className='itemName'>Mercedes-Benz Silver Ring</p>
                   <p className='itemPrice'>KRW 224,000</p>
                 </div>
               </div>
