@@ -117,12 +117,12 @@ export const Pay = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu variant="dark">
-                <Dropdown.Item href="#/kakao" onClick={() => changeCN("KaKao Card")}>KaKao Card</Dropdown.Item>
-                <Dropdown.Item href="#/shinhan" onClick={() => changeCN("ShinHan Card")}>ShinHan Card</Dropdown.Item>
-                <Dropdown.Item href="#/woori" onClick={() => changeCN("WOORI Card")}>WOORI Card</Dropdown.Item>
-                <Dropdown.Item href="#/nh" onClick={() => changeCN("NH Card")}>NH Card</Dropdown.Item>
-                <Dropdown.Item href="#/ibk" onClick={() => changeCN("IBK Card")}>IBK Card</Dropdown.Item>
-                <Dropdown.Item href="#/kb" onClick={() => changeCN("KB Card")}>KB Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("KaKao Card")}>KaKao Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("ShinHan Card")}>ShinHan Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("WOORI Card")}>WOORI Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("NH Card")}>NH Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("IBK Card")}>IBK Card</Dropdown.Item>
+                <Dropdown.Item onClick={() => changeCN("KB Card")}>KB Card</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
 

@@ -10,7 +10,7 @@
           "Img3": "./pic/Accessories/Perfume/BenZ/pic3.png",
           "Img4": "./pic/Accessories/Perfume/BenZ/pic4.png"
       }, {
-          "Name": "FERRARI For Men",
+          "Name": "FERRARI For Man 100ml",
           "ID": "0102",
           "Exp":"It is a popular perfume with its subtle and sophisticated scent and refreshing design.",
           "Price": "96,000",
@@ -28,7 +28,7 @@
           "Img3": "./pic/Accessories/Perfume/Lambo/pic3.png",
           "Img4": "./pic/Accessories/Perfume/Lambo/pic4.png"
       }, {
-          "Name": "BENTLEY Azur EDT",
+          "Name": "BENTLEY Azur EDT 75ml",
           "ID": "0104",
           "Exp":"Bentley's new masterpiece, Azure, is based on the scent of an explorer traveling around the world.",
           "Price": "67,000",
@@ -37,11 +37,10 @@
           "Img3": "./pic/Accessories/Perfume/Bently/pic3.png",
           "Img4": "./pic/Accessories/Perfume/Bently/pic4.png"
       },{
-
           "Name": "Mercedes-Benz Silver Ring",
           "ID": "0105",
           "Exp":"It consists of 70% and 30% synthetic metals and is fashionable with Benz's simple yet sophisticated design.",
-          "Price": "40,000",
+          "Price": "224,000",
           "Img1": "./pic/Accessories/Ring/pic1.png",
           "Img2": "./pic/Accessories/Ring/pic2.png",
           "Img3": "./pic/Accessories/Ring/pic3.png",

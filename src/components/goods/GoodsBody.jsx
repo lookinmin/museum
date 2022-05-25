@@ -10,8 +10,8 @@ import { GoodsChart } from './about/GoodsChart'; // 7주년 축하해 병주야 
 export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
   const pic1 = "./pic/Accessories/perfume/Ferrari/pic1.png";
-  const pic2 = "./pic/Accessories/Ring/pic2.png";
-  const pic3 = "./pic/PhoneCase/masserati/pic3.png";
+  const pic2 = "./pic/Accessories/Ring/pic1.png";
+  const pic3 = "./pic/PhoneCase/Lambo/pic3.png";
   const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
   const pic5 = "./pic/Home/diamond.png";
 
@@ -30,11 +30,11 @@ export const GoodsBody = (props) => {
                 <img className='itemPic' src={pic1} alt='벤즈 향수'/>
                 <div className="itemText">
                   <p className='itemName'>FERRARI For Man 100ml</p>
-                  <p className='itemPrice'>KRW 89,000</p>
+                  <p className='itemPrice'>KRW 96,000</p>
                 </div>
               </div>
               <div className="item" id='item2' onMouseOver={() => setPic(pic2)} onMouseOut={() => setPic(pic5)}
-                onClick={()=>goDetail("0104")}>
+                onClick={()=>goDetail("0105")}>
                 <img className='itemPic' src={pic2} alt='벤츠 반지'/>
                 <div className="itemText">
                   <p className='itemName'>Mercedes-Benz Silver Ring</p>
@@ -45,8 +45,8 @@ export const GoodsBody = (props) => {
                 onClick={()=>goDetail("0306")}>
                 <img className='itemPic' src={pic3} alt='마세라티 폰케이스'/>
                 <div className="itemText">
-                  <p className='itemName'>MASERATI Logo Case</p>
-                  <p className='itemPrice'>KRW 88,000</p>
+                  <p className='itemName'>Lamborghini Z-Flip Case</p>
+                  <p className='itemPrice'>KRW 32,000</p>
                 </div>
               </div>
               <div className="item" id='item4' onMouseOver={() => setPic(pic4)} onMouseOut={() => setPic(pic5)}
@@ -54,7 +54,7 @@ export const GoodsBody = (props) => {
                 <img className='itemPic' src={pic4} alt='벤츠 PK티'/>
                 <div className="itemText">
                   <p className='itemName'>BENZ PK T-shirts</p>
-                  <p className='itemPrice'>KRW 99,000</p>
+                  <p className='itemPrice'>KRW 78,000</p>
                 </div>
               </div>
               <div className="item" id='item5'> 
