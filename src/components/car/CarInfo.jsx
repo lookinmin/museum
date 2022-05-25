@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, createRoot, useFrame } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
@@ -10,31 +10,38 @@ import {
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
+import { Modal } from "./Modal";
+import { render } from "@testing-library/react";
+import ReactDOM from "react-dom/client";
+
 export const CarInfo = ({ images }) => {
+  const modalClick = () => {
+    console.log("Asdfasdf");
+  }
   return (
-    <Canvas
-      gl={{ alpha: false }}
-      camera={{ fov: 70, position: [0, 2, 15] }}
-    >
-      <color attach="background" args={["#191920"]} />
-      <Environment preset="city" />
-      <group position={[0, -0.5, 0]}>
-        <Frames images={images} />
-        <mesh rotation={[-Math.PI / 2, 0, 0]} >
-          <planeGeometry args={[50, 50]} />
-          <MeshReflectorMaterial
-            blur={[300, 100]}
-            resolution={2000}
-            mixBlur={1}
-            mixStrength={40}
-            depthScale={1.2}
-            minDepthThreshold={0.4}
-            maxDepthThreshold={1.4}
-            color="#101010"
-          />
-        </mesh>
-      </group>
-    </Canvas>
+    <>
+      <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
+        <color attach="background" args={["#191920"]} />
+        <Environment preset="city" />
+        <group position={[0, -0.5, 0]}>
+          <Frames images={images} />
+          <mesh rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <MeshReflectorMaterial
+              blur={[300, 100]}
+              resolution={2000}
+              mixBlur={1}
+              mixStrength={40}
+              depthScale={1.2}
+              minDepthThreshold={0.4}
+              maxDepthThreshold={1.4}
+              color="#101010"
+            />
+          </mesh>
+        </group>
+      </Canvas>
+      <Modal modalClick={modalClick}/>
+    </>
   );
 };
 
@@ -51,20 +58,31 @@ const ToHall = (path, setLocation) => {
 
 const ClickFrame = (current, object, setLocation) => {
   setLocation(current === object ? "/car" : "/car/" + object.name);
-  console.log(object.parent.num) // -1면 home
+
+  ReactDOM.createElement({
+    render() {
+      return <div>asfasdf</div>;
+    },
+  });
 };
 
-function Frames({images, q = new THREE.Quaternion(), p = new THREE.Vector3()}) {
+
+function Frames({
+  images,
+  q = new THREE.Quaternion(),
+  p = new THREE.Vector3(),
+}) {
   const ref = useRef();
   const [, params] = useRoute("/car/:id");
   const [, setLocation] = useLocation();
   var click;
-  var cnt = 1;
+
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
     if (click) {
+      click.parent.updateWorldMatrix(true, true);
+      click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
       click.parent.getWorldQuaternion(q);
-      p.set(0, 0.5, 1.25)
     } else {
       p.set(0, 0.5, 5.45); //초기 시점 좌표
     }
@@ -74,21 +92,22 @@ function Frames({images, q = new THREE.Quaternion(), p = new THREE.Vector3()}) {
     state.camera.quaternion.slerp(q, 0.025);
   });
   return (
-    <group
-      ref={ref}
-      onClick={(e) => (
-        e.object.parent.name === "home"
-          ? ToHall(e.object.name, setLocation) //home으로 이동
-          : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
-      )}
-      onPointerMissed={() => setLocation("/car")}
-    >
-      {
-        images.map(
-          (props) => 
-            <Frame key={props.url} {...props} /> )
-      }
-    </group>
+    <>
+      <group
+        ref={ref}
+        onClick={
+          (e) =>
+            e.object.parent.name === "home"
+              ? ToHall(e.object.name, setLocation) //home으로 이동
+              : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
+        }
+        onPointerMissed={() => setLocation("/car")}
+      >
+        {images.map((props) => (
+          <Frame key={props.url} {...props} />
+        ))}
+      </group>
+    </>
   );
 }
 
@@ -101,11 +120,11 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
   useFrame(() => {
     image.current.scale.x = THREE.MathUtils.lerp(
       image.current.scale.x,
-      0.95 * (hovered ? 0.8 : 1), 
+      0.95 * (hovered ? 0.8 : 1),
       0.1
     );
     image.current.scale.y = THREE.MathUtils.lerp(
-      image.current.scale.y, 
+      image.current.scale.y,
       0.95 * (hovered ? 0.9 : 1),
       0.1
     );
@@ -114,7 +133,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     <group {...props}>
       <mesh
         name={name}
-        onPointerOver={() => (hover(true))}
+        onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
         scale={[1, 1.6, 0.05]}
         position={[0, 0.8, 0]}
