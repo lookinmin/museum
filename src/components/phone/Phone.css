@@ -1,0 +1,89 @@
+.three{
+    width: 100vw;
+    height: 100vh;
+}
+
+.inner_html{
+    font-size: 50px;
+    height: 3200px;
+    width: 1500px;
+    border-radius: 150px;
+    position: relative;
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+.phonebg{
+    background-image: url(/public/model/phonebg.jpg);
+}
+.phonemain{
+    background-image: url(/public/model/phonemain.jpg);
+}
+.phone_message{
+    background-image: url(/public/model/message_in.jpg);
+}
+.inner_html .time{
+    position: absolute;
+    font-size: 500%;
+    color: aliceblue;
+    top: 23%;
+    left: 29%;
+}
+.inner_html .date{
+    position: absolute;
+    font-size: 150%;
+    color: aliceblue;
+    top: 33%;
+    left: 34%;
+}
+.inner_html #message_icon{
+    position: absolute;
+    top: 37%;
+    left: 48%;
+}
+.inner_html #fingerprint{
+    position: absolute;
+    top: 75%;
+    left: 45%;
+}
+.inner_html #message_app{
+    position: absolute;
+    top: 87%;
+    left: 23%;
+    animation: 0.5s onmessageapp;
+    z-index: 0;
+}
+.inner_html #message_main{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 10%;
+    z-index: 1;
+    visibility: hidden;
+    animation-delay: 10s;
+    animation: 0.5s onmessageappmain 0.1s;
+    animation-fill-mode: forwards;
+}
+@keyframes onmessageapp {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+@keyframes onmessageappmain {
+    0%{
+        top: 86%;
+    left: 27%;
+    width: 10%;
+        transform: scale(0);
+    }
+    100%{
+        visibility: visible;
+        top: 0%;
+    left: 0%;
+    width: 100%;
+        transform: scale(1);
+    }
+}
