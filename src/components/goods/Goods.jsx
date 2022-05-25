@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Goods.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { Footer } from './Footer';
 import { GoodsBody } from './GoodsBody';
 
@@ -12,6 +12,27 @@ export const Goods = () => {
   const [txtColor5, setTxtColor5] = useState("black");
   const [pageNum, setPageNum] = useState(0);
 
+  const goCart = () => {
+    window.location.href = `/cart`
+  }
+
+  let str = window.location.href;
+  let resultStr = str.substr(29);
+
+  useEffect(()=>{
+    if(resultStr === "clothes"){
+      setPageNum(1);
+      setTxtColor1("blue")
+    }else if(resultStr === "phonecase"){
+      setPageNum(2);
+      setTxtColor2("blue")
+    }else if(resultStr === "accessories"){
+      setPageNum(3);
+      setTxtColor3("blue")
+    }else{
+      setPageNum(0);
+    }
+  }, [resultStr]);
 
   return (
     <div className="wrapper">
@@ -25,6 +46,7 @@ export const Goods = () => {
               setTxtColor3("black")
               setTxtColor4("black")
               setTxtColor5("black")
+              window.location = '#/'
             }}>
             <h2 id='logo'>Diamonds Shop</h2>
             <img src='./pic/Home/diamond.png' alt='로고' height="24px" />
@@ -40,7 +62,8 @@ export const Goods = () => {
             setTxtColor2("black")
             setTxtColor3("black")
             setTxtColor4("black")
-            setTxtColor5("black")}}>Clothes</h2>
+            setTxtColor5("black")
+            window.location = '#/clothes'}}>Clothes</h2>
           <h2 className="NavTo" id='goPhoneCase' style={{color : txtColor2}} 
             onClick={() => {
               setPageNum(2)
@@ -48,7 +71,8 @@ export const Goods = () => {
               setTxtColor2("blue")
               setTxtColor3("black")
               setTxtColor4("black")
-              setTxtColor5("black")}}>Phone Case</h2>
+              setTxtColor5("black")
+              window.location = '#/phonecase'}}>Phone Case</h2>
           <h2 className="NavTo" id='goAcces' style={{color : txtColor3}} 
             onClick={() => {
               setPageNum(3)
@@ -56,10 +80,14 @@ export const Goods = () => {
               setTxtColor2("black") 
               setTxtColor3("blue")
               setTxtColor4("black")
-              setTxtColor5("black")}}>Accessories</h2>
+              setTxtColor5("black")
+              window.location = '#/accessories'}}>Accessories</h2>
         </div>
 
         <div className="thirdBar">
+          <img id="cart" src='./pic/about/cart.png' width="35px" onClick={
+            () => goCart()
+          }/>
           <h2 className="NavTo" id='goAbout' style={{color : txtColor4}} 
               onClick={() => {
               setPageNum(4) 
@@ -76,6 +104,7 @@ export const Goods = () => {
               setTxtColor3("black")
               setTxtColor4("black")
               setTxtColor5("blue")}}>Chart</h2>
+          
         </div>
       </div>
       <div className='mainContainer'>

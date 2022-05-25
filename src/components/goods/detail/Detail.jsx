@@ -5,9 +5,8 @@ import CaseData from "../PhoneCase.json"
 import "./Detail.css";
 import AcceData from "../Accessories.json"
 import { Footer } from '../Footer';
-import { GoodsInner } from '../GoodsInner';
-import { GoodsBody } from '../GoodsBody';
 import { Button } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel'
 
 export const Detail = () => {
 
@@ -20,6 +19,16 @@ export const Detail = () => {
   const [exp, setExp] = useState("");
   const [cID, setID] = useState("");
 
+  const [size1, setSize1] = useState("white");
+  const [size2, setSize2] = useState("white");
+  const [size3, setSize3] = useState("white");
+  const [size4, setSize4] = useState("white");
+  const [size5, setSize5] = useState("white");
+
+  const [model1, setModel1] = useState("white");
+  const [model2, setModel2] = useState("white");
+  const [model3, setModel3] = useState("white");
+
   const filterClo = Object.values(ClothesData);
   const filterCase = Object.values(CaseData);
   const filterAcce = Object.values(AcceData);
@@ -27,6 +36,10 @@ export const Detail = () => {
   let { id } = useParams();
 
   var num = parseInt(id)
+
+  const goPay = (e) =>{
+    window.location.href = `/pay/${e}`
+  }
 
   useEffect(()=> {
     if (num < 200){
@@ -62,50 +75,106 @@ export const Detail = () => {
     }
   }, []);
 
+
   const MakeSize = (e) => {
     var a = parseInt(e);
-    console.log(a)
     if(200 < a && a < 300){
       return(
         <div className="sizeTable">
-          <p id='underlineSize'>SIZE</p>
+          <p className='underlineSize'>SIZE</p>
           <div className="sizes">
-            <p>XS</p>
-            <p>S</p>
-            <p>M</p>
-            <p>L</p>
-            <p>XL</p>
+            <p style={{backgroundColor : size1}} onClick={()=> {
+            setSize1("lightgray")
+            setSize2("white")
+            setSize3("white")
+            setSize4("white")
+            setSize5("white")}}>XS</p>
+            <p style={{backgroundColor : size2}} onClick={()=> {
+            setSize1("white")
+            setSize2("lightgray")
+            setSize3("white")
+            setSize4("white")
+            setSize5("white")}}>S</p>
+            <p style={{backgroundColor : size3}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("lightgray")
+            setSize4("white")
+            setSize5("white")}}>M</p>
+            <p style={{backgroundColor : size4}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("white")
+            setSize4("lightgray")
+            setSize5("white")}}>L</p>
+            <p style={{backgroundColor : size5}} onClick={()=> {
+            setSize1("white")
+            setSize2("white")
+            setSize3("white")
+            setSize4("white")
+            setSize5("lightgray")}}>XL</p>
           </div>
         </div>
       )
     }
-    else{
+    else if (300 < a){
       return(
-        <h2>NO</h2>
+        <div className="choosePhone">
+          <p className='underlineSize'>Model</p>
+          <div className="models">
+            <p style={{backgroundColor : model1}} onClick={()=> {
+            setModel1("lightgray")
+            setModel2("white")
+            setModel3("white")
+            }}>Galaxy</p>
+            <p style={{backgroundColor : model2}} onClick={()=> {
+            setModel1("white")
+            setModel2("lightgray")
+            setModel3("white")
+            }}>IPhone</p>
+            <p style={{backgroundColor : model3}} onClick={()=> {
+            setModel1("white")
+            setModel2("white")
+            setModel3("lightgray")
+            }}>etc</p>
+          </div>
+        </div>
       )
     }
   }
 
   const goMenu = (e) => {
-    console.log(e)
-    if (e === 1){
-      return(
-        window.location.href = `/goods`
-      )
-    }else if(e === 2){
-      return(
-        window.location.href = `/goods`
-      )
-    }else if(e === 3){
-      return(
-        window.location.href = `/goods`
-      )
-    }else {
-      return(
-        window.location.href = `/goods`
-      )
+    switch (e){
+      case 1:
+        return(
+          window.location.href = `/goods`
+        )
+      case 2:
+        return(
+          window.location.href = `/goods#/clothes`
+        )
+      case 3:
+        return(
+          window.location.href = `/goods#/phonecase`
+        )
+      case 4:
+        return(
+          window.location.href = `/goods#/accessories`
+        )
+
     }
+
+    
   }
+
+  const addCart = () => {
+    alert(`${Name} has been added to cart.`);
+  }
+
+  const goCart = () => {
+    window.location.href = `/cart`
+  }
+
 
   return (
     <div className='DetailWrapper'>
@@ -120,26 +189,45 @@ export const Detail = () => {
         <h3 className='Dmenu' onClick={() => goMenu(2)}>Clothes</h3>
         <h3 className='Dmenu' onClick={() => goMenu(3)}>Phone Case</h3>
         <h3 className='Dmenu' onClick={() => goMenu(4)}>Accessories</h3>
+        <img className='Dmenu' id='toCart' src="../pic/about/cart.png" width="30px" onClick={() => goCart()}/>
       </div>
 
       <div className="Dcontent">
         <div className="Dpic">
-          <img src={`../${img1}`} width="400px"/>
+          
+          <Carousel variant="dark" style={{width : "450px"}} controls="true">
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img1}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img2}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img3}`}/>
+            </Carousel.Item>
+            <Carousel.Item interval="3000">
+              <img className="d-block w-100" src={`../${img4}`}/>
+            </Carousel.Item>
+          </Carousel>
+
+          <div className="picList">
+            <img src={`../${img1}`} width="350px"/>
+            <img src={`../${img2}`} width="350px"/>
+            <img src={`../${img3}`} width="350px"/>
+            <img src={`../${img4}`} width="350px"/>
+          </div>
         </div>
         <div className="Dinfo">
           <h2>{Name}</h2>
-          <p>KRW {Price}</p>
+          <p style={{marginBottom : "40px"}}>KRW {Price}</p>
           {MakeSize(cID)}
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>Product Explanation</p>
-          <p>{exp}</p>
+          <p style={{width : "400px"}}>{exp}</p>
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>BUY</p>
-          <Button variant="outline-secondary" className="btnBuy">BUY NOW</Button>
-          <Button variant="outline-secondary">ADD TO CART</Button>
+          <Button variant="outline-secondary" className="btnBuy" onClick={()=> goPay(cID)}>BUY NOW</Button>
+          <Button variant="outline-secondary" onClick = {() => addCart()}>ADD TO CART</Button>
         </div>
       </div>
-  
-     
-
       <Footer/>
     </div>
   )

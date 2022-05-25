@@ -19,7 +19,6 @@ export const GoodsInner = (props) => {
   const filterAcce = Object.values(AcceData);
 
   const goDetail = (e) => {
-    console.log(e);
     window.location.href = `/detail/${e}`
   }
 
