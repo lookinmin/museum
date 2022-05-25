@@ -4,114 +4,110 @@
             "Name": "Car Printing Case",
             "ID": "0301",
             "Price": "20,000",
-            "Img1": ".PhoneCase/Car Printing/pic1.PNG",
-            "Img2": ".PhoneCase/Car Printing/pic2.PNG",
-            "Img3": ".PhoneCase/Car Printing/pic3.PNG",
-            "Img4": ".PhoneCase/Car Printing/pic4.PNG"
+            "Exp":"Made of impact-resistant hard polycarbonate outer shell and inner TPU liner for extra impact resistance!",
+            "Img1": "./pic/PhoneCase/Car Printing/pic1.PNG",
+            "Img2": "./pic/PhoneCase/Car Printing/pic2.PNG",
+            "Img3": "./pic/PhoneCase/Car Printing/pic3.PNG",
+            "Img4": "./pic/PhoneCase/Car Printing/pic4.PNG"
         }, {
-            "Name": "Korea Circuit Case",
+            "Name": "Circuit Case",
             "ID": "0302",
             "Price": "23,000",
-            "Img1": ".PhoneCase/circuit/pic1.PNG",
-            "Img2": ".PhoneCase/circuit/pic2.PNG",
-            "Img3": ".PhoneCase/circuit/pic3.PNG",
-            "Img4": ".PhoneCase/circuit/pic4.PNG"
+            "Exp":"It is a plastic bumper-type cell phone case printed on the back of the world's smart circuit.",
+            "Img1": "./pic/PhoneCase/circuit/pic1.PNG",
+            "Img2": "./pic/PhoneCase/circuit/pic2.PNG",
+            "Img3": "./pic/PhoneCase/circuit/pic3.PNG",
+            "Img4": "./pic/PhoneCase/circuit/pic4.PNG"
         }, {
             "Name": "F1 Racing Case",
             "ID": "0303",
-            "Price": "22,000",
-            "Img1": ".PhoneCase/F1/pic1.PNG",
-            "Img2": ".PhoneCase/F1/pic2.PNG",
-            "Img3": ".PhoneCase/F1/pic3.PNG",
-            "Img4": ".PhoneCase/F1/pic4.PNG"
+            "Exp":"It is a jelly case designed by McLaren, a representative racing car brand.",
+            "Price": "28,000",
+            "Img1": "./pic/PhoneCase/F1/pic1.PNG",
+            "Img2": "./pic/PhoneCase/F1/pic2.PNG",
+            "Img3": "./pic/PhoneCase/F1/pic3.PNG",
+            "Img4": "./pic/PhoneCase/F1/pic4.PNG"
         }, {
             "Name": "Lamborghini Logo Case",
             "ID": "0304",
-            "Price": "25,000",
-            "Img1": ".PhoneCase/Lambo/pic1.PNG",
-            "Img2": ".PhoneCase/Lambo/pic2.PNG",
-            "Img3": ".PhoneCase/Lambo/pic3.PNG",
-            "Img4": ".PhoneCase/Lambo/pic4.PNG"
-        }, {
-            "Name": "Lincoln Continental Logo Case",
-            "ID": "0305",
-            "Price": "24,000",
-            "Img1": ".PhoneCase/Lincoln/pic1.PNG",
-            "Img2": ".PhoneCase/Lincoln/pic2.PNG",
-            "Img3": ".PhoneCase/Lincoln/pic3.PNG",
-            "Img4": ".PhoneCase/Lincoln/pic4.PNG"
-        }, {
-            "Name": "Masserati Logo Case",
+            "Exp":"It is a hard case that shows a sophisticated image by combining Lamborghini's intense logo and wild black.",
+            "Price": "32,000",
+            "Img1": "./pic/PhoneCase/Lambo/pic1.PNG",
+            "Img2": "./pic/PhoneCase/Lambo/pic2.PNG",
+            "Img3": "./pic/PhoneCase/Lambo/pic3.PNG",
+            "Img4": "./pic/PhoneCase/Lambo/pic4.PNG"
+        },  {
+            "Name": "Korea Independence Case",
             "ID": "0306",
+            "Exp":"It is a jelly case made to commemorate the liberation of Korea, and you can choose between Hunminjeongeum and Ahn Jung-geun's handwriting.",
             "Price": "27,000",
-            "Img1": ".PhoneCase/masserati/pic1.PNG",
-            "Img2": ".PhoneCase/masserati/pic2.PNG",
-            "Img3": ".PhoneCase/masserati/pic3.PNG",
-            "Img4": ".PhoneCase/masserati/pic4.PNG"
-        }, {
-            "Name": "Porsche Logo Case",
-            "ID": "0307",
-            "Price": "26,000",
-            "Img1": ".PhoneCase/porsche/pic1.PNG",
-            "Img2": ".PhoneCase/porsche/pic2.PNG",
-            "Img3": ".PhoneCase/porsche/pic3.PNG",
-            "Img4": ".PhoneCase/porsche/pic4.PNG"
-        }, {
+            "Img1": "./pic/PhoneCase/Independence/pic1.PNG",
+            "Img2": "./pic/PhoneCase/Independence/pic2.PNG",
+            "Img3": "./pic/PhoneCase/Independence/pic3.PNG",
+            "Img4": "./pic/PhoneCase/Independence/pic4.PNG"
+        },  {
             "Name": "Thisisneverthat Case",
             "ID": "0308",
-            "Price": "25,000",
-            "Img1": ".PhoneCase/Thisisneverthat/pic1.PNG",
-            "Img2": ".PhoneCase/Thisisneverthat/pic2.PNG",
-            "Img3": ".PhoneCase/Thisisneverthat/pic3.PNG",
-            "Img4": ".PhoneCase/Thisisneverthat/pic4.PNG"
+            "Exp":"It is a collaboration between ThisNeverthat and CASETiFY, and has a simple yet sensible design.",
+            "Price": "78,000",
+            "Img1": "./pic/PhoneCase/Thisisneverthat/pic1.PNG",
+            "Img2": "./pic/PhoneCase/Thisisneverthat/pic2.PNG",
+            "Img3": "./pic/PhoneCase/Thisisneverthat/pic3.PNG",
+            "Img4": "./pic/PhoneCase/Thisisneverthat/pic4.PNG"
         }, {
             "Name": "Volkswagen Logo Case",
             "ID": "0309",
+            "Exp":"It is a hard case with a retro sensibility with a Volkswagen minibus design.",
             "Price": "23,000",
-            "Img1": ".PhoneCase/volkswagen/pic1.PNG",
-            "Img2": ".PhoneCase/volkswagen/pic2.PNG",
-            "Img3": ".PhoneCase/volkswagen/pic3.PNG",
-            "Img4": ".PhoneCase/volkswagen/pic4.PNG"
+            "Img1": "./pic/PhoneCase/volkswagen/pic1.PNG",
+            "Img2": "./pic/PhoneCase/volkswagen/pic2.PNG",
+            "Img3": "./pic/PhoneCase/volkswagen/pic3.PNG",
+            "Img4": "./pic/PhoneCase/volkswagen/pic4.PNG"
         }, {
-            "Name": "Galaxy Flip Lettering Case",
+            "Name": "CASETiFY Flip Lettering Case",
             "ID": "0401",
-            "Price": "20,000",
-            "Img1": ".PhoneCase/flip1/pic1.PNG",
-            "Img2": ".PhoneCase/flip1/pic2.PNG",
-            "Img3": ".PhoneCase/flip1/pic3.PNG",
-            "Img4": ".PhoneCase/flip1/pic4.PNG"
+            "Exp":"CASETiFY's transparent plastic case is an eco-friendly case made by recycling plastic.",
+            "Price": "56,000",
+            "Img1": "./pic/PhoneCase/flip1/pic1.PNG",
+            "Img2": "./pic/PhoneCase/flip1/pic2.PNG",
+            "Img3": "./pic/PhoneCase/flip1/pic3.PNG",
+            "Img4": "./pic/PhoneCase/flip1/pic4.PNG"
         }, {
-            "Name": "Galaxy S21 Cat Case",
+            "Name": "CASETiFY S21 Cat Case",
             "ID": "0402",
-            "Price": "23,000",
-            "Img1": ".PhoneCase/galaxy/pic1.PNG",
-            "Img2": ".PhoneCase/galaxy/pic2.PNG",
-            "Img3": ".PhoneCase/galaxy/pic3.PNG",
-            "Img4": ".PhoneCase/galaxy/pic4.PNG"        
+            "Exp":"It is a jelly case with the eco-friendly technology of CASETiFY, and it has a cute cat design",
+            "Price": "53,000",
+            "Img1": "./pic/PhoneCase/galaxy/pic1.PNG",
+            "Img2": "./pic/PhoneCase/galaxy/pic2.PNG",
+            "Img3": "./pic/PhoneCase/galaxy/pic3.PNG",
+            "Img4": "./pic/PhoneCase/galaxy/pic4.PNG"        
         }, {
             "Name": "Iphone Case Mac Safe",
             "ID": "0403",
-            "Price": "22,000",
-            "Img1": ".PhoneCase/iphone1/pic1.PNG",
-            "Img2": ".PhoneCase/iphone1/pic2.PNG",
-            "Img3": ".PhoneCase/iphone1/pic3.PNG",
-            "Img4": ".PhoneCase/iphone1/pic4.PNG"
+            "Exp":"It is a Mac Safe jelly case that has Apple's own simple sensibility and offers a variety of colors.",
+            "Price": "67,000",
+            "Img1": "./pic/PhoneCase/iphone1/pic1.PNG",
+            "Img2": "./pic/PhoneCase/iphone1/pic2.PNG",
+            "Img3": "./pic/PhoneCase/iphone1/pic3.PNG",
+            "Img4": "./pic/PhoneCase/iphone1/pic4.PNG"
         }, {
-            "Name": "Iphone Case",
+            "Name": "CASETiFY Iphone Case",
             "ID": "0404",
-            "Price": "25,000",
-            "Img1": ".PhoneCase/iphone2/pic1.PNG",
-            "Img2": ".PhoneCase/iphone2/pic2.PNG",
-            "Img3": ".PhoneCase/iphone2/pic3.PNG",
-            "Img4": ".PhoneCase/iphone2/pic4.PNG"
+            "Exp":"It is a plastic case made with CASETiFY's eco-friendly technology, and it has a simple yet diverse design, and it is highlighted with a ticket",
+            "Price": "53,000",
+            "Img1": "./pic/PhoneCase/iphone2/pic1.PNG",
+            "Img2": "./pic/PhoneCase/iphone2/pic2.PNG",
+            "Img3": "./pic/PhoneCase/iphone2/pic3.PNG",
+            "Img4": "./pic/PhoneCase/iphone2/pic4.PNG"
         }, {
-            "Name": "Iphone Case Mini Phone",
+            "Name": "Iphone Case portrait",
             "ID": "0405",
+            "Exp":"It can be said to be a work of artist Lee Sang-ha with a portrait of himself in the dark night as he felt it as a design.",
             "Price": "24,000",
-            "Img1": ".PhoneCase/iphone3/pic1.PNG",
-            "Img2": ".PhoneCase/iphone3/pic2.PNG",
-            "Img3": ".PhoneCase/iphone3/pic3.PNG",
-            "Img4": ".PhoneCase/iphone3/pic4.PNG"
+            "Img1": "./pic/PhoneCase/iphone3/pic1.PNG",
+            "Img2": "./pic/PhoneCase/iphone3/pic2.PNG",
+            "Img3": "./pic/PhoneCase/iphone3/pic3.PNG",
+            "Img4": "./pic/PhoneCase/iphone3/pic4.PNG"
         }
     ]
 
