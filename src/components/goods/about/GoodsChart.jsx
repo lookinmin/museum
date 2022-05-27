@@ -18,20 +18,20 @@ export const GoodsChart = () => {
   };
 
   const Clothedata1 = [
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["Audi Men's Hooded Windbreaker", 87, 103, 48],
-    ["Descent Swiss (Audi) Ski Original Short Down Jacket", 108, 82, 25],
-    ["Bentley Jersey",  19, 34, 68],
-    ["Benz PK Polo Golf Collar Shirt", 31, 41, 103],
+    ["Age Group", "Male", "Female"],
+    ["Audi Men's Hooded Windbreaker", 87, 103],
+    ["Descent Swiss (Audi) Ski Original Short Down Jacket", 108, 82],
+    ["Bentley Jersey",  19, 34],
+    ["Benz PK Polo Golf Collar Shirt", 31, 41],
   ];
 
   const Clothedata2 =[
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["Benz T-Shirt Short-Sleeved", 51, 67, 15],
-    ["BMW Men's Hood Tech Short Jacket", 73, 51, 50],
-    ["Men’s recycled scuba sweatshirt with Ferrari logo", 51, 67, 15],
-    ["Organic cotton T-shirt with Ferrari logo", 82, 93, 68],
-    ["Volvo Jersey", 17, 35, 47],
+    ["Age Group", "Male", "Female"],
+    ["Benz T-Shirt Short-Sleeved", 67, 15],
+    ["BMW Men's Hood Tech Short Jacket", 51, 50],
+    ["Men’s recycled scuba sweatshirt with Ferrari logo", 67, 15],
+    ["Organic cotton T-shirt with Ferrari logo", 68,18],
+    ["Volvo Jersey", 17, 35],
   ];
 
   const Clotheoptions = {
@@ -42,20 +42,20 @@ export const GoodsChart = () => {
   };
 
   const Accessoriesdata1 = [
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["Benz Men's \nPerfume MB Man", 83, 103, 44],
-    ["Light Essence By \nFerrari For Men", 54, 105, 115],
-    ["Tonino Lamborghini \nInvincible EDT", 65, 65, 100],
-    ["Bentley \nAzur EDT", 85, 39, 99],
-    ["Mercedes-Benz \nRing", 105, 118, 88],
+    ["Age Group", "Male", "Female"],
+    ["Benz Men's \nPerfume MB Man", 83, 44],
+    ["Light Essence By \nFerrari For Men", 105,54,],
+    ["Tonino Lamborghini \nInvincible EDT", 65, 65],
+    ["Bentley \nAzur EDT", 85, 39],
+    ["Mercedes-Benz \nRing", 105, 34],
   ];
   const Accessoriesdata2 =[
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["PhoneNum \nKeyRing", 105, 118, 59],
-    ["Benz Las Vegas\n Key Ring", 73, 85, 59],
-    ["Leather Prancing \nHorse keychain", 1, 85, 32],
-    ["Bride\n Racing Wallet", 17, 47, 2],
-    ["Legend Car \nWallet", 120, 72, 35],
+    ["Age Group", "Male", "Female"],
+    ["PhoneNum \nKeyRing", 105, 59],
+    ["Benz Las Vegas\n Key Ring", 73, 59],
+    ["Leather Prancing \nHorse keychain", 1, 85],
+    ["Bride\n Racing Wallet", 17, 2],
+    ["Legend Car \nWallet", 72, 35],
   ];
 
   const Accessoriesoptions = {
@@ -66,22 +66,22 @@ export const GoodsChart = () => {
   };
 
   const Phonecasedata1 = [
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["Car \nCase", 47,97, 5],
-    ["F1 \nRacing Case", 53, 63, 73],
-    ["Lamborghini \nCase", 15, 28, 90],
-    ["Korea \nIndependence Case", 110, 158, 170],
-    ["Thisisneverthat \nCase", 102, 130, 11],
+    ["Age Group", "Male", "Female"],
+    ["Car \nCase", 97, 12],
+    ["F1 \nRacing Case", 73, 20],
+    ["Lamborghini \nCase", 28, 5],
+    ["Korea \nIndependence Case", 88, 87],
+    ["Thisisneverthat \nCase", 102, 130],
 
   ];
   const Phonecasedata2 =[
-    ["Age Group", "18-27", "28-37", "38-47"],
-    ["Volkswagen \nLogo Case", 44, 17, 14],
-    ["CASETiFY  \nLettering Case", 106, 115, 89],
-    ["CASETiFY  \nCat Case", 100, 102, 93],
-    ["Iphone Case \nMac Safe", 109, 111, 14],
-    ["CASETiFY \n Case", 80, 106, 16],
-    ["Iphone Case \nportrait", 71, 107, 33],
+    ["Age Group", "Male", "Female"],
+    ["Volkswagen \nLogo Case", 44, 17],
+    ["CASETiFY  \nLettering Case", 106, 89],
+    ["CASETiFY  \nCat Case", 100, 93],
+    ["Iphone Case \nMac Safe", 109, 111],
+    ["CASETiFY \n Case", 80, 46],
+    ["Iphone Case \nportrait", 33, 71],
   ];
   const Phonecaseoptions = {
     chart: {
