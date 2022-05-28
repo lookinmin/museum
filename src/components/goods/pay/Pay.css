@@ -10,9 +10,30 @@
   font-family: 'LeferiPoint-WhiteObliqueA'; 
 }
 
-#Ptitle{
-  font-size: 35px;
+.Ptop{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
   align-self: flex-start;
+  gap: 320px;
+}
+
+.DlogoContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.DlogoContainer:hover{
+  cursor: pointer;
+}
+
+#Ptitle{
+  font-size: 33px;
+  border-bottom: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .Pitem{
@@ -93,6 +114,8 @@
   align-self: flex-start;
   margin-top: 100px;
   border-bottom: 1px solid gray;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .method{

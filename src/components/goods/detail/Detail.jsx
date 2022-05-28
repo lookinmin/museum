@@ -166,8 +166,9 @@ export const Detail = () => {
 
   const addCart = () => {
     alert(`${Name}'s Link Copied Complete!`);
-
-    navigator.clipboard.writeText(window.location.href);
+    let str = window.location.href;
+    console.log(str)
+    navigator.clipboard.writeText(str);
   }
 
   return (

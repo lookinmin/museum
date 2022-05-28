@@ -86,9 +86,20 @@ export const Pay = () => {
     window.location.href = `/detail/${id}`;
   })
 
+  const goHome = () => {
+    window.location.href = "/goods"
+  }
+
   return (
     <div className='Pwrapper'>
-      <h2 id='Ptitle'>Payment Page</h2>
+      <div className="Ptop">
+        <div className="DlogoContainer" onClick={() => {goHome()}}>
+            <h2 id='Dtitle'>Diamonds Shop</h2>
+            <img src='../pic/Home/diamond.png' alt='로고' height="24px" style={{marginBottom : "40px"}} />
+          </div>
+        <h2 id='Ptitle'>Payment Page</h2>
+      </div>
+    
       <div className="Pitem">
         <img id="buyImg" src={`../${img1}`} width="250px"/>
         <div className="description">

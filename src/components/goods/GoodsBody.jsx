@@ -27,7 +27,7 @@ export const GoodsBody = (props) => {
             <Suspense fallback={<h2>is Loading</h2>}>
               <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}
                 onClick={()=>goDetail("0102")}>
-                <img className='itemPic' src={pic1} alt='벤즈 향수'/>
+                <img className='itemPic' src={pic1} alt='남자 향수'/>
                 <div className="itemText">
                   <p className='itemName'>FERRARI For Man 100ml</p>
                   <p className='itemPrice'>KRW 96,000</p>
@@ -42,8 +42,8 @@ export const GoodsBody = (props) => {
                 </div>
               </div>
               <div className="item" id='item3' onMouseOver={() => setPic(pic3)} onMouseOut={() => setPic(pic5)}
-                onClick={()=>goDetail("0306")}>
-                <img className='itemPic' src={pic3} alt='마세라티 폰케이스'/>
+                onClick={()=>goDetail("0303")}>
+                <img className='itemPic' src={pic3} alt='람보르기니 폰케이스'/>
                 <div className="itemText">
                   <p className='itemName'>Lamborghini Z-Flip Case</p>
                   <p className='itemPrice'>KRW 32,000</p>
