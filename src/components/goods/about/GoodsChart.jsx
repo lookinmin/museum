@@ -17,16 +17,24 @@ export const GoodsChart = () => {
   };
 
   const data2 = [
-    ["Year", "Sales", "Expenses"],
-    ["2004", 1000, 400],
-    ["2005", 1170, 460],
-    ["2006", 660, 1120],
-    ["2007", 1030, 540],
+    ["Month", "Male", "Female"],
+    ["JAN", 1000, 400],
+    ["FEB", 1170, 460],
+    ["MAR", 660, 720],
+    ["APR", 530, 940],
+    ["MAY", 600, 800],
+    ["JUN", 970, 1060],
+    ["JUL", 660, 1140],
+    ["AUG", 730, 800],
+    ["SEP", 900, 670],
+    ["OCT", 1170, 550],
+    ["NOV", 800, 400],
+    ["DEC", 1030, 650],
   ];
   
   const options2 = {
-
     legend: { position: "bottom" },
+    chartArea : {width:"85%", height:"75%"},
   };
   
 
@@ -50,7 +58,7 @@ export const GoodsChart = () => {
           chartType="LineChart"
           className="lines"
           width="100%"
-          height="350px"
+          height="500px"
           data={data2}
           options={options2}
         />
