@@ -10,16 +10,37 @@
   font-family: 'LeferiPoint-WhiteObliqueA'; 
 }
 
-#Ptitle{
-  font-size: 35px;
+.Ptop{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
   align-self: flex-start;
+  gap: 320px;
+}
+
+.DlogoContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.DlogoContainer:hover{
+  cursor: pointer;
+}
+
+#Ptitle{
+  font-size: 33px;
+  border-bottom: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .Pitem{
   display: flex;
   flex-flow: row nowrap;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 2px solid rgb(167, 167, 167);
+  border-bottom: 2px solid rgb(167, 167, 167);
   width: 1100px;
   padding: 50px 70px;
   margin-top: 50px;
@@ -93,6 +114,8 @@
   align-self: flex-start;
   margin-top: 100px;
   border-bottom: 1px solid gray;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .method{
@@ -131,12 +154,43 @@
 }
 #chooseMe1{
   display: none;
+  border: 1px dotted gray;
+  border-radius: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
 }
 
 #chooseMe2{
   display: none;
+  border: 1px dotted gray;
+  border-radius: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
 }
 
 #chooseMe3{
   display: none;
+  border: 1px dotted gray;
+  border-radius: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
+}
+
+.cardMethod{
+  display: none;
+  flex-flow: row nowrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.mb-3{
+  width: 500px !important;
+}
+
+.mb-2{
+  width: 350px !important;
+  margin-top: 30px;
 }

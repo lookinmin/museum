@@ -17,21 +17,69 @@
 }
 
 .clothesShowcase .list .clItem{
-  width: 230px;
   display: flex;
+  width: 300px;
+  height: 250px;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding-bottom: 15px;
 }
 
-.clothesShowcase .list .clItem:hover{
-  cursor: pointer;
+.clItem::after{
+  content: "";
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+.clItem:hover::after{
+  animation: animates 0.2s linear forwards;
+}
+
+@keyframes animates {
+  0% {
+      width: 0;
+      height: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: blue;
+  }
+
+  50% {
+      width: 0;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: blue;
+      border-left-color: transparent;
+  }
+
+  100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: blueviolet;
+      border-left-color: transparent;
+  }
 }
 
 .clothesShowcase .list .clItem .itemPic{
   height: 190px;
 }
 
+.clothesShowcase .list .clItem .itemName{
+  align-self: flex-end;
+  margin-bottom: 0 !important;
+}
+
+.clothesShowcase .list .clItem .itemPrice{
+  align-self: flex-end;
+  margin-bottom: 0 !important;
+}
 .clothesShowcase .nowOn{
   grid-column: 2/3;
   display: flex;
@@ -48,3 +96,5 @@
   align-self: center;
   margin-top: 20px;
 }
+
+

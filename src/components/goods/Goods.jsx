@@ -12,10 +12,6 @@ export const Goods = () => {
   const [txtColor5, setTxtColor5] = useState("black");
   const [pageNum, setPageNum] = useState(0);
 
-  const goCart = () => {
-    window.location.href = `/cart`
-  }
-
   let str = window.location.href;
   let resultStr = str.substr(29);
 
@@ -85,9 +81,6 @@ export const Goods = () => {
         </div>
 
         <div className="thirdBar">
-          <img id="cart" src='./pic/about/cart.png' width="35px" onClick={
-            () => goCart()
-          }/>
           <h2 className="NavTo" id='goAbout' style={{color : txtColor4}} 
               onClick={() => {
               setPageNum(4) 

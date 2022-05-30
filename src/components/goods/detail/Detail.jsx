@@ -161,20 +161,15 @@ export const Detail = () => {
         return(
           window.location.href = `/goods#/accessories`
         )
-
     }
-
-    
   }
 
   const addCart = () => {
-    alert(`${Name} has been added to cart.`);
+    alert(`${Name}'s Link Copied Complete!`);
+    let str = window.location.href;
+    console.log(str)
+    navigator.clipboard.writeText(str);
   }
-
-  const goCart = () => {
-    window.location.href = `/cart`
-  }
-
 
   return (
     <div className='DetailWrapper'>
@@ -189,7 +184,6 @@ export const Detail = () => {
         <h3 className='Dmenu' onClick={() => goMenu(2)}>Clothes</h3>
         <h3 className='Dmenu' onClick={() => goMenu(3)}>Phone Case</h3>
         <h3 className='Dmenu' onClick={() => goMenu(4)}>Accessories</h3>
-        <img className='Dmenu' id='toCart' src="../pic/about/cart.png" width="30px" onClick={() => goCart()}/>
       </div>
 
       <div className="Dcontent">
@@ -225,7 +219,7 @@ export const Detail = () => {
           <p style={{width : "400px"}}>{exp}</p>
           <p style={{marginTop : "40px", borderBottom : "1px solid black", width:"fit-content"}}>BUY</p>
           <Button variant="outline-secondary" className="btnBuy" onClick={()=> goPay(cID)}>BUY NOW</Button>
-          <Button variant="outline-secondary" onClick = {() => addCart()}>ADD TO CART</Button>
+          <Button variant="outline-secondary" onClick = {() => addCart()}>COPY LINK</Button>
         </div>
       </div>
       <Footer/>

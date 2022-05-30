@@ -4,7 +4,6 @@ import "./Inner.css"
 import ClothesData from "./Clothes.json";
 import CaseData from "./PhoneCase.json";
 import AcceData from "./Accessories.json";
-import { Detail } from './detail/Detail';
 
 export const GoodsInner = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");

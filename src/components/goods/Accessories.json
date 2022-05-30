@@ -1,88 +1,96 @@
 {
   "Accessories": [
       {
-          "Name": "Benz Men's Perfume MB Man ",
+          "Name": "BENZ Men's EDT 100ml ",
           "ID": "0101",
           "Exp":"The cool and sweet pear and geranium meet with deep and sophisticated woody to add modernity and have a luxurious design that resembles Mercedes.",
-          "Price": "69,000",
-          "Img1": ".Accessories/BenZ/pic1.png",
-          "Img2": ".Accessories/BenZ/pic2.png",
-          "Img3": ".Accessories/BenZ/pic3.png",
-          "Img4": ".Accessories/BenZ/pic4.png"
+          "Price": "79,000",
+          "Img1": "./pic/Accessories/Perfume/BenZ/pic1.png",
+          "Img2": "./pic/Accessories/Perfume/BenZ/pic2.png",
+          "Img3": "./pic/Accessories/Perfume/BenZ/pic3.png",
+          "Img4": "./pic/Accessories/Perfume/BenZ/pic4.png"
       }, {
-          "Name": "Light Essence By Ferrari For Men",
+          "Name": "FERRARI For Man 100ml",
           "ID": "0102",
           "Exp":"It is a popular perfume with its subtle and sophisticated scent and refreshing design.",
-          "Price": "56,000",
-          "Img1": ".Accessories/Ferrari/pic1.png",
-          "Img2": ".Accessories/Ferrari/pic2.png",
-          "Img3": ".Accessories/Ferrari/pic3.png",
-          "Img4": ".Accessories/Ferrari/pic4.png"
+          "Price": "96,000",
+          "Img1": "./pic/Accessories/Perfume/Ferrari/pic1.png",
+          "Img2": "./pic/Accessories/Perfume/Ferrari/pic2.png",
+          "Img3": "./pic/Accessories/Perfume/Ferrari/pic3.png",
+          "Img4": "./pic/Accessories/Perfume/Ferrari/pic4.png"
       }, {
-          "Name": "Tonino Lamborghini Invincible EDT",
+          "Name": "LAMBORGHINI Invincible EDT",
           "ID": "0103",
           "Exp":"It is a representative perfume of Lamborghini with a cool yet masculine scent.",
-          "Price": "50,000",
-          "Img1": ".Accessories/Lambo/pic1.png",
-          "Img2": ".Accessories/Lambo/pic2.png",
-          "Img3": ".Accessories/Lambo/pic3.png",
-          "Img4": ".Accessories/Lambo/pic4.png"
+          "Price": "110,000",
+          "Img1": "./pic/Accessories/Perfume/Lambo/pic1.png",
+          "Img2": "./pic/Accessories/Perfume/Lambo/pic2.png",
+          "Img3": "./pic/Accessories/Perfume/Lambo/pic3.png",
+          "Img4": "./pic/Accessories/Perfume/Lambo/pic4.png"
       }, {
-
-          "Name": "Mercedes-Benz Ring",
+          "Name": "BENTLEY Azur EDT 75ml",
           "ID": "0104",
+          "Exp":"Bentley's new masterpiece, Azure, is based on the scent of an explorer traveling around the world.",
+          "Price": "67,000",
+          "Img1": "./pic/Accessories/Perfume/Bently/pic1.png",
+          "Img2": "./pic/Accessories/Perfume/Bently/pic2.png",
+          "Img3": "./pic/Accessories/Perfume/Bently/pic3.png",
+          "Img4": "./pic/Accessories/Perfume/Bently/pic4.png"
+      },{
+          "Name": "Mercedes-Benz Silver Ring",
+          "ID": "0105",
           "Exp":"It consists of 70% and 30% synthetic metals and is fashionable with Benz's simple yet sophisticated design.",
-          "Price": "40,000",
-          "Img1": ".Accessories/Ring/pic1.png",
-          "Img2": ".Accessories/Ring/pic2.png",
-          "Img3": ".Accessories/Ring/pic3.png",
-          "Img4": ".Accessories/Ring/pic4.png"
+          "Price": "224,000",
+          "Img1": "./pic/Accessories/Ring/pic1.png",
+          "Img2": "./pic/Accessories/Ring/pic2.png",
+          "Img3": "./pic/Accessories/Ring/pic3.png",
+          "Img4": "./pic/Accessories/Ring/pic4.png"
       }, {
           "Name": "PhoneNum KeyRing",
-          "ID": "0105",
+          "ID": "0106",
           "Exp":"It is made of synthetic leather with a basic design and you can write down your cell phone number.",
           "Price": "5,000",
-          "Img1": ".Accessories/PhoneNum/pic1.png",
-          "Img2": ".Accessories/PhoneNum/pic2.png",
-          "Img3": ".Accessories/PhoneNum/pic3.png",
-          "Img4": ".Accessories/PhoneNum/pic4.png"
+          "Img1": "./pic/Accessories/KeyRing/PhoneNum/pic1.png",
+          "Img2": "./pic/Accessories/KeyRing/PhoneNum/pic2.png",
+          "Img3": "./pic/Accessories/KeyRing/PhoneNum/pic3.png",
+          "Img4": "./pic/Accessories/KeyRing/PhoneNum/pic4.png"
       }, {
-          "Name": "Benz Las Vegas Key Ring",
-          "ID": "0106",
+          "Name": "Mercedes-Benz Key Ring",
+          "ID": "0107",
           "Exp":"It is a smart key that can be used for all cars of Benz, and it is fashionable because it has a touchable and cute design.",
           "Price": "96,000",
-          "Img1": ".Accessories/Benz/pic1.png",
-          "Img2": ".Accessories/Benz/pic2.png",
-          "Img3": ".Accessories/Benz/pic3.png",
-          "Img4": ".Accessories/Benz/pic4.png"
+          "Img1": "./pic/Accessories/KeyRing/Benz/pic1.png",
+          "Img2": "./pic/Accessories/KeyRing/Benz/pic2.png",
+          "Img3": "./pic/Accessories/KeyRing/Benz/pic3.png",
+          "Img4": "./pic/Accessories/KeyRing/Benz/pic4.png"
       }, {
 
-          "Name": "Leather Prancing Horse keychain",
-          "ID": "0107",
+          "Name": "FERRARI Logo keychain",
+          "ID": "0108",
           "Exp":"It consists of Ferrari's logo and keychain, which are made of 100% cowhide, and has a luxurious image in its own red color.",
           "Price": "173,000",
           "Img1": "./pic/Accessories/Wapen/pic1.png",
-          "Img2": ".Accessories/Wapen/pic2.png",
-          "Img3": ".Accessories/Wapen/pic3.png",
-          "Img4": ".Accessories/Wapen/pic4.png"
+          "Img2": "./pic/Accessories/Wapen/pic2.png",
+          "Img3": "./pic/Accessories/Wapen/pic3.png",
+          "Img4": "./pic/Accessories/Wapen/pic4.png"
       }, {
           "Name": "Bride Racing Wallet",
-          "ID": "0108",
+          "ID": "0109",
           "Exp":"It is made of authentic racing seat fabric material on the outside and features a beautiful black leather on the inside.",
-          "Price": "42,900",
+          "Price": "82,900",
           "Img1": "./pic/Accessories/Wallets/BrideRacing/pic1.png",
-          "Img2": ".Accessories/Wallets/BrideRacing/pic2.png",
-          "Img3": ".Accessories/Wallets/BrideRacing/pic3.png",
-          "Img4": ".Accessories/Wallets/BrideRacing/pic4.png"
+          "Img2": "./pic/Accessories/Wallets/BrideRacing/pic2.png",
+          "Img3": "./pic/Accessories/Wallets/BrideRacing/pic3.png",
+          "Img4": "./pic/Accessories/Wallets/BrideRacing/pic4.png"
       }, {
           "Name": "Legend Car Logo Wallet",
-          "ID": "0109",
+          "ID": "0110",
           "Exp":"made of environmentally-friendly leather-like material, with plenty of storage for cash, credit cards, and whatever you keep in your wallet!",
-          "Price": "41,000",
-          "Img1": ".Accessories/Wallets/CarDesing/pic1.png",
-          "Img2": ".Accessories/Wallets/CarDesing/pic2.png",
-          "Img3": ".Accessories/Wallets/CarDesing/pic3.png",
-          "Img4": ".Accessories/Wallets/CarDesing/pic4.png"
+          "Price": "91,000",
+          "Img1": "./pic/Accessories/Wallets/CarDesing/pic1.png",
+          "Img2": "./pic/Accessories/Wallets/CarDesing/pic2.png",
+          "Img3": "./pic/Accessories/Wallets/CarDesing/pic3.png",
+          "Img4": "./pic/Accessories/Wallets/CarDesing/pic4.png"
       }
 
   ]
