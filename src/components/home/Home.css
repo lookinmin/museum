@@ -1,4 +1,11 @@
-body {
+.three{
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+/* body {
   margin: 0 !important;
 }
 
@@ -84,7 +91,7 @@ body {
   cursor: pointer;
 }
 /*------------------phone 포탈------------------*/
-#portal_phone{
+/* #portal_phone{
   position: absolute;
   left: 57%;
   top: 20%;
@@ -121,7 +128,7 @@ body {
   overflow: hidden;
 }
 /*-----------------------*/
-
+/* 
 @keyframes rotate-center {
   0% {
     transform: rotate(0) ;
@@ -153,4 +160,4 @@ body {
   100% {
     transform:  perspective(500px) rotateY(-50deg) scale(0.3) ;
   }
-}
+} */

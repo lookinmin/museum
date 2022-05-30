@@ -1,0 +1,17 @@
+{
+
+    "phoneHistory": [
+        {
+            "Year": "2015년 4월 14일",
+            "Company": "부타케 빵주",
+            "Info": "부타케 빵주",
+            "Img": "iPhone5.png"
+        },{
+            "Year": "1886",
+            "Company": "고틀리프 다임러",
+            "Info": "1기통 배기량 250cc 0.8마력의 4륜 휘발유 자동차 발명",
+             "Img": "2.gasolincar.jpg"
+        }
+    ]
+    
+}
