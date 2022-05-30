@@ -10,21 +10,50 @@ import {
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
-import { Modal } from "./Modal";
-import { render } from "@testing-library/react";
-import ReactDOM from "react-dom/client";
 
 export const CarInfo = ({ images }) => {
-  const modalClick = () => {
-    console.log("Asdfasdf");
-  }
+  const [set, reSet] = useState(false);
+  const modal = useRef();
+  const modalClick = (click, num) => {
+    if (num != -1) {
+      if (modal.current !== null) {
+        if (click) {
+          modal.current.style = "display: block;";
+        } else {
+          modal.current.style = "display: none";
+        }
+      } else {
+        reSet(!set);
+        console.log("modal null");
+      }
+    }else if(num == 5){
+      if (modal.current !== null) {
+        if (click) {
+          modal.current.style = "left: 10%"
+          // modal.current.style = "right: 39%"
+          modal.current.style = "display: block;";
+        } else {
+          modal.current.style = "display: none";
+        }
+      } else {
+        reSet(!set);
+        console.log("modal null");
+      }
+    } else{
+
+    }
+  };
+
+  useState(() => {
+    console.log("set render");
+  }, [set]);
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
         <color attach="background" args={["#191920"]} />
         <Environment preset="city" />
         <group position={[0, -0.5, 0]}>
-          <Frames images={images} />
+          <Frames images={images} modalClick={modalClick} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
@@ -40,7 +69,18 @@ export const CarInfo = ({ images }) => {
           </mesh>
         </group>
       </Canvas>
-      <Modal modalClick={modalClick}/>
+      <div className="modalContainer text-focus-in" ref={modal}>
+        <div className="modalWrapper">
+          <div className="modalImg">
+            <img src="./pic/Car/mainCar.png" alt="" />
+          </div>
+          <div className="modalInfo">
+            <div>Car Name</div>
+            <div>Year</div>
+            <div>Car Info</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -58,33 +98,40 @@ const ToHall = (path, setLocation) => {
 
 const ClickFrame = (current, object, setLocation) => {
   setLocation(current === object ? "/car" : "/car/" + object.name);
-
-  ReactDOM.createElement({
-    render() {
-      return <div>asfasdf</div>;
-    },
-  });
 };
-
 
 function Frames({
   images,
   q = new THREE.Quaternion(),
   p = new THREE.Vector3(),
+  modalClick,
 }) {
   const ref = useRef();
   const [, params] = useRoute("/car/:id");
   const [, setLocation] = useLocation();
   var click;
-
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
     if (click) {
-      click.parent.updateWorldMatrix(true, true);
-      click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
-      click.parent.getWorldQuaternion(q);
+      console.log(click.parent.num);
+      let num = click.parent.num;
+      if (num === -1) {
+        click.parent.updateWorldMatrix(true, true);
+        click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
+        click.parent.getWorldQuaternion(q);
+      } else if (num === 5) {
+        click.parent.updateWorldMatrix(true, true);
+        click.parent.localToWorld(p.set(-1, 1.6 / 2, 1.25));
+        click.parent.getWorldQuaternion(q);
+      } else {
+        click.parent.updateWorldMatrix(true, true);
+        click.parent.localToWorld(p.set(1, 1.6 / 2, 1.25));
+        click.parent.getWorldQuaternion(q);
+      }
+      modalClick(true, num);
     } else {
       p.set(0, 0.5, 5.45); //초기 시점 좌표
+      modalClick(false, -2);
     }
   });
   useFrame((state) => {

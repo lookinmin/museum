@@ -1,0 +1,146 @@
+.three{
+    width: 100vw;
+    height: 100vh;
+}
+
+.inner_html{
+    font-size: 50px;
+    height: 3200px;
+    width: 1500px;
+    border-radius: 150px;
+    position: relative;
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+.phonebg{
+    position: absolute;
+    background-image: url(/public/model/phonebg.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.phonemain{
+    position: absolute;
+    background-image: url(/public/model/phonemain.jpg);
+}
+.phone_message{
+    position: absolute;
+    background-image: url(/public/model/message_in.jpg);
+}
+.inner_html .time{
+    text-align: center;
+    margin-top: 400px;
+    font-size: 500%;
+    color: aliceblue;
+}
+.inner_html .date{
+    text-align: center;
+    font-size: 150%;
+    color: aliceblue;
+}
+.inner_html #message_icon{
+    margin: 0px auto;
+    height: 50px;
+    width: 50px;
+}
+.inner_html #fingerprint{
+    margin: 0px auto;
+    margin-top: 1500px;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+.inner_html #message_app{
+    position: absolute;
+    top: 87%;
+    left: 23%;
+    animation: 0.5s onmessageapp;
+    z-index: 0;
+}
+.inner_html #message_main{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 10%;
+    z-index: 1;
+    visibility: hidden;
+    animation-delay: 10s;
+    animation: 0.5s onmessageappmain 0.1s;
+    animation-fill-mode: forwards;
+}
+.inner_html .message_box{
+    margin-top: 30%;
+    width: 100%;
+    height: 76%;
+    border: red solid 1px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.inner_html .message_box::-webkit-scrollbar {
+	display:none /* Chrome , Safari , Opera */
+}
+.inner_html .message_date{
+    width: 100%;
+    padding: 30px;
+    border: red 1px solid;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    background-color: #000000;
+}
+.inner_html .message{
+    width: fit-content;
+    border-radius: 60px;
+    padding: 30px;
+    margin: 20px 85px;
+    color: white;
+    text-align: left;
+    font-size: 50px;
+    background-color: #454545;
+}
+.inner_html .left_info{
+    position: absolute;
+    left: -180%;
+    top: 10%;
+    width: 150%;
+    height: 80%;
+    transform: perspective(800px) rotateY(3deg);
+    border: red 5px solid;
+    border-radius: 60px;
+    background-color: black;
+    opacity: 0.25;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+}
+.left_info p{
+
+}
+.left_info img{
+    width: 1000px;
+}
+@keyframes onmessageapp {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+@keyframes onmessageappmain {
+    0%{
+        top: 86%;
+    left: 27%;
+    width: 10%;
+        transform: scale(0);
+    }
+    100%{
+        visibility: visible;
+        top: 0%;
+    left: 0%;
+    width: 100%;
+        transform: scale(1);
+    }
+}
