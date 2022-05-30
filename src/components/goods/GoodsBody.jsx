@@ -57,7 +57,7 @@ export const GoodsBody = (props) => {
                   <p className='itemPrice'>KRW 78,000</p>
                 </div>
               </div>
-              <div className="item" id='item5'> 
+              <div className="itemss" id='item5'> 
                 <img id='nowItem' src={pic}/>
               </div>
             </Suspense>
