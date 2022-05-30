@@ -16,7 +16,7 @@ export default function Holder(props) {
         geometry={nodes.Box.geometry}
         position={[0, 28.29, 8.22]}
         rotation={[Math.PI / 3, 0, 0]}
-      ><meshStandardMaterial roughness={0.2} metalness={0.5} color="#EEEEEE" ></meshStandardMaterial></mesh>
+      ><meshStandardMaterial roughness={0.2} metalness={1} color="#EEEEEE" ></meshStandardMaterial></mesh>
       <mesh
         castShadow
         receiveShadow
@@ -24,20 +24,20 @@ export default function Holder(props) {
         material={nodes.Box_1.material}
         position={[0, 40, 0]}
         rotation={[-Math.PI / 6, 0, 0]}
-        ><meshStandardMaterial roughness={0.2} metalness={0.5} color="#EEEEEE" ></meshStandardMaterial></mesh>
+        ><meshStandardMaterial roughness={0.2} metalness={1} color="#EEEEEE" ></meshStandardMaterial></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder.geometry}
         material={nodes.Cylinder.material}
         position={[0, 20, 0]}
-        ><meshStandardMaterial roughness={0.2} metalness={0.5} color="#EEEEEE" ></meshStandardMaterial></mesh>
+        ><meshStandardMaterial roughness={0.2} metalness={1} color="#EEEEEE" ></meshStandardMaterial></mesh>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder_1.geometry}
         material={nodes.Cylinder_1.material}
-        ><meshStandardMaterial roughness={0.2} metalness={0.5} color="#EEEEEE" ></meshStandardMaterial></mesh>
+        ><meshStandardMaterial roughness={0.2} metalness={1} color="#EEEEEE" ></meshStandardMaterial></mesh>
     </group>
   );
 }
