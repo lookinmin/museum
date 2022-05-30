@@ -1,4 +1,54 @@
-.tabatr{
-    width: 1500px;
+
+.pieChartIn{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-self: center;
+}
+
+.pieChartIn h2{
+    font-size: 33px;
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    border-bottom: 1px solid gray;
+    padding: 10px 10px 5px 10px;
+    margin-bottom: 50px !important;
+    align-self: center;
+    width: fit-content;
+}
+
+.pieChartIn rect{
+    width: 800px !important;
+    height: 350px;
+    align-self: center;
+}
+
+.pieChartIn Chart{
+    margin: 0 !important;
+}
+
+.circles{
+    width: 800px !important;
+    margin: 0 !important;
+    align-self: center;
+}
+
+.circles rect{
+
+}
+
+.pieChartIn rect{
+}
+
+
+.tabContent{
+    padding: 30px 50px 20px 50px;
+}
+/* svg{
+    width: 1000px;
     height: 500px;
 }
+
+g{
+    width: 1000px;
+    height: 500px;
+} */
