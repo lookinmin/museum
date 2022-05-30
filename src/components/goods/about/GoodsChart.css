@@ -4,9 +4,27 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-self: center;
+  margin-bottom: 150px;
 }
 
 .pieChartIn h2{
+  font-size: 33px;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  border-bottom: 1px solid gray;
+  padding: 10px 10px 5px 10px;
+  margin-bottom: 50px !important;
+  align-self: center;
+  width: fit-content;
+}
+
+.barChartIn{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.barChartIn h2{
   font-size: 33px;
   font-family: 'LeferiPoint-WhiteObliqueA';
   border-bottom: 1px solid gray;
@@ -30,13 +48,13 @@
   width: 800px !important;
   margin: 0 !important;
   align-self: center;
+  height: 400px;
 }
 
-.circles rect{
-
-}
-
-.pieChartIn rect{
+.circles text{
+  font-size: 20px;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  text-align: center;
 }
 
 
@@ -52,3 +70,14 @@ g{
   width: 1000px;
   height: 500px;
 } */
+
+
+.chartContent{
+
+}
+
+.lines{
+  width: 800px !important;
+  margin: 0 !important;
+  align-self: center;
+}
