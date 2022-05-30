@@ -8,7 +8,6 @@ import {Phone} from "./components/phone/Phone"
 import {VideoStart} from './components/home/VideoStart'
 import {Detail} from './components/goods/detail/Detail'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Cart } from "./components/goods/about/Cart";
 import { Pay } from "./components/goods/pay/Pay";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
           <Route path="/Phone" element={<Phone/>}></Route>
           <Route path="/goods" element={<Goods/>}></Route>
           <Route path={`${/detail/}:id`} element={<Detail/>}></Route>
-          <Route path="/cart" element={<Cart/>}></Route>
           <Route path={`${/pay/}:id`} element={<Pay/>}></Route>
         </Routes>
       </div>
