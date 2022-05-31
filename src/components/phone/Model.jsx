@@ -15,9 +15,12 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/model/simple.glb");
   return (
     <group onPointerOver={(e)=>{console.log(e); 
-       props.pos.current=new THREE.Vector3(0, 128, 14);
-       props.pos1.current=new THREE.Vector3(0, 0, -170); }} onClick={(e)=>{console.log(e);
-     e.camera.position=[0,0,0]}} scale={0.4} ref={group} {...props} dispose={null}>
+      if(props.pos.current.x>-1){
+        props.pos.current=new THREE.Vector3(0, 132, 18);
+       props.pos1.current=new THREE.Vector3(0, 0, -170);
+      }
+        }} onClick={(e)=>{console.log(e);
+     }} scale={0.4} ref={group} {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow

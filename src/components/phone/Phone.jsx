@@ -19,8 +19,8 @@ function Move_camera({pos,pos1}) {
   const p1 = new THREE.Vector3(0, 100, 0);
   
   useFrame((state, dt) => {
-    state.camera.position.lerp(pos.current, 0.025)
-    p1.lerp(pos1.current,0.025);
+    state.camera.position.lerp(pos.current, 0.015)
+    p1.lerp(pos1.current,0.015);
     state.camera.lookAt(p1);
     
   })
@@ -44,7 +44,6 @@ const My_light = () => {
 const Cube = () => {
   const p = new THREE.Vector3(150, 75, 150);
   const temp=useRef();
-  temp.current=p;
   const p2 = new THREE.Vector3(0, 100, 0);
   const temp2=useRef();
   temp.current=p;
