@@ -19,7 +19,7 @@
             "Img3":"./pic/clothes/BENZ PK2/pic3.PNG",
             "Img4":"./pic/clothes/BENZ PK2/pic4.PNG"
         }, {
-            "Name": "FERRARI T-shirt",
+            "Name": "FERRARI Basic T-shirt",
             "ID": "0208",
             "Price": "128,000",
             "Exp":"An embroidered version of the unmistakable Prancing Horse is emblazoned on the back of this versatile T-shirt.",
@@ -74,7 +74,7 @@
             "Img3":"./pic/clothes/Bentley/pic3.PNG",
             "Img4":"./pic/clothes/Bentley/pic4.PNG"
         }, {
-            "Name": "VOLVO Jersey",
+            "Name": "VOLVO New Jersey",
             "ID": "0209",
             "Price": "118,000",
             "Exp":"This windbreaker stands out with carefully crafted details that underline its comfort, including the fully recycled water-resistant fabric.",

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./GoodsChart.css";
 import { Chart } from "react-google-charts";
-import { Tab } from "react-bootstrap";
-import { Tabs } from "react-bootstrap";
 
 export const GoodsChart = () => {
   const data = [
