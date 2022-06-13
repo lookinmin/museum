@@ -20,53 +20,62 @@ const realtime=()=>{
     const week=WEEKDAY[date.getDay()];
     return {time:hours+":"+minutes,date:month+"월 "+day+"일 "+week};
 }
-const Message=({phone_detail})=>{
+const Message=({setindex,index,setondetail})=>{
     return(
-        <div className='message_date'>
-            <p>{phone_his.phoneHistory[0].Year}</p>
-            <div className='message'>
-                <img src={"/pic/Phone/" + phone_his.phoneHistory[0].Img}></img><br></br>
-                {phone_his.phoneHistory[0].Info+"나왔데 깔깔"}
+        <div onClick={(e)=>{setindex(index);setondetail(true)}} className='message_date'>
+            <p>{phone_his.phoneHistory[index].Year}</p>
+            <div className='message' index={index}>
+                <img src={ phone_his.phoneHistory[index].Img}></img><br></br>
+                {phone_his.phoneHistory[index].Company+"에서 "+phone_his.phoneHistory[index].Img.slice(12,-6)+"출시!!"}<br></br>
             </div>
         </div>
         
     )
 }
-const Message_in=({pos,pos1})=>{
+const Message_in=({pos,pos1,pagenum,time})=>{
     const [message_list, setmessage_list] = useState([<></>]);
-    console.log("메세지 렌더")
+    const [ondetail,setondetail]=useState(false);
+    const [index,setindex]=useState(0);
 
+    const num=useRef(0);
     return(
-        <div className='inner_html phone_message'>
-            <div onScroll={(e)=>{console.log(e)}}
-             onClick={(e)=>{console.log(message_list); 
-                var temp=[...message_list];
-                temp.push(<Message/>);
-                pos.current=new THREE.Vector3(-15, 128, 14);
-                pos1.current=new THREE.Vector3(-15, 0, -170);
-                setmessage_list(temp)}} className='message_box'>
+        <div className='inner_html phone_message'style={pagenum}>
+            <div className='time'>
+                {time.time}
+            </div>
+            <div 
+             onClick={(e)=>{
+                 if(num.current<=10){
+                     var temp = [...message_list];
+                     temp.push(<Message setindex={setindex} setondetail={setondetail} index={num.current} key={num.current} />);
+                     num.current = num.current + 1;
+                     setmessage_list(temp)
+                 }
+                    pos.current=new THREE.Vector3(-15, 132, 18);
+                    pos1.current=new THREE.Vector3(-20, 0, -170);
+                }} className='message_box'>
                 {message_list}
             </div>
-            <div className='left_info'>
-                <img src={"/pic/Phone/"+phone_his.phoneHistory[0].Img}></img>
+            <div className='left_info' style={ondetail?{opacity:0.5}:{opacity:0}}>
+                <img src={phone_his.phoneHistory[index].Img}></img>
                 <div>
                     <p>
-                        {phone_his.phoneHistory[0].Year}
+                        {phone_his.phoneHistory[index].Year}
                     </p>
                     <p>
-                        {phone_his.phoneHistory[0].Company}
+                        {phone_his.phoneHistory[index].Company}
                     </p>
                     <p>
-                        {phone_his.phoneHistory[0].Info}
+                        {phone_his.phoneHistory[index].Info}
                     </p>
                 </div>
             </div>
         </div>
     )
 }
-const Standby = ({time}) => {
+const Standby = ({chgpage,time,pagenum}) => {
     return (
-        <div className={"inner_html phonebg"}>
+        <div className={"inner_html phonebg"} style={pagenum}>
             <div className='time'>
                 {time.time}
             </div>
@@ -74,14 +83,32 @@ const Standby = ({time}) => {
                 {time.date}
             </div>
             <img id='message_icon' src='/model/message.png'></img>
-            {/* <img onClick={()=>{setpagenum({    visibility: "visible",display: "block"})}} id='fingerprint' src='/model/fingerprint.png'></img> */}
+            <img  onClick={()=>{chgpage([{visibility: "hidden"},{visibility: "visible"},{visibility: "hidden",display:"none"}])}} id='fingerprint' src='/model/fingerprint.png'></img>
         </div>
+    )
+}
+
+const Main_screen = ({time,pagenum,chgpage}) => {
+    const [click, setclick] = useState("message_main");
+    return (
+        <>
+            <div className={"inner_html phonemain"} style={pagenum}>
+                <div className='time'>{time.time}</div>
+                <img onClick={() => { setclick("message_main_click") }} id='message_app' src='/model/message_app.png'></img>
+                <div id={""+click}>
+                    <div className='time'>{time.time}</div>
+                    <div onClick={()=>{chgpage([{visibility: "visible"},{visibility: "hidden",display:"none"},{visibility: "hidden",display:"none"}])}}className='start'>
+                        dkfskldf
+                        <img src='/model/first.png'></img>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 export const Innerhtml = ({pos,pos1}) => {
     const [time, settime] = useState(realtime());
-    const [pagenum, setpagenum] = useState({    visibility: "hidden",display: "none"});
-    
+    const [pagenum, setpagenum] = useState([{visibility: "hidden"},{visibility: "hidden"},{visibility: "visible"}]);
     
     const start_realtime=()=>{
         setInterval(() => {
@@ -93,21 +120,13 @@ export const Innerhtml = ({pos,pos1}) => {
     }, []);
     console.log("렌더")
 
-    const Main_screen = () => {
-        return (
-            <>
-                <div className={"inner_html phonemain"} style={pagenum}>
-                    <img id='message_app' src='/model/message_app.png'></img>
-                    <img id='message_main' src='/model/message_main.jpg'></img>
-                </div>
-            </>
-        )
-    }
     
 
     return (
         <>
-            <Message_in pos={pos} pos1={pos1}/>
+            <Message_in time={time} pagenum={pagenum[0]} pos={pos} pos1={pos1}/>
+            <Main_screen chgpage={setpagenum} time={time} pagenum={pagenum[1]}/>
+            <Standby chgpage={setpagenum} pagenum={pagenum[2]} time={time}/>
         </>
     )
 }
