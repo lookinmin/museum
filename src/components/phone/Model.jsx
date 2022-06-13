@@ -13,11 +13,12 @@ import * as THREE from 'three'
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/model/simple.glb");
+  const phone_material = new THREE.MeshStandardMaterial({ color: "#007cb0", metalness: 0.9, roughness: 0.2 })
   return (
     <group onPointerOver={(e)=>{console.log(e); 
       if(props.pos.current.x>-1){
         props.pos.current=new THREE.Vector3(0, 132, 18);
-       props.pos1.current=new THREE.Vector3(0, 0, -170);
+       props.pos1.current=new THREE.Vector3(0, 0, -180);
       }
         }} onClick={(e)=>{console.log(e);
      }} scale={0.4} ref={group} {...props} dispose={null}>
@@ -25,40 +26,40 @@ export default function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.Box.geometry}
-        material={nodes.Box.material}
+        material={phone_material}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Box_1.geometry}
-        material={nodes.Box_1.material}
-      />
+        material={phone_material}
+        />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder_1.geometry}
-        material={nodes.Cylinder_1.material}
+        material={phone_material}
         position={[-16, 0, -37]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder_2.geometry}
-        material={nodes.Cylinder_2.material}
+        material={phone_material}
         position={[-16, 0, 37]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder_3.geometry}
-        material={nodes.Cylinder_3.material}
+        material={phone_material}
         position={[16, 0, 37]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder_4.geometry}
-        material={nodes.Cylinder_4.material}
+        material={phone_material}
         position={[16, 0, -37]}
       />
       <mesh

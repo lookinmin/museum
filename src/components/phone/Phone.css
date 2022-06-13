@@ -90,6 +90,7 @@
 .inner_html #message_main_click{
     position: absolute;
     background: url(/public/model/message_main.jpg) no-repeat ;
+    border-radius: 150px;
     background-size:contain;
     top: 0%;
     left: 0%;
