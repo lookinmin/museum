@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
@@ -26,12 +26,8 @@ const Car=()=>{
 }
 
 export const CarInfo = ({ images }) => {
-  const [set, reSet] = useState(false);
-  const modal = useRef();
+
   const [modalFlag, setModalFlag] = useState(false);
-  const carInfo = useRef();
-  const carImg = useRef();
-  const data = carData.carHistory;
 
   const modalClick = (num) => {
     // if (!set) {
@@ -64,8 +60,9 @@ export const CarInfo = ({ images }) => {
       
   return (
     <>
-      <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
+      <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0.2, 0.205, 4.1] }}>
         <Car></Car>  
+        <Move_camera/>
        <rectAreaLight
           width={10}
           height={10}
@@ -107,26 +104,22 @@ export const CarInfo = ({ images }) => {
           </mesh>
         </group>
       </Canvas>
-      {/* <div
-        className="text-focus-in"
-        ref={modal}
-        id={modalFlag ? "modalContainer" : "modalContainer2"}
-      >
-        <div className="modalWrapper">
-          <div className="modalImg">
-            <img src="/pic/Car/mainCar.png" alt="" ref={carImg}/>
-          </div>
-          <div className="modalInfo" ref={carInfo}>
-            <div>Car Name</div>
-            <div>Year</div>
-            <div>Car Info</div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };
 
+const Move_camera=({pos,pos1})=> {//카메라 고정
+  const p1 = new THREE.Vector3(0.2, 0.205, 3);
+  // useFrame((state)=>{
+  //   state.camera.lookAt(p1);//카메라 표적 변환
+  // })
+  // useFrame((state, dt) => {//화면 프레임에 따라 다름 144hz면 초당 144 60hz면 초당 60번 불림
+  //   state.camera.position.lerp(pos.current, 0.015)//부드러운 화면 카메라 위치 전환
+  //   p1.lerp(pos1.current,0.015);//부드러운 카메라 표적 위치 변환
+    
+  // })
+  return null
+}
 const ToHall = (path, setLocation) => {
   setLocation("/car/" + path);
   const timer = setTimeout(() => {
@@ -178,11 +171,11 @@ function Car_Museum({
       modalClick(-2);
     }
   });
-  useFrame((state) => {
-    console.log(state);
-    state.camera.position.lerp(p, 0.025);
-    state.camera.quaternion.slerp(q, 0.025);
-  });
+  // useFrame((state) => {
+  //   console.log(state);
+  //   state.camera.position.lerp(p, 0.025);
+  //   state.camera.quaternion.slerp(q, 0.025);
+  // });
   return (
     <>
       <group

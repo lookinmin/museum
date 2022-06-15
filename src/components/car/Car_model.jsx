@@ -5,14 +5,16 @@ import * as THREE from "three";
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/model/car.glb");
-  const frame_mat = new THREE.MeshStandardMaterial({ color: "#505050", metalness: 0.8, roughness: 0.4 })//핸드폰 모델 공통 material
+  const frame_mat = new THREE.MeshStandardMaterial({ color: "#505050", metalness: 0.8, roughness: 0.4,side:THREE.DoubleSide })//핸드폰 모델 공통 material
   const wheelrubber_mat = new THREE.MeshPhongMaterial({ color: "#ffffff"})//핸드폰 모델 공통 material
   const wheel_mat = new THREE.MeshStandardMaterial({ color: "#c0c0c0",metalness: 0.8, roughness: 0.4})//핸드폰 모델 공통 material
   const mirror = new THREE.MeshPhysicalMaterial({ color: "#ca5caa",metalness: 0.8, roughness: 0.4,transparent:true,opacity:1})//핸드폰 모델 공통 material
+  const front=new THREE.MeshStandardMaterial({ color: "#505050",metalness: 0.8, roughness: 0.4,side:THREE.DoubleSide})//핸드폰 모델 공통 material
+  const frontmirror=new THREE.MeshStandardMaterial({ color: "a9f0fe",roughness: 0.2,metalness:0.5, transparent:true,opacity:0.3,side:THREE.DoubleSide})//핸드폰 모델 공통 material
   
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0,-0.5,0]} rotation={[0,-Math.PI*0.5,0]} scale={0.0006} userData={{ name: "3d-model.obj" }}>
+      <group position={[0,-0.5,4]} rotation={[0,-Math.PI*0.5,0]} scale={0.0006} userData={{ name: "3d-model.obj" }}>
         <mesh
           castShadow
           receiveShadow
@@ -52,7 +54,7 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.frontmirroframe.geometry}
-          material={frame_mat}
+          material={front}
           userData={{ name: "frontmirroframe" }}
         />
         <mesh
@@ -87,7 +89,7 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.frontmirror.geometry}
-          material={nodes.frontmirror.material}
+          material={frontmirror}
           userData={{ name: "frontmirror" }}
         />
         <mesh
