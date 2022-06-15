@@ -1,24 +1,18 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, createRoot, useFrame } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
   Image,
   Environment,
-  Stars,
-  Plane,
   Sky,
+  Stars,
+  Sparkles
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
-
-const geometry = new THREE.PlaneGeometry(1, 1);
-const material = new THREE.MeshBasicMaterial({
-  color: 0xffff00,
-  side: THREE.DoubleSide,
-});
 
 export const CarInfo = ({ images }) => {
   const [set, reSet] = useState(false);
@@ -35,12 +29,12 @@ export const CarInfo = ({ images }) => {
       if (num === -2 || num === -1) {
         modal.current.style = "display: none";
       } else {
-        modal.current.style = "display: block";
-        carImg.current.src = "/pic/Car/" + data[num - 1].Img;
+        modal.current.style = "display: block"
+        carImg.current.src = "/pic/Car/"+data[num-1].Img;
         var children = carInfo.current.childNodes;
-        children[0].innerText = data[num - 1].Company;
-        children[1].innerText = data[num - 1].Year;
-        children[2].innerText = data[num - 1].Info;
+        children[0].innerText = data[num-1].Company;
+        children[1].innerText = data[num-1].Year;
+        children[2].innerText = data[num-1].Info;
         if (num >= 5) {
           setModalFlag(false);
         } else {
@@ -51,25 +45,25 @@ export const CarInfo = ({ images }) => {
   };
 
   useEffect(() => {
-    console.log(carImg.current.src);
-  }, [modalFlag]);
+  }, [ modalFlag]);
 
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
         <color attach="background" args={["#191920"]} />
-        <fog attach="fog" args={["#191920", 0, 15]} />
+        <fog attach="fog" args={['#191920', 0, 15]} />
         <Environment preset="city" />
-        <group position={[0, -0.5, -1]}>
+        <group position={[0, -0.5, 0]}>
           <Frames images={images} modalClick={modalClick} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
-            <MeshReflectorMaterial color="#101010" />
+            <MeshReflectorMaterial
+              color="#101010"
+            />
           </mesh>
         </group>
         <Stars/>
       </Canvas>
-
       <div
         className="text-focus-in"
         ref={modal}
@@ -77,7 +71,7 @@ export const CarInfo = ({ images }) => {
       >
         <div className="modalWrapper">
           <div className="modalImg">
-            <img src="/pic/Car/mainCar.png" alt="" ref={carImg} />
+            <img src="/pic/Car/mainCar.png" alt="" ref={carImg}/>
           </div>
           <div className="modalInfo" ref={carInfo}>
             <div>Car Name</div>
@@ -86,7 +80,6 @@ export const CarInfo = ({ images }) => {
           </div>
         </div>
       </div>
-
     </>
   );
 };
@@ -116,6 +109,7 @@ function Frames({
   const [, params] = useRoute("/car/:id");
   const [, setLocation] = useLocation();
   var click;
+  const [flag, setFlag] = useState(true);
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
     if (click) {
@@ -135,35 +129,48 @@ function Frames({
       }
       modalClick(num);
     } else {
-      p.set(0, 0.5, 5.45); //초기 시점 좌표
+      p.set(0, 0.5, 6.5); //초기 시점 좌표
       modalClick(-2);
     }
   });
   useFrame((state) => {
-    state.camera.position.lerp(p, 0.015);
-    state.camera.quaternion.slerp(q, 0.015);
+    state.camera.position.lerp(p, 0.02);
+    state.camera.quaternion.slerp(q, 0.02);
   });
+  const tmp = (e) => {
+    e.object.parent.name === -1
+              ? ToHall(e.object.name, setLocation) //home으로 이동
+              : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
+  }
+  const tmp2 = (e, tmp) => {
+    console.log(tmp);
+    images.map((props) => (
+      console.log("Qerqwer", props),
+      <Frame key={props.url} {...props} flag={true}/>
+    ));
+    <Frame key={tmp.url} {...tmp} flag={true}/>
+  }
   return (
     <>
       <group
         ref={ref}
-        onClick={
-          (e) =>
-            e.object.parent.name === -1
-              ? ToHall(e.object.name, setLocation) //home으로 이동
-              : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
-        }
+        onClick={(e) => tmp(e)}
         onPointerMissed={() => setLocation("/car")}
       >
         {images.map((props) => (
-          <Frame key={props.url} {...props} />
+          <Frame key={props.url} {...props} 
+          flag={true}
+          onClick={(e) => tmp2(e, props)}
+          />,
+          console.log("sdsdv")
         ))}
       </group>
     </>
   );
 }
 
-function Frame({ url, c = new THREE.Color(), ...props }) {
+function Frame({ url, c = new THREE.Color(), flag, ...props }) {
+  console.log(flag);
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
@@ -182,7 +189,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     );
   });
   return (
-    <group {...props}>
+    <group {...props} visible={true}>
       <mesh
         name={name}
         onPointerOver={() => hover(true)}
