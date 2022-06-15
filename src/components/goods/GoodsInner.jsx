@@ -8,7 +8,7 @@ import AcceData from "./Accessories.json";
 export const GoodsInner = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
   const [itemName, setItemName] = useState("Diamonds Shop");
-  const [itemPrice, setItemPrice] = useState("100,000");
+  const [itemPrice, setItemPrice] = useState("");
   const [itemlist, setItemList] = useState([]);
   const [title, setTitle] = useState("Diamonds");
   const pic1 = "./pic/Home/diamond.png";
@@ -48,7 +48,7 @@ export const GoodsInner = (props) => {
         onMouseOut={() => { 
         setPic(pic1)
         setItemName("Diamonds Shop")
-        setItemPrice("100,000")}}
+        setItemPrice("")}}
         
         onClick={()=>goDetail(item.ID)}
         key={item.ID}>
