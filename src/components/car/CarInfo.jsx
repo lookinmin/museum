@@ -6,9 +6,8 @@ import {
   MeshReflectorMaterial,
   Image,
   Environment,
-  Sky,
   Stars,
-  Sparkles
+  OrbitControls
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
@@ -51,26 +50,46 @@ export const CarInfo = ({ images }) => {
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
+      <rectAreaLight
+          width={10}
+          height={10}
+          color={"#0000ff"}
+          intensity={50}
+          position={[-10, 0, 0]}
+          lookAt={[0, 0, 0]}
+          rotation={[0,Math.PI*-0.5,0]}
+          castShadow
+        />
+        <rectAreaLight
+          width={10}
+          height={10}
+          color={"#ff0000"}
+          intensity={50}
+          position={[10, 0, 0]}
+          lookAt={[0, 0, 0]}
+          rotation={[0,Math.PI*0.5,0]}
+          castShadow
+        />
+        <OrbitControls/>
         <color attach="background" args={["#191920"]} />
         <fog attach="fog" args={['#191920', 0, 15]} />
         <Environment preset="city" />
         <group position={[0, -0.5, 0]}>
-          <Frames images={images} modalClick={modalClick} />
+          <Car_Museum images={images} modalClick={modalClick} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
-              // blur={[300, 100]}
-              // resolution={2000}
-              // mixBlur={1}
-              // mixStrength={40}
-              // depthScale={1.2}
-              // minDepthThreshold={0.4}
-              // maxDepthThreshold={1.4}
+              blur={[300, 100]}
+              resolution={2000}
+              mixBlur={2}
+              mixStrength={15}
+              depthScale={1.2}
+              minDepthThreshold={0.4}
+              maxDepthThreshold={1.4}
               color="#101010"
             />
           </mesh>
         </group>
-        <Stars/>
       </Canvas>
       <div
         className="text-focus-in"
@@ -107,7 +126,7 @@ const ClickFrame = (current, object, setLocation) => {
   setLocation(current === object ? "/car" : "/car/" + object.name);
 };
 
-function Frames({
+function Car_Museum({
   images,
   q = new THREE.Quaternion(),
   p = new THREE.Vector3(),
@@ -140,10 +159,10 @@ function Frames({
       modalClick(-2);
     }
   });
-  useFrame((state) => {
-    state.camera.position.lerp(p, 0.025);
-    state.camera.quaternion.slerp(q, 0.025);
-  });
+  // useFrame((state) => {
+  //   state.camera.position.lerp(p, 0.025);
+  //   state.camera.quaternion.slerp(q, 0.025);
+  // });
   return (
     <>
       <group
@@ -157,14 +176,14 @@ function Frames({
         onPointerMissed={() => setLocation("/car")}
       >
         {images.map((props) => (
-          <Frame key={props.url} {...props} />
+          <Photo_Frame key={props.url} {...props} />
         ))}
       </group>
     </>
   );
 }
 
-function Frame({ url, c = new THREE.Color(), ...props }) {
+function Photo_Frame({ url,  ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
@@ -183,7 +202,7 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     );
   });
   return (
-    <group {...props}>
+    <group rotation={[0,0,Math.PI*0.5]} {...props}>
       <mesh
         name={name}
         onPointerOver={() => hover(true)}
