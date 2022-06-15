@@ -1,45 +1,27 @@
 import React, { Suspense, useRef } from 'react'
-import { OrbitControls, SpotLight, RoundedBox, MeshReflectorMaterial, Environment, Cylinder } from '@react-three/drei';
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { RoundedBox, MeshReflectorMaterial, Environment } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three'
 import "./Phone.css";
 import Model from './Model'
 import Holder from './Holder'
 
-export const Phone = () => {
-
+export const Phone = () => {//
   return (
     <div className='three'>
       <Cube></Cube>
     </div>
   )
 }
-function Move_camera({pos,pos1}) {
-  const p = new THREE.Vector3(150, 75, 150);
+function Move_camera({pos,pos1}) {//카메라 고정
   const p1 = new THREE.Vector3(0, 100, 0);
   
-  useFrame((state, dt) => {
-    state.camera.position.lerp(pos.current, 0.015)
-    p1.lerp(pos1.current,0.015);
-    state.camera.lookAt(p1);
-    
+  useFrame((state, dt) => {//화면 프레임에 따라 다름 144hz면 초당 144 60hz면 초당 60번 불림
+    state.camera.position.lerp(pos.current, 0.015)//부드러운 화면 카메라 위치 전환
+    p1.lerp(pos1.current,0.015);//부드러운 카메라 표적 위치 변환
+    state.camera.lookAt(p1);//카메라 표적 변환
   })
   return null
-}
-const My_light = () => {
-  return (
-    <SpotLight position={[0, 300, 0]}
-      castShadow
-      penumbra={0.1}
-      radiusTop={5}
-      radiusBottom={100}
-      distance={300}
-      angle={Math.PI * 0.05}
-      attenuation={220}
-      anglePower={5}
-      intensity={1}
-    />
-  )
 }
 const Cube = () => {
   const p = new THREE.Vector3(150, 75, 150);
@@ -50,11 +32,11 @@ const Cube = () => {
   temp2.current=p2;
   return (
     <>
-      <Canvas gl={{ alpha: false }} dpr={[1, 1.5]} camera={{ position: [300, 300, 300] }} >
+      <Canvas dpr={[1, 1.5]} camera={{ position: [300, 300, 300] }} >
         <Move_camera pos={temp} pos1={temp2}/>
-        {/* <OrbitControls /> */}
         <color attach="background" args={['#191920']} />
         <ambientLight color="#ffffff" />
+        {/*양 옆 빨간색 파란색 조명*/}
         <rectAreaLight
           width={300}
           height={300}
@@ -75,12 +57,12 @@ const Cube = () => {
           penumbra={1}
           castShadow
         />
-        
+        {/*기준 거리 이상 뿌옇게 보이기*/}
         <fog attach="fog" args={['#191920', 0, 500]} />
         <Environment preset="city" />
-        {/* <OrbitControls intensity={0} position={[0, 2, 0]} /> */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-          <planeGeometry args={[1500, 1000]} />
+        {/*바닥 mesh*/}
+        <mesh onDoubleClick={(e)=>{e.stopPropagation();console.log("처음으로");temp.current=new THREE.Vector3(150, 75, 150);temp2.current=new THREE.Vector3(0, 100, 0);}} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+          <planeGeometry  args={[1500, 1000]} />
           <MeshReflectorMaterial
             blur={[300, 100]}
             resolution={2048}
@@ -94,16 +76,17 @@ const Cube = () => {
             metalness={0.5}
           />
         </mesh>
+        {/*진열대*/}
         <RoundedBox args={[50, 90, 50]} radius={5} position={[0, 35, 0]} smoothness={10}>
           <meshStandardMaterial roughness={0.2} metalness={1} color="#ffffff" ></meshStandardMaterial>
         </RoundedBox>
 
+        {/*휴대폰 모델, 홀더 모델 불러오기 크기가 크기 때문에 suspense로 걸어둠*/}
         <Suspense fallback={null}>
           <Model pos1={temp2} pos={temp} rotation={[1.05, 0, 0]} position={[0, 118.05, -1.2]} />
           <Holder position={[0, 80, 0]} />
         </Suspense>
 
-        <axesHelper />
       </Canvas>
     </>
   );

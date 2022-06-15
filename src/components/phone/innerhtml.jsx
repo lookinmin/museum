@@ -1,10 +1,9 @@
-
 import React, { useRef, useEffect,useState } from 'react'
 import "./Phone.css";
 import * as THREE from 'three'
 const phone_his= require('./phoneHistory.json'); 
 
-const realtime=()=>{
+const realtime=()=>{//핸드폰 화면 내에서 실시간 시간 및 일자 계산
     const date=new Date();
     var hours=date.getHours();
     if(hours<10){
@@ -20,7 +19,7 @@ const realtime=()=>{
     const week=WEEKDAY[date.getDay()];
     return {time:hours+":"+minutes,date:month+"월 "+day+"일 "+week};
 }
-const Message=({setindex,index,setondetail})=>{
+const Message=({setindex,index,setondetail})=>{//메시지 앱 내에서 메시지 하나하나 만들어서 출력 컴포넌트
     return(
         <div onClick={(e)=>{setindex(index);setondetail(true)}} className='message_date'>
             <p>{phone_his.phoneHistory[index].Year}</p>
@@ -28,16 +27,15 @@ const Message=({setindex,index,setondetail})=>{
                 <img src={ phone_his.phoneHistory[index].Img}></img><br></br>
                 {phone_his.phoneHistory[index].Company+"에서 "+phone_his.phoneHistory[index].Img.slice(12,-6)+"출시!!"}<br></br>
             </div>
-        </div>
-        
+        </div> 
     )
 }
-const Message_in=({pos,pos1,pagenum,time})=>{
-    const [message_list, setmessage_list] = useState([<></>]);
+const Message_in=({pos,pos1,pagenum,time})=>{//메시지 앱 내부
     const [ondetail,setondetail]=useState(false);
     const [index,setindex]=useState(0);
-
-    const num=useRef(0);
+    const [message_list, setmessage_list] = useState([<Message setindex={setindex} setondetail={setondetail} index={0} key={0} />]);
+    const num=useRef(1);
+    
     return(
         <div className='inner_html phone_message'style={pagenum}>
             <div className='time'>
@@ -73,7 +71,7 @@ const Message_in=({pos,pos1,pagenum,time})=>{
         </div>
     )
 }
-const Standby = ({chgpage,time,pagenum}) => {
+const Standby = ({chgpage,time,pagenum}) => {//잠금화면 
     return (
         <div className={"inner_html phonebg"} style={pagenum}>
             <div className='time'>
@@ -88,7 +86,7 @@ const Standby = ({chgpage,time,pagenum}) => {
     )
 }
 
-const Main_screen = ({time,pagenum,chgpage}) => {
+const Main_screen = ({time,pagenum,chgpage}) => {//잠금화면 이후 배경화면 및 메시지 앱 
     const [click, setclick] = useState("message_main");
     return (
         <>
@@ -98,7 +96,7 @@ const Main_screen = ({time,pagenum,chgpage}) => {
                 <div id={""+click}>
                     <div className='time'>{time.time}</div>
                     <div onClick={()=>{chgpage([{visibility: "visible"},{visibility: "hidden",display:"none"},{visibility: "hidden",display:"none"}])}}className='start'>
-                        dkfskldf
+                        Motorola DynaTAC에서 DynaTAC8000X출시!!
                         <img src='/model/first.png'></img>
                     </div>
                 </div>
@@ -106,21 +104,19 @@ const Main_screen = ({time,pagenum,chgpage}) => {
         </>
     )
 }
-export const Innerhtml = ({pos,pos1}) => {
+export const Innerhtml = ({pos,pos1}) => {//휴대폰 화면 내부
     const [time, settime] = useState(realtime());
     const [pagenum, setpagenum] = useState([{visibility: "hidden"},{visibility: "hidden"},{visibility: "visible"}]);
     
-    const start_realtime=()=>{
+    const start_realtime=()=>{//실시간 시간 및 날짜 계산 시작 함수
         setInterval(() => {
             settime(realtime());
         }, 60000);
     }
-    useEffect(() => {
+    useEffect(() => {//처음 렌더링 될때 실시간 시간 및 날짜 계산 함수 시작
         start_realtime();
     }, []);
     console.log("렌더")
-
-    
 
     return (
         <>

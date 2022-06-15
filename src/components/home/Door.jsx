@@ -7,10 +7,9 @@ import { useGLTF,MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import * as THREE from 'three'
-import { useLocation } from "wouter";
 
 export default function Model(props) {
-  const [, setLocation] = useLocation();
+  
   const group = useRef();
   const { nodes, materials } = useGLTF("/model/door.glb");
   const beam_material = new THREE.MeshStandardMaterial({ color: "#101010", metalness: 0.5, roughness: 0.8 })
@@ -22,9 +21,8 @@ export default function Model(props) {
           props.pos1.current = new THREE.Vector3(5, 0, 10);
           props.pos2.current = new THREE.Vector3(0, 0, 10);
           console.log("left");
-          // setTimeout(() => {
-          //   window.location.href = "/phone"
-          // }, 2500);
+          e.stopPropagation();
+          props.is_close.current=true;
         }} position={[-10, 0, 0]}>
           <mesh
             castShadow
@@ -59,9 +57,8 @@ export default function Model(props) {
           props.pos1.current = new THREE.Vector3(-5, 0, 10);
           props.pos2.current = new THREE.Vector3(0, 0, 10);
           console.log("right");
-          // setTimeout(() => {
-          //   window.location.href = "/car"
-          // }, 2500);
+          e.stopPropagation();
+          props.is_close.current=true;
         }} position={[10, 0, 0]}>
           <mesh
             castShadow
@@ -123,11 +120,11 @@ export default function Model(props) {
             if(props.pos1.current.z==10){
               props.pos1.current = new THREE.Vector3(-6, 0, 10);
             props.pos2.current = new THREE.Vector3(-10, 0, 10);
+            props.is_close.current=false
             setTimeout(() => {
               window.location.href = "/phone"
             }, 700);
             }
-            
             console.log("left");
             
           }}
@@ -140,14 +137,17 @@ export default function Model(props) {
           geometry={nodes.Plane_2.geometry}
           position={[9.52, 1, 0]}
           rotation={[0, -Math.PI / 2, 0]}
+          
           onClick={(e) => {
             if(props.pos1.current.z==10){
               props.pos1.current = new THREE.Vector3(6, 0, 10);
               props.pos2.current = new THREE.Vector3(10, 0, 10);
+              props.is_close.current=false
+              setTimeout(() => {
+                window.location.href = "/phone"
+              }, 700);
             }
-            // setTimeout(() => {
-            //   window.location.href = "/phone"
-            // }, 2500);
+            
           }}
         >
         </mesh>
