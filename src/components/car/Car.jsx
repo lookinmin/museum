@@ -59,9 +59,9 @@ export const Car = () => {
     {
       position: [-1.15, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/13.boltEV.png",
+      url: "./pic/Car/10.tolonado.png",
       name: 4,
-      num: 13
+      num: 10
     },
     {
       position: [0.0, 0, -1.0],
@@ -73,9 +73,9 @@ export const Car = () => {
     {
       position: [1.15, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/6.sitroang.png",
+      url: "./pic/Car/7.firstdisel.png",
       name: 5,
-      num : 6
+      num : 7
     },
     // Left
     {
@@ -111,23 +111,23 @@ export const Car = () => {
     {
       position: [1.75, 0, 0.25],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: "./pic/Car/7.firstdisel.png",
+      url: "./pic/Car/12.EV1.png",
       name: 6,
-      num : 7
+      num : 12
     },
     {
       position: [2.15, 0, 1.40],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: "./pic/Car/8.jeep.png",
+      url: "./pic/Car/13.boltEV.png",
       name: 7,
-      num : 8
+      num : 13
     },
     {
       position: [2.5, 0, 2.55],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: "./pic/Car/12.EV1.png",
+      url: "./pic/Car/14.toossanix.png",
       name: 8,
-      num : 12
+      num : 14
     },
     {
       position: [2.8, 0, 3.7],

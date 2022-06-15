@@ -1,15 +1,24 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, createRoot, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
   Image,
   Environment,
+  Stars,
+  Plane,
+  Sky,
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
+
+const geometry = new THREE.PlaneGeometry(1, 1);
+const material = new THREE.MeshBasicMaterial({
+  color: 0xffff00,
+  side: THREE.DoubleSide,
+});
 
 export const CarInfo = ({ images }) => {
   const [set, reSet] = useState(false);
@@ -26,12 +35,12 @@ export const CarInfo = ({ images }) => {
       if (num === -2 || num === -1) {
         modal.current.style = "display: none";
       } else {
-        modal.current.style = "display: block"
-        carImg.current.src = "/pic/Car/"+data[num-1].Img;
+        modal.current.style = "display: block";
+        carImg.current.src = "/pic/Car/" + data[num - 1].Img;
         var children = carInfo.current.childNodes;
-        children[0].innerText = data[num-1].Company;
-        children[1].innerText = data[num-1].Year;
-        children[2].innerText = data[num-1].Info;
+        children[0].innerText = data[num - 1].Company;
+        children[1].innerText = data[num - 1].Year;
+        children[2].innerText = data[num - 1].Info;
         if (num >= 5) {
           setModalFlag(false);
         } else {
@@ -43,30 +52,24 @@ export const CarInfo = ({ images }) => {
 
   useEffect(() => {
     console.log(carImg.current.src);
-  }, [ modalFlag]);
+  }, [modalFlag]);
 
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
         <color attach="background" args={["#191920"]} />
+        <fog attach="fog" args={["#191920", 0, 15]} />
         <Environment preset="city" />
-        <group position={[0, -0.5, 0]}>
+        <group position={[0, -0.5, -1]}>
           <Frames images={images} modalClick={modalClick} />
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
-            <MeshReflectorMaterial
-              blur={[300, 100]}
-              resolution={2000}
-              mixBlur={1}
-              mixStrength={40}
-              depthScale={1.2}
-              minDepthThreshold={0.4}
-              maxDepthThreshold={1.4}
-              color="#101010"
-            />
+            <MeshReflectorMaterial color="#101010" />
           </mesh>
         </group>
+        <Stars/>
       </Canvas>
+
       <div
         className="text-focus-in"
         ref={modal}
@@ -74,7 +77,7 @@ export const CarInfo = ({ images }) => {
       >
         <div className="modalWrapper">
           <div className="modalImg">
-            <img src="/pic/Car/mainCar.png" alt="" ref={carImg}/>
+            <img src="/pic/Car/mainCar.png" alt="" ref={carImg} />
           </div>
           <div className="modalInfo" ref={carInfo}>
             <div>Car Name</div>
@@ -83,6 +86,7 @@ export const CarInfo = ({ images }) => {
           </div>
         </div>
       </div>
+
     </>
   );
 };
@@ -136,8 +140,8 @@ function Frames({
     }
   });
   useFrame((state) => {
-    state.camera.position.lerp(p, 0.025);
-    state.camera.quaternion.slerp(q, 0.025);
+    state.camera.position.lerp(p, 0.015);
+    state.camera.quaternion.slerp(q, 0.015);
   });
   return (
     <>
