@@ -9,9 +9,10 @@ import { GoodsChart } from './about/GoodsChart'; // 7주년 축하해 병주야 
 
 export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
+  const [itemName, setItemName] = useState("Diamonds Shop");
   const pic1 = "./pic/Accessories/perfume/Ferrari/pic1.png";
-  const pic2 = "./pic/Accessories/Ring/pic1.png";
-  const pic3 = "./pic/PhoneCase/Lambo/pic3.png";
+  const pic2 = "./pic/PhoneCase/Lambo/pic3.png";
+  const pic3 = "./pic/Accessories/Ring/pic3.png";
   const pic4 = "./pic/clothes/BENZ PK2/pic1.png";
   const pic5 = "./pic/Home/diamond.png";
 
@@ -25,7 +26,13 @@ export const GoodsBody = (props) => {
         <h2 className='inlineTitle'>Best Products</h2>
           <div className="showcase">
             <Suspense fallback={<h2>is Loading</h2>}>
-              <div className="item" id='item1' onMouseOver={() => setPic(pic1)} onMouseOut={() => setPic(pic5)}
+              <div className="item" id='item1' 
+              onMouseOver={() => {
+                setPic(pic1)
+                setItemName("BENZ Men's EDT 100ml")}} 
+              onMouseOut={() => {
+                setPic(pic5)
+                setItemName("Diamonds")}}
                 onClick={()=>goDetail("0102")}>
                 <img className='itemPic' src={pic1} alt='남자 향수'/>
                 <div className="itemText">
@@ -33,23 +40,41 @@ export const GoodsBody = (props) => {
                   <p className='itemPrice'>KRW 96,000</p>
                 </div>
               </div>
-              <div className="item" id='item2' onMouseOver={() => setPic(pic2)} onMouseOut={() => setPic(pic5)}
-                onClick={()=>goDetail("0105")}>
-                <img className='itemPic' src={pic2} alt='벤츠 반지'/>
-                <div className="itemText">
-                  <p className='itemName'>Mercedes-Benz Silver Ring</p>
-                  <p className='itemPrice'>KRW 224,000</p>
-                </div>
-              </div>
-              <div className="item" id='item3' onMouseOver={() => setPic(pic3)} onMouseOut={() => setPic(pic5)}
+              <div className="item" id='item2' 
+              onMouseOver={() => {
+                setPic(pic2)
+                setItemName("Lamborghini Z-Flip Case")}} 
+              onMouseOut={() => {
+                setPic(pic5)
+                setItemName("Diamonds")}}
                 onClick={()=>goDetail("0303")}>
-                <img className='itemPic' src={pic3} alt='람보르기니 폰케이스'/>
+                <img className='itemPic' src={pic2} alt='람보르기니 폰케이스'/>
                 <div className="itemText">
                   <p className='itemName'>Lamborghini Z-Flip Case</p>
                   <p className='itemPrice'>KRW 32,000</p>
                 </div>
               </div>
-              <div className="item" id='item4' onMouseOver={() => setPic(pic4)} onMouseOut={() => setPic(pic5)}
+              <div className="item" id='item3' 
+              onMouseOver={() => {
+                setPic(pic3)
+                setItemName("Mercedes-Benz Silver Ring")}} 
+              onMouseOut={() => {
+                setPic(pic5)
+                setItemName("Diamonds")}}
+                onClick={()=>goDetail("0105")}>
+                <img className='itemPic' src={pic3} alt='반지'/>
+                <div className="itemText">
+                  <p className='itemName'>Mercedes-Benz Silver Ring</p>
+                  <p className='itemPrice'>KRW 224,000</p>
+                </div>
+              </div>
+              <div className="item" id='item4' 
+              onMouseOver={() => {
+                setPic(pic4)
+                setItemName("BENZ PK T-shirts")}} 
+              onMouseOut={() => {
+                setPic(pic5)
+                setItemName("Diamonds")}}
                 onClick={()=>goDetail("0205")}>
                 <img className='itemPic' src={pic4} alt='벤츠 PK티'/>
                 <div className="itemText">
@@ -59,6 +84,7 @@ export const GoodsBody = (props) => {
               </div>
               <div className="itemss" id='item5'> 
                 <img id='nowItem' src={pic}/>
+                <p className='itemName'>{itemName}</p>
               </div>
             </Suspense>
           </div>

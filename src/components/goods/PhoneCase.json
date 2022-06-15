@@ -28,7 +28,7 @@
             "Img3": "./pic/PhoneCase/Lambo/pic3.PNG",
             "Img4": "./pic/PhoneCase/Lambo/pic4.PNG"
         },  {
-            "Name": "Korea Independence Case",
+            "Name": "Korea Heritage Case",
             "ID": "0304",
             "Exp":"It is a jelly case made to commemorate the liberation of Korea, and you can choose between Hunminjeongeum and Ahn Jung-geun's handwriting.",
             "Price": "27,000",
@@ -37,7 +37,7 @@
             "Img3": "./pic/PhoneCase/Independence/pic3.PNG",
             "Img4": "./pic/PhoneCase/Independence/pic4.PNG"
         },  {
-            "Name": "thisisneverthat Basic Case",
+            "Name": "thisisneverthat Case",
             "ID": "0305",
             "Exp":"It is a collaboration between ThisNeverthat and CASETiFY, and has a simple yet sensible design.",
             "Price": "78,000",
@@ -55,7 +55,7 @@
             "Img3": "./pic/PhoneCase/volkswagen/pic3.PNG",
             "Img4": "./pic/PhoneCase/volkswagen/pic4.PNG"
         }, {
-            "Name": "CASETiFY Z-Flip Lettering Case",
+            "Name": "CASETiFY Z-Flip Case",
             "ID": "0307",
             "Exp":"CASETiFY's transparent plastic case is an eco-friendly case made by recycling plastic.",
             "Price": "56,000",
@@ -91,7 +91,7 @@
             "Img3": "./pic/PhoneCase/iphone2/pic3.PNG",
             "Img4": "./pic/PhoneCase/iphone2/pic4.PNG"
         }, {
-            "Name": "Iphone Case portrait",
+            "Name": "Iphone Portrait Case",
             "ID": "0311",
             "Exp":"It can be said to be a work of artist Lee Sang-ha with a portrait of himself in the dark night as he felt it as a design.",
             "Price": "24,000",

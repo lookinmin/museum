@@ -1,9 +1,15 @@
 .pieChartIn{
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.chartF{
+  display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-self: center;
-  margin-bottom: 150px;
 }
 
 .pieChartIn h2{
@@ -21,6 +27,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .barChartIn h2{
@@ -34,7 +41,7 @@
 }
 
 .pieChartIn rect{
-  width: 800px !important;
+  width: 600px !important;
   height: 350px;
   align-self: center;
 }
@@ -44,16 +51,17 @@
 }
 
 .circles{
-  width: 800px !important;
+  width: 600px !important;
   margin: 0 !important;
   align-self: center;
   height: 400px;
 }
 
-.circles text{
-  font-size: 20px;
-  font-family: 'LeferiPoint-WhiteObliqueA';
-  text-align: center;
+.circles svg:first-child text{
+  font-size: 17px;
+  font-family: "LeferiPoint-WhiteObliqueA";
+  text-align: left;
+  padding-top: 10px !important;
 }
 
 .tabContent{
