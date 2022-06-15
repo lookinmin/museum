@@ -14,39 +14,37 @@ import carData from "../car/carHistory.json";
 export const CarInfo = ({ images }) => {
   const [set, reSet] = useState(false);
   const modal = useRef();
-  const modalClick = (click, num) => {
-    if (num != -1) {
-      if (modal.current !== null) {
-        if (click) {
-          modal.current.style = "display: block;";
-        } else {
-          modal.current.style = "display: none";
-        }
-      } else {
-        reSet(!set);
-        console.log("modal null");
-      }
-    }else if(num == 5){
-      if (modal.current !== null) {
-        if (click) {
-          modal.current.style = "left: 10%"
-          // modal.current.style = "right: 39%"
-          modal.current.style = "display: block;";
-        } else {
-          modal.current.style = "display: none";
-        }
-      } else {
-        reSet(!set);
-        console.log("modal null");
-      }
-    } else{
+  const [modalFlag, setModalFlag] = useState(false);
+  const carInfo = useRef();
+  const carImg = useRef();
+  const data = carData.carHistory;
 
+  const modalClick = (num) => {
+    if (!set) {
+      reSet(true);
+    } else {
+      if (num === -2 || num === -1) {
+        modal.current.style = "display: none";
+      } else {
+        modal.current.style = "display: block"
+        carImg.current.src = "/pic/Car/"+data[num-1].Img;
+        var children = carInfo.current.childNodes;
+        children[0].innerText = data[num-1].Company;
+        children[1].innerText = data[num-1].Year;
+        children[2].innerText = data[num-1].Info;
+        if (num >= 5) {
+          setModalFlag(false);
+        } else {
+          setModalFlag(true);
+        }
+      }
     }
   };
 
-  useState(() => {
-    console.log("set render");
-  }, [set]);
+  useEffect(() => {
+    console.log(carImg.current.src);
+  }, [ modalFlag]);
+
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
@@ -69,12 +67,16 @@ export const CarInfo = ({ images }) => {
           </mesh>
         </group>
       </Canvas>
-      <div className="modalContainer text-focus-in" ref={modal}>
+      <div
+        className="text-focus-in"
+        ref={modal}
+        id={modalFlag ? "modalContainer" : "modalContainer2"}
+      >
         <div className="modalWrapper">
           <div className="modalImg">
-            <img src="./pic/Car/mainCar.png" alt="" />
+            <img src="/pic/Car/mainCar.png" alt="" ref={carImg}/>
           </div>
-          <div className="modalInfo">
+          <div className="modalInfo" ref={carInfo}>
             <div>Car Name</div>
             <div>Year</div>
             <div>Car Info</div>
@@ -113,13 +115,12 @@ function Frames({
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
     if (click) {
-      console.log(click.parent.num);
       let num = click.parent.num;
       if (num === -1) {
         click.parent.updateWorldMatrix(true, true);
         click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
         click.parent.getWorldQuaternion(q);
-      } else if (num === 5) {
+      } else if (num >= 5) {
         click.parent.updateWorldMatrix(true, true);
         click.parent.localToWorld(p.set(-1, 1.6 / 2, 1.25));
         click.parent.getWorldQuaternion(q);
@@ -128,10 +129,10 @@ function Frames({
         click.parent.localToWorld(p.set(1, 1.6 / 2, 1.25));
         click.parent.getWorldQuaternion(q);
       }
-      modalClick(true, num);
+      modalClick(num);
     } else {
       p.set(0, 0.5, 5.45); //초기 시점 좌표
-      modalClick(false, -2);
+      modalClick(-2);
     }
   });
   useFrame((state) => {
@@ -144,7 +145,7 @@ function Frames({
         ref={ref}
         onClick={
           (e) =>
-            e.object.parent.name === "home"
+            e.object.parent.name === -1
               ? ToHall(e.object.name, setLocation) //home으로 이동
               : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
         }

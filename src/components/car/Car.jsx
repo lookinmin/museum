@@ -59,25 +59,23 @@ export const Car = () => {
     {
       position: [-1.15, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/2.gasolincar.png",
-      // img: "./pic/Car/2.gasolincar.png",
+      url: "./pic/Car/13.boltEV.png",
       name: 4,
-      num: 4
+      num: 13
     },
     {
       position: [0.0, 0, -1.0],
       rotation: [0, 0, 0],
       url: "./pic/Home/hall.jpg",
-      // img: "./pic/Home/hall.jpg",
       name: -1,
       num: -1
     },
     {
       position: [1.15, 0, -1.0],
       rotation: [0, 0, 0],
-      url: "./pic/Car/3.fordTmodel.png",
+      url: "./pic/Car/6.sitroang.png",
       name: 5,
-      num : 5
+      num : 6
     },
     // Left
     {
@@ -85,73 +83,64 @@ export const Car = () => {
       rotation: [0, Math.PI / 2.5, 0],
       url: "./pic/Car/4.modelA.png",
       name: 3,
-      num : 3
+      num : 4
     },
     {
       position: [-2.15, 0, 1.4],
       rotation: [0, Math.PI / 2.5, 0],
-      url: "./pic/Car/5.Rakll.png",
+      url: "./pic/Car/3.fordTmodel.png",
       name: 2,
-      num : 2
+      num : 3
     },
     {
       position: [-2.5, 0, 2.55],
       rotation: [0, Math.PI / 2.5, 0],
-      url: "./pic/Car/6.sitroang.png",
+      url: "./pic/Car/2.gasolincar.png",
       name: 1,
-      num : 1
+      num : 2
     },
     {
       position: [-2.8, 0, 3.7],
       rotation: [0, Math.PI / 2.5, 0],
-      url: "./pic/Car/7.firstdisel.png",
+      url: "./pic/Car/1.qunni.png",
       name: 0,
-      num : 0
+      num : 1
     },
 
     // Right
     {
       position: [1.75, 0, 0.25],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: "./pic/Car/8.jeep.png",
+      url: "./pic/Car/7.firstdisel.png",
       name: 6,
-      num : 6
+      num : 7
     },
     {
       position: [2.15, 0, 1.40],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: pexel(911738),
+      url: "./pic/Car/8.jeep.png",
       name: 7,
-      num : 7
+      num : 8
     },
     {
       position: [2.5, 0, 2.55],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: pexel(1738986),
+      url: "./pic/Car/12.EV1.png",
       name: 8,
-      num : 8
+      num : 12
     },
     {
       position: [2.8, 0, 3.7],
       rotation: [0, -Math.PI / 2.5, 0],
-      url: pexel(7319158),
+      url: "./pic/Car/16.nexxo.png",
       name: 9,
-      num : 9
+      num : 16
     },
   ];
 
   return (
     <>
-      <div
-        id="CarContainer"
-        // onMouseMove={(e) => {
-        //   chg_zoom(e);
-        // }}
-        // onMouseOut={(ec) => {
-        //   init_zoom(ec);
-        // }}
-      >
-
+      <div id="CarContainer">
           <Suspense fallback={null} id="CarContainer">
             <CarInfo images={images} />
           </Suspense>
