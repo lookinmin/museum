@@ -86,7 +86,6 @@ const Cube = () => {
           <Model pos1={temp2} pos={temp} rotation={[1.05, 0, 0]} position={[0, 118.05, -1.2]} />
           <Holder position={[0, 80, 0]} />
         </Suspense>
-
       </Canvas>
     </>
   );

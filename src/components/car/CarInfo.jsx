@@ -45,6 +45,7 @@ export const CarInfo = ({ images }) => {
   };
 
   useEffect(() => {
+    console.log(carImg.current.src);
   }, [ modalFlag]);
 
   return (
@@ -58,6 +59,13 @@ export const CarInfo = ({ images }) => {
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
+              // blur={[300, 100]}
+              // resolution={2000}
+              // mixBlur={1}
+              // mixStrength={40}
+              // depthScale={1.2}
+              // minDepthThreshold={0.4}
+              // maxDepthThreshold={1.4}
               color="#101010"
             />
           </mesh>
@@ -109,7 +117,6 @@ function Frames({
   const [, params] = useRoute("/car/:id");
   const [, setLocation] = useLocation();
   var click;
-  const [flag, setFlag] = useState(true);
   useEffect(() => {
     click = ref.current.getObjectByName(params?.id);
     if (click) {
@@ -129,48 +136,35 @@ function Frames({
       }
       modalClick(num);
     } else {
-      p.set(0, 0.5, 6.5); //초기 시점 좌표
+      p.set(0, 0.5, 5.45); //초기 시점 좌표
       modalClick(-2);
     }
   });
   useFrame((state) => {
-    state.camera.position.lerp(p, 0.02);
-    state.camera.quaternion.slerp(q, 0.02);
+    state.camera.position.lerp(p, 0.025);
+    state.camera.quaternion.slerp(q, 0.025);
   });
-  const tmp = (e) => {
-    e.object.parent.name === -1
-              ? ToHall(e.object.name, setLocation) //home으로 이동
-              : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
-  }
-  const tmp2 = (e, tmp) => {
-    console.log(tmp);
-    images.map((props) => (
-      console.log("Qerqwer", props),
-      <Frame key={props.url} {...props} flag={true}/>
-    ));
-    <Frame key={tmp.url} {...tmp} flag={true}/>
-  }
   return (
     <>
       <group
         ref={ref}
-        onClick={(e) => tmp(e)}
+        onClick={
+          (e) =>
+            e.object.parent.name === -1
+              ? ToHall(e.object.name, setLocation) //home으로 이동
+              : ClickFrame(click, e.object, setLocation) //클릭한 frame으로 이동
+        }
         onPointerMissed={() => setLocation("/car")}
       >
         {images.map((props) => (
-          <Frame key={props.url} {...props} 
-          flag={true}
-          onClick={(e) => tmp2(e, props)}
-          />,
-          console.log("sdsdv")
+          <Frame key={props.url} {...props} />
         ))}
       </group>
     </>
   );
 }
 
-function Frame({ url, c = new THREE.Color(), flag, ...props }) {
-  console.log(flag);
+function Frame({ url, c = new THREE.Color(), ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
@@ -189,7 +183,7 @@ function Frame({ url, c = new THREE.Color(), flag, ...props }) {
     );
   });
   return (
-    <group {...props} visible={true}>
+    <group {...props}>
       <mesh
         name={name}
         onPointerOver={() => hover(true)}

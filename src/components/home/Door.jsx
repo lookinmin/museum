@@ -144,7 +144,7 @@ export default function Model(props) {
               props.pos2.current = new THREE.Vector3(10, 0, 10);
               props.is_close.current=false
               setTimeout(() => {
-                window.location.href = "/phone"
+                window.location.href = "/car"
               }, 700);
             }
             
