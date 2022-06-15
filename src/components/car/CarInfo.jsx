@@ -1,17 +1,28 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { Canvas, createRoot, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useCursor,
   MeshReflectorMaterial,
   Image,
   Environment,
-  Stars,
   OrbitControls
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
+import React from "react";
+import Car_model from './Car_model'
+
+
+const extrudeSettings = { steps: 2, depth: 0.5, bevelSize: 0.5,
+	bevelOffset: 0,bevelEnabled: true,bevelSegments: 50,bevelThickness: 0.25, };
+  
+const Car=()=>{
+  return(
+    <Car_model></Car_model>
+  )
+}
 
 export const CarInfo = ({ images }) => {
   const [set, reSet] = useState(false);
@@ -47,14 +58,18 @@ export const CarInfo = ({ images }) => {
     console.log(carImg.current.src);
   }, [ modalFlag]);
 
+  
+    
+      
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
+        <Car></Car>
       <rectAreaLight
           width={10}
           height={10}
           color={"#0000ff"}
-          intensity={50}
+          intensity={25}
           position={[-10, 0, 0]}
           lookAt={[0, 0, 0]}
           rotation={[0,Math.PI*-0.5,0]}
@@ -64,7 +79,7 @@ export const CarInfo = ({ images }) => {
           width={10}
           height={10}
           color={"#ff0000"}
-          intensity={50}
+          intensity={25}
           position={[10, 0, 0]}
           lookAt={[0, 0, 0]}
           rotation={[0,Math.PI*0.5,0]}
