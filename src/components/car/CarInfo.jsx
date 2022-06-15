@@ -7,6 +7,7 @@ import {
   Image,
   Environment,
   OrbitControls
+
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
@@ -33,30 +34,30 @@ export const CarInfo = ({ images }) => {
   const data = carData.carHistory;
 
   const modalClick = (num) => {
-    if (!set) {
-      reSet(true);
-    } else {
-      if (num === -2 || num === -1) {
-        modal.current.style = "display: none";
-      } else {
-        modal.current.style = "display: block"
-        carImg.current.src = "/pic/Car/"+data[num-1].Img;
-        var children = carInfo.current.childNodes;
-        children[0].innerText = data[num-1].Company;
-        children[1].innerText = data[num-1].Year;
-        children[2].innerText = data[num-1].Info;
-        if (num >= 5) {
-          setModalFlag(false);
-        } else {
-          setModalFlag(true);
-        }
-      }
-    }
+    // if (!set) {
+    //   reSet(true);
+    // } else {
+    //   if (num === -2 || num === -1) {
+    //     modal.current.style = "display: none";
+    //   } else {
+    //     modal.current.style = "display: block"
+    //     carImg.current.src = "/pic/Car/"+data[num-1].Img;
+    //     var children = carInfo.current.childNodes;
+    //     children[0].innerText = data[num-1].Company;
+    //     children[1].innerText = data[num-1].Year;
+    //     children[2].innerText = data[num-1].Info;
+    //     if (num >= 5) {
+    //       setModalFlag(false);
+    //     } else {
+    //       setModalFlag(true);
+    //     }
+    //   }
+    // }
   };
 
   useEffect(() => {
-    console.log(carImg.current.src);
-  }, [ modalFlag]);
+    // console.log(carImg.current.src);
+  }, [modalFlag]);
 
   
     
@@ -64,15 +65,15 @@ export const CarInfo = ({ images }) => {
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0, 2, 15] }}>
-        <Car></Car>
-      <rectAreaLight
+        <Car></Car>  
+       <rectAreaLight
           width={10}
           height={10}
           color={"#0000ff"}
           intensity={25}
           position={[-10, 0, 0]}
           lookAt={[0, 0, 0]}
-          rotation={[0,Math.PI*-0.5,0]}
+          rotation={[0, Math.PI * -0.5, 0]}
           castShadow
         />
         <rectAreaLight
@@ -82,16 +83,16 @@ export const CarInfo = ({ images }) => {
           intensity={25}
           position={[10, 0, 0]}
           lookAt={[0, 0, 0]}
-          rotation={[0,Math.PI*0.5,0]}
+          rotation={[0, Math.PI * 0.5, 0]}
           castShadow
         />
-        <OrbitControls/>
+        <OrbitControls />
         <color attach="background" args={["#191920"]} />
-        <fog attach="fog" args={['#191920', 0, 15]} />
+        <fog attach="fog" args={["#191920", 0, 15]} />
         <Environment preset="city" />
         <group position={[0, -0.5, 0]}>
           <Car_Museum images={images} modalClick={modalClick} />
-          <mesh rotation={[-Math.PI / 2, 0, 0]}>
+          <mesh rotation={[-Math.PI * 0.5, 0, 0]}>
             <planeGeometry args={[50, 50]} />
             <MeshReflectorMaterial
               blur={[300, 100]}
@@ -106,7 +107,7 @@ export const CarInfo = ({ images }) => {
           </mesh>
         </group>
       </Canvas>
-      <div
+      {/* <div
         className="text-focus-in"
         ref={modal}
         id={modalFlag ? "modalContainer" : "modalContainer2"}
@@ -121,7 +122,7 @@ export const CarInfo = ({ images }) => {
             <div>Car Info</div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
@@ -155,17 +156,20 @@ function Car_Museum({
     click = ref.current.getObjectByName(params?.id);
     if (click) {
       let num = click.parent.num;
+      let vector = click.parent.position;
+      console.log(click.parent.position);
       if (num === -1) {
         click.parent.updateWorldMatrix(true, true);
         click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
         click.parent.getWorldQuaternion(q);
-      } else if (num >= 5) {
+      }
+      if (num % 2 === 0) {
         click.parent.updateWorldMatrix(true, true);
-        click.parent.localToWorld(p.set(-1, 1.6 / 2, 1.25));
+        click.parent.localToWorld(p.set(1, 1, 1));
         click.parent.getWorldQuaternion(q);
       } else {
         click.parent.updateWorldMatrix(true, true);
-        click.parent.localToWorld(p.set(1, 1.6 / 2, 1.25));
+        click.parent.localToWorld(p.set(-1, 1, 1));
         click.parent.getWorldQuaternion(q);
       }
       modalClick(num);
@@ -174,10 +178,11 @@ function Car_Museum({
       modalClick(-2);
     }
   });
-  // useFrame((state) => {
-  //   state.camera.position.lerp(p, 0.025);
-  //   state.camera.quaternion.slerp(q, 0.025);
-  // });
+  useFrame((state) => {
+    console.log(state);
+    state.camera.position.lerp(p, 0.025);
+    state.camera.quaternion.slerp(q, 0.025);
+  });
   return (
     <>
       <group
@@ -198,7 +203,7 @@ function Car_Museum({
   );
 }
 
-function Photo_Frame({ url,  ...props }) {
+function Photo_Frame({ url, ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
@@ -217,7 +222,7 @@ function Photo_Frame({ url,  ...props }) {
     );
   });
   return (
-    <group rotation={[0,0,Math.PI*0.5]} {...props}>
+    <group rotation={[0, 0, Math.PI * 0.5]} {...props}>
       <mesh
         name={name}
         onPointerOver={() => hover(true)}

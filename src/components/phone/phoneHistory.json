@@ -1,69 +1,80 @@
 {
     "phoneHistory": [
         {
-            "Year": "1983년 9월 21일",
-            "Company": "Motorola DynaTAC",
-            "Info": "최초로 상용화된 휴대전화로 매우 무겁고 비쌌습니다 ",
+            "Year": "September 21, 1983",
+            "Company": "MOTOROLA",
+            "name": "MOTOROLA DynaTAC",
+            "Info": "It was the first commercial cell phone to be heavy and expensive.",
             "Img": "./pic/Phone/DynaTAC8000X_1.png"
         },
         {
-            "Year": "1992년 11월 10일",
-            "Company": "Nokia",
-            "Info": "SIM 카드로 알려진 가입자 식별 모듈을 사용한 최초의 GSM(Global System for Mobile Communication).기능이 있는 휴대전화였으며 . 독일 노키아사에서 제작한 최초의 대량 생산된 GSM 휴대 전화였고 출시 당시 14개국에서 작동했습니다..",
+            "Year": "November 10, 1992",
+            "Company": "NOKIA",
+            "name" : "NOKIA 1011",
+            "Info": "The first GSM-enabled mobile phone to use a SIM card.\nIt was the first mass-produced GSM mobile phone manufactured by Nokia and operated in 14 countries at the time of its launch.",
             "Img": "./pic/Phone/nokia1011_2.png"
         },
         {
-            "Year": "1999년",
-            "Company": "Samsung Anycall",
-            "Info": "1999년 출시된 애니콜의 미니폴더로 깍두기폰이라고도 불렸다.초소형, 초경량에 뛰어난 성능으로 휘청했던 애니콜을 다시 일으켜 세운 제품으로 애니콜의 명작 1순위이다. ",
+            "Year": "November 1, 1994",
+            "Company": "SAMSUNG Anycall",
+            "name" : "Anycall SCH-A100",
+            "Info": "It is the first mobile phone to carry the brand name `Anycall`, which was released in 1994.",
             "Img": "./pic/Phone/SCH-A100_3.png"
         },
         {
-            "Year": "1999년",
-            "Company": "Samsung Anycall",
-            "Info": "세계최초의 손목시계 핸드폰으로 기네스북에 등재되어 있으며 현대의 갤럭시 기어와는 다르게 보조장비가 아닌 실제 핸드폰이였다. 시대를 앞서간 디자인과 발상이였으며 10년뒤 2009년 새로운 모델이 나왔지만 마침 3G가 안정화되어 스마트폰 사업이 활성화 되면서 훗날을 도모하게 되었다.",
+            "Year": "November 12, 1999",
+            "Company": "SAMSUNG Anycall",
+            "name" : "Anycall SPH-WP10",
+            "Info": "It is listed in the Guinness Book of World Records as the world's first wristwatch cell phone.\n Unlike modern Galaxy Gear, it was not an auxiliary device but an actual cell phone.",
             "Img": "./pic/Phone/SPH_WP10_4.png"
         },
         {
-            "Year": "2004년 6월",
-            "Company": "Samsung Anycall",
-            "Info": "세계최초로 TV기능을 내장한 핸드폰으로 높은 기술력을 가지고 있지만 그만큼 높은 가격으로 판매량은 저조하였다. 안테나를 가지고있는 외관적 특징이 있으며 안테나를 이용하여 아날로그 신호를 받아 TV를 보여줬다.",
-            "Img": "./pic/Phone/SCH-M220_5.png"
-        },
-        {
-            "Year": "2005년",
-            "Company": "Motolora",
-            "Info": "슬림형 폰의 시초로 국내 기업 삼영과 협업하여 제작된 제품이다. 해외에는 2003년 국내에는 2005년 발매하였고 전세계적으로 큰인기를 끌었으며 이것으로 모토로라는 핸드폰 세계 1위 브랜드가 되었다.",
+            "Year": "December 1, 2003",
+            "Company": "MOTOROLA",
+            "name" : "MOTOROLA RAZR",
+            "Info": "It is a product as the beginning of the thin phone.\n It has gained huge popularity worldwide, making Motorola the world's No.1 mobile brand.",
             "Img": "./pic/Phone/RAZR_6.png"
         },
         {
-            "Year": "2007년 6월 29일",
+            "Year": "June 10, 2004",
+            "Company": "SAMSUNG Anycall",
+            "name" : "Anycall SCH-M220",
+            "Info": "The World's First Mobile Phone with Built-in TV Features.\n Although it has high technology, its sales volume was low at such a high price.",
+            "Img": "./pic/Phone/SCH-M220_5.png"
+        },
+        {
+            "Year": "June 29, 2007",
             "Company": "Apple",
-            "Info": "스티브잡스의 세상을 바꾼 연설로 유명하며 스마트폰의 형태를 처음으로 제시한 애플사의 아이폰이다. 기존의 아이팟과 핸드폰, 인터넷통신기기를 하나의 제품으로 만들어 핸드폰 역사상 가장 혁신적인 제품으로 불리며 이후 세계 IT시장은 격변하며 apple은 시가총액 1위의 기반을 다지게 되었다",
+            "name" : "Apple Iphone",
+            "Info": "Steve Jobs' masterpiece of first smartphone form. Iphone from Apple.\n The Most Innovative Product in Cell Phone History.",
             "Img": "./pic/Phone/Phone1_6.png"
         },
         {
-            "Year": "2011년 11월 28일",
-            "Company": "Samsung",
-            "Info": "2011년 삼성전자가 S펜을 이용하도록 만든 최초의 스마트폰으로 S노트와 S메모를 이용하여 터치형 핸드폰에 손으로 했던 기록을 종이에 그리듯 펜을 이용하여 기록할 수 있도록하였다.",
+            "Year": "November 28, 2011",
+            "Company": "SAMSUNG GALAXY",
+            "name" : "GALAXY Note",
+            "Info": "SAMSUNG's First Smartphone to Use S-Pen. It's meaningful as the first phablet smartphone.",
             "Img": "./pic/Phone/Samsung_Note1_7.png"
         },
         {
-            "Year": "2012년 9월 12일",
+            "Year": "September 12, 2012",
             "Company": "Apple",
-            "Info": "애플을 창립하고 정상으로 이끌은 리더 스티브 잡스의 사후 나온 아이폰이다.스티브 잡스가 고집하던 작고 둥근 디자인을 벗어난 최초의 아이폰으로 기본 iPhone5와 iPhone5s로 나뉘며 두 기종의 판매량은 무려 3억장이 넘는다.",
+            "name" : "Iphone 5",
+            "Info": "Steve Jobs' first iPhone to be released after death. \n The first iPhone to break away from Steve Jobs' insistence.",
             "Img": "./pic/Phone/iPhone5_8.png"
         },
         {
-            "Year": "2019년 4월 26일",
-            "Company": "Samsung",
-            "Info": "고전적인 바형태의 스마트폰에서 벗어난 폴더블 스마트폰이라는 형태와 장르를 새롭게 개척한 스마트폰이다.당시 고객들의 테블릿에 비해 작은 핸드폰과 핸드폰에 비해 무겁고 불편한 테블릿 각자의 장점들을 뛰어난 기술력으로 모두 만족시킨 혁신적인 제품이다.",
+            "Year": "April 26, 2019",
+            "Company": "SAMSUNG GALAXY",
+            "name" : "GALAXY Z Fold",
+            "Info": "It is a smartphone that newly pioneered the form and genre of foldable smartphones that deviate from classic bar-type smartphones.",
             "Img": "./pic/Phone/Fold_9.png"
         },
         {
-            "Year": "2021년 4월 5일",
+            "Year": "April 5, 2021",
             "Company": "LG",
-            "Info": "한 때, 옵티머스 시리즈로 한국 스마트폰 점유율 2위까지 올랐던 LG전자의 마지막 스마트폰이다.LG Rollable과 마찬가지로 21년 상반기에 출시되려 하였으나 LG의 스마트폰 시장철수로 결국 출시되지 못하고임직원대상으로 3000대만 판매된 비운의 제품이다. ",
+            "name" : "LG Velvet 2 Pro",
+            "Info": "This is LG Electronics' last smartphone. \n It was supposed to be released in the first half of 2021, but it was not released. ",
             "Img": "./pic/Phone/LGvelvet2pro_10.png"
         }
     ]

@@ -1,100 +1,103 @@
 {
+
   "carHistory": [
-    {
-      "Year": "1769",
-      "Company": "니콜라스 조셉 퀴뇨",
-      "Info": "최조의 증기자동차 발명",
-      "Img": "1.qunni.png"
-    },
-    {
-      "Year": "1886",
-      "Company": "고틀리프 다임러",
-      "Info": "1기통 배기량 250cc 0.8마력의 4륜 휘발유 자동차 발명",
-      "Img": "2.gasolincar.png"
-    },
-    {
-      "Year": "1908",
-      "Company": "포드",
-      "Info": "생산 첫 해에 6870대 판매. 1908년 10월 1일 부터 1927년 5월 26일 까지 15007033대 생산",
-      "Img": "3.fordTmodel.png"
-    },
-    {
-      "Year": "1921",
-      "Company": "듀젠버그",
-      "Info": "최초로 4륜 유압 브레이크를 적용한 듀젠버그사의 모델 A가 발표",
-      "Img": "4.modelA.png"
-    },
-    {
-      "Year": "1927",
-      "Company": "오펠",
-      "Info": "오펠사 로켓 자동차 'Rak Ⅱ'발명 시속 200km 기록",
-      "Img": "5.Rakll.png"
-    },
-    {
-      "Year": "1934",
-      "Company": "시트로엥",
-      "Info": "프랑스 '시트로엥'은 세계 최초로 앞바퀴 굴림차 '시트로엥 7CV 트락숑 아방'을 생산 플로팅 파워 OHV직렬 4기통 엔진에 의해 앞바퀴를 구동해 런닝보드 가없는 일체구조로 차폭을 넓게 한 설계로 구시대의 자동차 기술을 혁신",
-      "Img": "6.sitroang.png"
-    },
-    {
-      "Year": "1936",
-      "Company": "다임러 벤츠",
-      "Info": "다임러 벤츠사 최초의 양산 디젤 승용차 '모델 260D' 발표",
-      "Img": "7.firstdisel.png"
-    },
-    {
-      "Year": "1940",
-      "Company": "로버트 G.하우어",
-      "Info": "전쟁으로 인한 자동차기술의 영향 미 육군대위 '로버트 G.하우어'는 소형 경량 1/4톤 정도의 4륜 군용 만능차를 설계 다듬어져 '지프'로 발전 1년후 윌리스-오버랜드사는 군용지프 생산을 시작",
-      "Img": "8.jeep.png"
-    },
-    {
-      "Year": "1966",
-      "Company": "젠슨 모터스",
-      "Info": "최초의 사륜구동 승용차 젠슨 FF출시",
-      "Img": "9.zensonFF.png"
-    },
-    {
-      "Year": "1973",
-      "Company": "듀젠버그사",
-      "Info": "올즈모빌 토로나도에 최초로 에이백 옵션 등장",
-      "Img": "10.tolonado.jfif"
-    },
-    {
-      "Year": "1998",
-      "Company": "맥라렌",
-      "Info": "맥라렌 F1 시속386.7km 양산 로드카 최고속도를 경신",
-      "Img": "11.maclarenF1.png"
-    },
-    {
-      "Year": "1996",
-      "Company": "GM",
-      "Info": "글로벌 자동차 업계 최초로 양산형 전기차 EV1을 출시",
-      "Img": "12.EV1.png"
-    },
-    {
-      "Year": "2016",
-      "Company": "쉐보레",
-      "Info": "제너럴 모터스에서 2016년부터 쉐보레 브랜드로 판매 중인 전기자동차 모델",
-      "Img": "13.boltEV.png"
-    },
-    {
-      "Year": "2013",
-      "Company": "현대자동차",
-      "Info": " 현대자동차가 세계 최초로 개발한 양산형 수소차 모델",
-      "Img": "14.toossanix.png"
-    },
-    {
-      "Year": "2014",
-      "Company": "토요타",
-      "Info": "토요타사에서 생산한 양산형 세단 수소연료전지차(FCEV)",
-      "Img": "15.mirai.png"
-    },
-    {
-      "Year": "2018",
-      "Company": "현대자동차",
-      "Info": "현대자동차의 전륜구동 수소연료 전지 SUV. 2017년 제네바 모터쇼에서 공개 후, 양산형 모델 판매",
-      "Img": "16.nexxo.png"
-    }
+      {
+          "Year": "1769",
+          "Company": "Nicolas-Joseph Cugnot",
+          "Info": "The first steam Automobile invented by a French scientist Nicolas-Joseph Cugnot. \n Caused the world's first car accident",
+          "name" : "World First Steam Car",
+          "Img": "1.qunni.jpg"
+      },{
+          "Year": "1886",
+          "Company": "Gottlieb Daimler",
+          "Info": "A four-wheeler with a gasoline engine in a carriage",
+          "name" : "Mercedes-Benz Daimler Motor Carriage. \n The maximum speed of the car is 16 kilometers per hour",
+          "Img": "2.gasolincar.jpg"
+      },{
+          "Year": "1908",
+          "Company": "Ford",
+          "Info": "U.S. automobiles mass-produced from 1908 to 1927 and brought about the era of automobiles",
+          "name" : "Ford Model T",
+          "Img": "3.fordTmodel.jpg"
+      },{
+          "Year": "1921",
+          "Company": "Duesenberg",
+          "Info": "First Automobile with four-wheel hydraulic brakes.",
+          "name" : "Duesenberg Model A",
+          "Img": "4.modelA.jpg"
+      },{
+          "Year": "1927",
+          "Company": "Adam Opel AG",
+          "Info": "It was a Rocket car made by Opel.\n Recorded 200 kilometers per hour.",
+          "name" : "Opel Rak Ⅱ",
+          "Img": "5.Rakll.jpg"
+      },{
+          "Year": "1934",
+          "Company": "CITROEN",
+          "Info": "The world's first front-wheeler.\n Revolutionized the Automobile technology of the old days",
+          "name" : "CITROEN 7CV Traction Avant",
+          "Img": "6.sitroang.jpg"
+      },{
+          "Year": "1936",
+          "Company": "Mercedes-BENZ",
+          "Info": "Mercedes-Benz's First Mass-Production Diesel Automobile.",
+          "name" : "BENZ Model 260D",
+          "Img": "7.firstdisel.jpg"
+      },{
+          "Year": "1940",
+          "Company": "Robert G.Hauer",
+          "Info": "War Development of Small, Lightweight Four-Wheel Military Vehicles. \n Developed into a Jeep.",
+          "name" : "Jeep",
+          "Img": "8.jeep.jpg"
+      },{
+          "Year": "1966",
+          "Company": "Zenson Motors",
+          "Info": "The first four-wheel-drive Automobile",
+          "name" : "Zenson FF",
+          "Img": "9.zensonFF.jpg"
+      },{
+          "Year": "1973",
+          "Company": "Duesenberg",
+          "Info": "The world's first airbag-equipped Automobile.",
+          "name" : "Oldsmobile Toronado",
+          "Img": "10.tolonado.jfif"
+      },{
+          "Year": "1998",
+          "Company": "Maclaren F1",
+          "Info": "Mass-production road car speeds up to 386.7 kilometers per hour.",
+          "name" : "Maclaren F1",
+          "Img": "11.maclarenF1.jpg"
+      },{
+          "Year": "1996",
+          "Company": "GM",
+          "Info": "Global Automotive Industry's First Mass-Production Electric Vehicle.",
+          "name" : "GM EV1",
+          "Img": "12.EV1.jpg"
+      },{
+          "Year": "2016",
+          "Company": "CHEVROLET",
+          "Info": "Electric vehicle model sold under Chevrolet brand since 2016",
+          "name" : "CHEVROLET BOLT EV",
+          "Img": "13.boltEV.jpg"
+      },{
+          "Year": "2013",
+          "Company": "HYUNDAI",
+          "Info": " World's first mass-produced hydrogen car model made by HYUNDAI",
+          "name" : "HYUNDAI Tucson IX",
+          "Img": "14.toossanix.jpg"
+      },{
+          "Year": "2014",
+          "Company": "TOYOTA",
+          "Info": "Mass-produced sedan hydrogen fuel cell vehicle manufactured by TOYOTA",
+          "name" : "TOYOTA MIRAI",
+          "Img": "15.mirai.jpg"
+      },{
+          "Year": "2018",
+          "Company": "HYUNDAI",
+          "Info": "Front wheel drive hydrogen made by HYUNDAI. Concept car unveiled at Geneva Motor Show in 2017.",
+          "name" : "NEXXO",
+          "Img": "16.nexxo.jpg"
+      }
   ]
+  
 }
