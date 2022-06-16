@@ -9,9 +9,9 @@ import {
   Box,
   ScrollControls,
   useScroll,
-  OrbitControls,
   Text,
-  Stars,
+  Sky,
+  OrbitControls,
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
@@ -19,25 +19,13 @@ import carData from "../car/carHistory.json";
 import React from "react";
 import Car_model from "./Car_model";
 
-const extrudeSettings = {
-  steps: 2,
-  depth: 0.5,
-  bevelSize: 0.5,
-  bevelOffset: 0,
-  bevelEnabled: true,
-  bevelSegments: 50,
-  bevelThickness: 0.25,
-};
-
-
-
 const Car=({carpos})=>{
   const scroll = useScroll()
-  const temp=useRef(new THREE.Vector3(0,-0.5,4))
+  const temp=useRef(new THREE.Vector3(0,0,4))
   const tmp=useRef()
   useFrame((state, delta) => {
     tmp.current.position.z=scroll.scroll.current*-10+5
-    tmp.current.position.y=-0.5
+    tmp.current.position.y=0
     tmp.current.position.x=0
     carpos.current=tmp.current.position
   })
@@ -94,13 +82,14 @@ export const CarInfo = ({ images }) => {
       <ScrollControls pages={10}>
         <Car carpos={car_position}></Car>  
         </ScrollControls>
+        <OrbitControls></OrbitControls>
         
        <rectAreaLight
           width={10}
           height={10}
           color={"#0000ff"}
-          intensity={25}
-          position={[-10, 0, 0]}
+          intensity={35}
+          position={[-20, 0, 0]}
           lookAt={[0, 0, 0]}
           rotation={[0, Math.PI * -0.5, 0]}
           castShadow
@@ -109,8 +98,8 @@ export const CarInfo = ({ images }) => {
           width={10}
           height={10}
           color={"#ff0000"}
-          intensity={25}
-          position={[10, 0, 0]}
+          intensity={35}
+          position={[20, 0, 0]}
           lookAt={[0, 0, 0]}
           rotation={[0, Math.PI * 0.5, 0]}
           castShadow
@@ -119,10 +108,10 @@ export const CarInfo = ({ images }) => {
         <color attach="background" args={["#191920"]} />
         <fog attach="fog" args={["#191920", 0, 15]} />
         <Environment preset="city" />
-        <group position={[0, -0.5, 0]}>
+        <group position={[0, 0, 0]}>
           <Car_Museum flag={flag} car_position={car_position} images={images} modalClick={modalClick} />
           <mesh rotation={[-Math.PI * 0.5, 0, 0]}>
-            <planeGeometry args={[50, 50]} />
+            <planeGeometry args={[250, 250]} />
             <MeshReflectorMaterial
               blur={[300, 100]}
               resolution={2000}
@@ -135,7 +124,7 @@ export const CarInfo = ({ images }) => {
             />
           </mesh>
         </group>
-        <Stars />
+        <Sky distance={500} Inclination={0.495} sunPosition={[1, 0, -1]} mieCoefficient={0.20} mieDirectionalG={0.7} Rayleigh={6} Turbidity={8}  />
       </Canvas>
       <div
         className="text-focus-in"
@@ -224,24 +213,24 @@ function Car_Museum({images, q = new THREE.Vector3(0.18, 0.205, 3.61), modalClic
     }
   });
   
-  useFrame((state) => {
-    if(flag.current){
-      camera_pos=car_position.current
-    // pos1.current.setX(0+state.mouse.x*4)
-    // pos1.current.setY(0-state.mouse.y*4)
-    state.camera.position.set(camera_pos.x+0.2,camera_pos.y+0.705,camera_pos.z)
-    temp_pos=new THREE.Vector3(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.49)
-    temp_pos.x=temp_pos.x+state.mouse.x*0.75
-    temp_pos.y=temp_pos.y+state.mouse.y*0.1
-    camerapoint.current.position.set(temp_pos.x,temp_pos.y,temp_pos.z)
-    state.camera.lookAt(temp_pos);
-    }
-    else{
-    // state.camera.position.lerp(frame_click, 0.025);
-    state.camera.lookAt(temp_pos);
-    }
+  // useFrame((state) => {// 화면 자동차에 고정
+  //   if(flag.current){
+  //     camera_pos=car_position.current
+  //   // pos1.current.setX(0+state.mouse.x*4)
+  //   // pos1.current.setY(0-state.mouse.y*4)
+  //   state.camera.position.set(camera_pos.x+0.2,camera_pos.y+0.705,camera_pos.z)
+  //   temp_pos=new THREE.Vector3(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.49)
+  //   temp_pos.x=temp_pos.x+state.mouse.x*0.75
+  //   temp_pos.y=temp_pos.y+state.mouse.y*0.1
+  //   camerapoint.current.position.set(temp_pos.x,temp_pos.y,temp_pos.z)
+  //   state.camera.lookAt(temp_pos);
+  //   }
+  //   else{
+  //   // state.camera.position.lerp(frame_click, 0.025);
+  //   state.camera.lookAt(temp_pos);
+  //   }
 
-  });
+  // });
   return (
     <>
       <group
@@ -255,7 +244,7 @@ function Car_Museum({images, q = new THREE.Vector3(0.18, 0.205, 3.61), modalClic
         }
         onPointerMissed={() => setLocation("/car")}
       >
-        <Box args={[0.5,0.5,0.5]} ref={camerapoint} position={temp_pos}>
+        <Box args={[0.1,0.1,0.1]} ref={camerapoint} position={temp_pos}>
       <meshBasicMaterial  color={"#ff0000"}></meshBasicMaterial>
     </Box>
         {images.map((props) => (
