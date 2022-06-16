@@ -3,6 +3,7 @@ import "./Goods.css";
 import { Link, NavLink, useParams } from "react-router-dom";
 import { Footer } from './Footer';
 import { GoodsBody } from './GoodsBody';
+import $ from 'jquery'
 
 export const Goods = () => {
   const [txtColor1, setTxtColor1] = useState("black");
@@ -30,6 +31,10 @@ export const Goods = () => {
     }
   }, [resultStr]);
 
+  $('#logoPic').click(()=> {
+    window.location = 'http://localhost:3000/';
+  })
+
   return (
     <div className="wrapper">
       <div className='HeWrapper'>
@@ -47,7 +52,7 @@ export const Goods = () => {
             <h2 id='logo'>Diamonds Shop</h2>
             <img src='./pic/Home/diamond.png' alt='로고' height="24px" />
           </div>
-          <img src='./pic/Home/diamond.png' alt='로고' height="60px" id='logoPic'/>
+          <img src='./pic/Home/diamond.png' alt='로고' title='Go Home' height="60px" id='logoPic'/>
         </div>
 
         <div className="secondBar">

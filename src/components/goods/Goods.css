@@ -53,6 +53,7 @@
 #logoPic{
   position: fixed;
   left: 46.5%;
+  cursor: pointer;
 }
 
 .secondBar{
