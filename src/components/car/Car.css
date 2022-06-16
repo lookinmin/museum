@@ -89,7 +89,7 @@
 
 .topWrapper > div:nth-child(1){
   font-family: 'LeferiPoint-WhiteObliqueA';
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 650;
 }
 
@@ -127,7 +127,8 @@
 
 .bottomWrapper > div:nth-child(2){
   font-family: 'LeferiPoint-WhiteA';
-  font-weight: 600;
+  font-weight: 550;
+  font-size: 25px;
   display: grid;
   border-top: 2px dotted #ccac00;
   justify-items: center;

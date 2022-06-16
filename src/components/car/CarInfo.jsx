@@ -220,7 +220,7 @@ function Car_Museum({
   );
 }
 
-function Photo_Frame({ url, ...props }) {
+function Photo_Frame({ url, frame_color = new THREE.Color(), ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
@@ -240,6 +240,7 @@ function Photo_Frame({ url, ...props }) {
       0.1
     );
     image.current.material.zoom = 0.6
+    frame.current.material.color.lerp(frame_color.set(hovered ? '#151515' : 'white'), 0.1)
   });
   return (
     <group rotation={[0, 0, Math.PI * 0.5]} {...props}>
