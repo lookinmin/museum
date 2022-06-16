@@ -17,18 +17,18 @@ const realtime = () => {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const WEEKDAY = [
-    "일요일",
-    "월요일",
-    "화요일",
-    "수요일",
-    "목요일",
-    "금요일",
-    "토요일",
+    "SUN",
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT",
   ];
   const week = WEEKDAY[date.getDay()];
   return {
     time: hours + ":" + minutes,
-    date: month + "월 " + day + "일 " + week,
+    date: month + ". " + day + ". " + week,
   };
 };
 const Message = ({ setindex, index, setondetail }) => {

@@ -181,11 +181,13 @@
 .left_info p{
     font-family: 'LeferiPoint-WhiteA';
     font-weight: 500;
+    margin: 0px;
 }
 .left_info .namebox{
     border-top: red solid 5px;
     border-bottom: red solid 5px;
-    padding: 100px 0px;
+    padding: 80px 0px;
+    padding-top: 110px;
     width:80%;
     font-size: 120px;
     margin: 100px 0px;
