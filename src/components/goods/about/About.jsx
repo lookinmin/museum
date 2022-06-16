@@ -37,7 +37,7 @@ export const About = () => {
           </div>
           <div className="memberInfo">
             <img src="./pic/about/gwangmo.jpg" alt="" width="230px" />
-            <h4>Kim-GwangMo</h4>
+            <h4>Kim-KwangMo</h4>
             <p>Software Engineering</p>
             <p>2018038065</p>
           </div>

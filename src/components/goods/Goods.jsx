@@ -97,7 +97,6 @@ export const Goods = () => {
               setTxtColor3("black")
               setTxtColor4("black")
               setTxtColor5("blue")}}>Chart</h2>
-          
         </div>
       </div>
       <div className='mainContainer'>

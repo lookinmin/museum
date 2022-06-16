@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'LeferiPoint-WhiteA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #CarContainer{
   width: 100vw;
   height: 100vh;
@@ -32,9 +39,8 @@
   border-radius: 10px;
   /* display: none; */
   color: white;
-  box-shadow: 20px 20px 20px inset gray;
-  border: 30px outset rgb(38, 38, 38);
-
+  box-shadow: 15px 15px 15px inset gray;
+  border: 6px outset gray;
 }
 
 
@@ -93,25 +99,36 @@
   display: grid;
   font-size: large;
   color: black;
-  border: 8px outset gray;
+  border: 3px outset gray;
   padding: 20px;
   margin: 0 5% 5% 5%;
   background-color: whitesmoke;
 }
 
 .modalInfo > div:nth-child(1){
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 20px;
+  font-weight: 650;
   grid-column: 1/3;
   grid-row: 1;
 }
 .modalInfo > div:nth-child(2){
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 20px;
+  font-weight: 650;
   grid-column: 1/2;
   grid-row: 2/3;
 }
 .modalInfo > div:nth-child(3){
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 20px;
+  font-weight: 650;
   grid-column: 2/4;
   grid-row: 2/3;
 }
 .modalInfo > div:nth-child(4){
+  font-family: 'LeferiPoint-WhiteA';
+  font-weight: 600;
   grid-column: 1/3;
   grid-row: 3;
 }
