@@ -45,8 +45,9 @@ export const CarInfo = ({ images }) => {
   const car_position = useRef(new THREE.Vector3(0.2, 0.205, 4.1));
   const flag = useRef(true);
 
-  const carInfo = useRef();
+  const carTop = useRef();
   const carImg = useRef();
+  const carBottom = useRef();
   const data = carData.carHistory;
 
   const modalClick = (num) => {
@@ -56,15 +57,14 @@ export const CarInfo = ({ images }) => {
       if (num === -2 || num === -1) {
         modal.current.style = "display: none";
       } else {
-        console.log(carImg.current.src);
         modal.current.style = "display: block";
         carImg.current.src = "/pic/Car/" + data[num - 1].Img;
-        console.log(carImg.current.src);
-        var children = carInfo.current.childNodes;
-        children[0].innerText = data[num - 1].name;
-        children[1].innerText = data[num - 1].Company;
-        children[2].innerText = data[num - 1].Year;
-        children[3].innerText = data[num - 1].Info;
+        var top = carTop.current.childNodes;
+        var bottom = carBottom.current.childNodes;
+        top[0].innerText = data[num-1].Company;
+        top[1].innerText = data[num-1].Year;
+        bottom[0].innerText = data[num-1].name;
+        bottom[1].innerText = data[num-1].Info;
         if (num % 2 === 0) {
           setModalFlag(false);
         } else {
@@ -88,7 +88,6 @@ export const CarInfo = ({ images }) => {
         </ScrollControls>
         
        <rectAreaLight
-
           width={10}
           height={10}
           color={"#0000ff"}
@@ -137,14 +136,16 @@ export const CarInfo = ({ images }) => {
         id={modalFlag ? "modalContainer" : "modalContainer2"}
       >
         <div className="modalWrapper">
-          <div className="modalImg">
-            <img src="/pic/Car/1.qunni.png" alt="" ref={carImg} />
+          <div className="topWrapper" ref={carTop}>
+            <div>HYUNDAI</div>
+            <div>2018</div>
           </div>
-          <div className="modalInfo" ref={carInfo}>
-            <div>Car Name</div>
-            <div>Company</div>
-            <div>Year</div>
-            <div>Car Info</div>
+          <div className="midWrapper">
+            <img src="/pic/Car/1.qunni.png" alt="Car Image" ref={carImg}/>
+          </div>
+          <div className="bottomWrapper" ref={carBottom}>
+            <div>NEXXO</div>
+            <div>Front wheel drive hydrogen made by HYUNDAI. Concept car unveiled at Geneva Motor Show in 2017</div>
           </div>
         </div>
       </div>
