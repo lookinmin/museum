@@ -144,6 +144,8 @@
     display: flex;
     flex-direction: column;
     background-color: #454545;
+    font-family: 'LeferiPoint-WhiteA';
+    font-weight: 600;
 }
 .inner_html .left_info{
     position: absolute;
@@ -161,6 +163,7 @@
     text-align: center;
     transition: 1s;
     padding: 50px;
+    
 }
 .left_info{
     display: grid;
@@ -168,7 +171,12 @@
     align-content: center;
 }
 .left_info p{
-
+    font-family: 'LeferiPoint-WhiteA';
+    font-weight: 600;
+}
+.left_info p.Oblique{
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    font-weight: 650;
 }
 .left_info img{
     height: 900px;
