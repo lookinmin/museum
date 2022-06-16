@@ -159,22 +159,39 @@
     background-color: black;
     opacity: 0.25;
     color: white;
-    font-size: 100px;
+    font-size: 80px;
     text-align: center;
     transition: 1s;
     padding: 50px;
-    
 }
 .left_info{
     display: grid;
     justify-items: center;
     align-content: center;
 }
+.left_info .top{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    margin: 50px 0px;
+}
+.left_info .info{
+    height: 200%;
+}
 .left_info p{
     font-family: 'LeferiPoint-WhiteA';
-    font-weight: 600;
+    font-weight: 500;
 }
-.left_info p.Oblique{
+.left_info .namebox{
+    border-top: red solid 5px;
+    border-bottom: red solid 5px;
+    padding: 100px 0px;
+    width:80%;
+    font-size: 120px;
+    margin: 100px 0px;
+    font-weight: 700;
+}
+.left_info .Oblique{
     font-family: 'LeferiPoint-WhiteObliqueA';
     font-weight: 650;
 }
