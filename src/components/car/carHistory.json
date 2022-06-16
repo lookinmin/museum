@@ -6,55 +6,55 @@
           "Company": "Nicolas-Joseph Cugnot",
           "Info": "The first steam Automobile invented by a French scientist Nicolas-Joseph Cugnot. \n Caused the world's first car accident",
           "name" : "World First Steam Car",
-          "Img": "1.qunni.jpg"
+          "Img": "1.qunni.png"
       },{
           "Year": "1886",
           "Company": "Gottlieb Daimler",
-          "Info": "A four-wheeler with a gasoline engine in a carriage",
-          "name" : "Mercedes-Benz Daimler Motor Carriage. \n The maximum speed of the car is 16 kilometers per hour",
-          "Img": "2.gasolincar.jpg"
+          "Info": "A four-wheeler with a gasoline engine in a carriage\n The maximum speed of the car is 16 kilometers per hour",
+          "name" : "Mercedes-Benz Daimler Motor Carriage",
+          "Img": "2.gasolincar.png"
       },{
           "Year": "1908",
           "Company": "Ford",
           "Info": "U.S. automobiles mass-produced from 1908 to 1927 and brought about the era of automobiles",
           "name" : "Ford Model T",
-          "Img": "3.fordTmodel.jpg"
+          "Img": "3.fordTmodel.png"
       },{
           "Year": "1921",
           "Company": "Duesenberg",
           "Info": "First Automobile with four-wheel hydraulic brakes.",
           "name" : "Duesenberg Model A",
-          "Img": "4.modelA.jpg"
+          "Img": "4.modelA.png"
       },{
           "Year": "1927",
           "Company": "Adam Opel AG",
           "Info": "It was a Rocket car made by Opel.\n Recorded 200 kilometers per hour.",
           "name" : "Opel Rak Ⅱ",
-          "Img": "5.Rakll.jpg"
+          "Img": "5.Rakll.png"
       },{
           "Year": "1934",
           "Company": "CITROEN",
           "Info": "The world's first front-wheeler.\n Revolutionized the Automobile technology of the old days",
           "name" : "CITROEN 7CV Traction Avant",
-          "Img": "6.sitroang.jpg"
+          "Img": "6.sitroang.png"
       },{
           "Year": "1936",
           "Company": "Mercedes-BENZ",
           "Info": "Mercedes-Benz's First Mass-Production Diesel Automobile.",
           "name" : "BENZ Model 260D",
-          "Img": "7.firstdisel.jpg"
+          "Img": "7.firstdisel.png"
       },{
           "Year": "1940",
           "Company": "Robert G.Hauer",
           "Info": "War Development of Small, Lightweight Four-Wheel Military Vehicles. \n Developed into a Jeep.",
           "name" : "Jeep",
-          "Img": "8.jeep.jpg"
+          "Img": "8.jeep.png"
       },{
           "Year": "1966",
           "Company": "Zenson Motors",
           "Info": "The first four-wheel-drive Automobile",
           "name" : "Zenson FF",
-          "Img": "9.zensonFF.jpg"
+          "Img": "9.zensonFF.png"
       },{
           "Year": "1973",
           "Company": "Duesenberg",
@@ -66,37 +66,37 @@
           "Company": "Maclaren F1",
           "Info": "Mass-production road car speeds up to 386.7 kilometers per hour.",
           "name" : "Maclaren F1",
-          "Img": "11.maclarenF1.jpg"
+          "Img": "11.maclarenF1.png"
       },{
           "Year": "1996",
           "Company": "GM",
           "Info": "Global Automotive Industry's First Mass-Production Electric Vehicle.",
           "name" : "GM EV1",
-          "Img": "12.EV1.jpg"
+          "Img": "12.EV1.png"
       },{
           "Year": "2016",
           "Company": "CHEVROLET",
           "Info": "Electric vehicle model sold under Chevrolet brand since 2016",
           "name" : "CHEVROLET BOLT EV",
-          "Img": "13.boltEV.jpg"
+          "Img": "13.boltEV.png"
       },{
           "Year": "2013",
           "Company": "HYUNDAI",
           "Info": " World's first mass-produced hydrogen car model made by HYUNDAI",
           "name" : "HYUNDAI Tucson IX",
-          "Img": "14.toossanix.jpg"
+          "Img": "14.toossanix.png"
       },{
           "Year": "2014",
           "Company": "TOYOTA",
           "Info": "Mass-produced sedan hydrogen fuel cell vehicle manufactured by TOYOTA",
           "name" : "TOYOTA MIRAI",
-          "Img": "15.mirai.jpg"
+          "Img": "15.mirai.png"
       },{
           "Year": "2018",
           "Company": "HYUNDAI",
           "Info": "Front wheel drive hydrogen made by HYUNDAI. Concept car unveiled at Geneva Motor Show in 2017.",
           "name" : "NEXXO",
-          "Img": "16.nexxo.jpg"
+          "Img": "16.nexxo.png"
       }
   ]
   
