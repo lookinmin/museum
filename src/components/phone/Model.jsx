@@ -64,7 +64,7 @@ export default function Model(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         >
         {/*핸드폰 화면 html으로 구성*/}
-        <Html className='inner_html' position={[0, 0, 0.001]} transform occlude>
+        <Html className='inner_html' position={[0, 0, 0.001]} transform occlude={[]}>
           <Innerhtml pos={props.pos} pos1={props.pos1} />
         </Html>
       </mesh>
