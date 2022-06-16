@@ -2052,7 +2052,7 @@ export default function Model(props) {
         <meshNormalMaterial />
       </Text3D>
       <Text3D font={"/model/leferi.json"} rotation={[0,Math.PI*1,0]} position={[2.7,8,45]}>
-        Goods
+        Souvenir
         <meshNormalMaterial />
       </Text3D>
     </group>
