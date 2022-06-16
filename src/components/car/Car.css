@@ -10,7 +10,9 @@
   height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+}
+#CarContainer div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 #modalContainer{
@@ -106,7 +108,8 @@
 }
 
 .midWrapper > img{
-  width: 100%;
+  height: 380px;
+  width: auto;
 }
 
 .bottomWrapper{

@@ -181,7 +181,7 @@ const Main_screen = ({ time, pagenum, chgpage }) => {
             }}
             className="start"
           >
-            Motorola DynaTAC에서 DynaTAC8000X출시!!
+            DynaTAC8000X is released ...
             <img src="/model/first.png"></img>
           </div>
         </div>
