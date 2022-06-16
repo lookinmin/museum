@@ -127,7 +127,7 @@
   font-family: 'LeferiPoint-WhiteA';
   font-weight: 600;
   display: grid;
-  border-top: 2px solid black;
+  border-top: 2px dotted black;
   justify-items: center;
   padding: 20px 30px 0 30px;
 }
