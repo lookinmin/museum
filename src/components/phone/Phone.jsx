@@ -117,7 +117,7 @@ const Cube = () => {
           />
           <Holder position={[0, 80, 0]} />
         </Suspense>
-        <Stars />
+        <Stars radius={150} depth={50} count={5000} factor={4} saturation={0} fade speed={1}/>
       </Canvas>
     </>
   );
