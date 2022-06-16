@@ -1,9 +1,16 @@
 import React, { useRef } from "react";
-import { useGLTF,MeshReflectorMaterial } from "@react-three/drei";
+import { useGLTF,MeshReflectorMaterial,useScroll } from "@react-three/drei";
+import {  useFrame,useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
+const move=()=>{
+  
+  return null
+}
 export default function Model(props) {
+ 
   const group = useRef();
+  const { viewport } = useThree()
   const { nodes, materials } = useGLTF("/model/car.glb");
   const frame_mat = new THREE.MeshStandardMaterial({ color: "#505050", metalness: 0.8, roughness: 0.4,side:THREE.DoubleSide })//핸드폰 모델 공통 material
   const wheelrubber_mat = new THREE.MeshPhongMaterial({ color: "#ffffff"})//핸드폰 모델 공통 material
@@ -13,8 +20,8 @@ export default function Model(props) {
   const frontmirror=new THREE.MeshStandardMaterial({ color: "a9f0fe",roughness: 0.2,metalness:0.5, transparent:true,opacity:0.3,side:THREE.DoubleSide})//핸드폰 모델 공통 material
   
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group position={[0,-0.5,4]} rotation={[0,-Math.PI*0.5,0]} scale={0.0006} userData={{ name: "3d-model.obj" }}>
+    <group  ref={group} {...props} dispose={null}>
+      <group rotation={[0,-Math.PI*0.5,0]} scale={0.0006} userData={{ name: "3d-model.obj" }}>
         <mesh
           castShadow
           receiveShadow
