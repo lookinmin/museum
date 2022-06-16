@@ -9,13 +9,29 @@ import {
   OrbitControls,
   Box,
   ScrollControls,
-  useScroll
+  useScroll,
+  OrbitControls,
+  Text,
+  Stars,
+  Box,
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
 import React from "react";
-import Car_model from './Car_model'
+import Car_model from "./Car_model";
+import Frame from "./Frame";
+
+const extrudeSettings = {
+  steps: 2,
+  depth: 0.5,
+  bevelSize: 0.5,
+  bevelOffset: 0,
+  bevelEnabled: true,
+  bevelSegments: 50,
+  bevelThickness: 0.25,
+};
+
 
 
 const Car=({carpos})=>{
@@ -37,37 +53,44 @@ const Car=({carpos})=>{
 }
 
 export const CarInfo = ({ images }) => {
-
+  const [set, reSet] = useState(false);
+  const modal = useRef();
   const [modalFlag, setModalFlag] = useState(false);
   const car_position=useRef(new THREE.Vector3(0.2, 0.205, 4.1));
   const flag=useRef(true);
 
+  const carInfo = useRef();
+  const carImg = useRef();
+  const data = carData.carHistory;
+
   const modalClick = (num) => {
-    // if (!set) {
-    //   reSet(true);
-    // } else {
-    //   if (num === -2 || num === -1) {
-    //     modal.current.style = "display: none";
-    //   } else {
-    //     modal.current.style = "display: block"
-    //     carImg.current.src = "/pic/Car/"+data[num-1].Img;
-    //     var children = carInfo.current.childNodes;
-    //     children[0].innerText = data[num-1].Company;
-    //     children[1].innerText = data[num-1].Year;
-    //     children[2].innerText = data[num-1].Info;
-    //     if (num >= 5) {
-    //       setModalFlag(false);
-    //     } else {
-    //       setModalFlag(true);
-    //     }
-    //   }
-    // }
+    if (!set) {
+      reSet(true);
+    } else {
+      if (num === -2 || num === -1) {
+        modal.current.style = "display: none";
+      } else {
+        console.log(carImg.current.src);
+        modal.current.style = "display: block";
+        carImg.current.src = "/pic/Car/" + data[num - 1].Img;
+        console.log(carImg.current.src);
+        var children = carInfo.current.childNodes;
+        children[0].innerText = data[num - 1].name;
+        children[1].innerText = data[num - 1].Company;
+        children[2].innerText = data[num - 1].Year;
+        children[3].innerText = data[num - 1].Info;
+        if (num % 2 === 0) {
+          setModalFlag(false);
+        } else {
+          setModalFlag(true);
+        }
+      }
+    }
   };
 
   useEffect(() => {
     // console.log(carImg.current.src);
   }, [modalFlag]);
-      
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0.2, 0.205, 4.1] }}>
@@ -115,7 +138,25 @@ export const CarInfo = ({ images }) => {
             />
           </mesh>
         </group>
+        <Stars />
       </Canvas>
+      <div
+        className="text-focus-in"
+        ref={modal}
+        id={modalFlag ? "modalContainer" : "modalContainer2"}
+      >
+        <div className="modalWrapper">
+          <div className="modalImg">
+            <img src="/pic/Car/1.qunni.png" alt="" ref={carImg} />
+          </div>
+          <div className="modalInfo" ref={carInfo}>
+            <div>Car Name</div>
+            <div>Company</div>
+            <div>Year</div>
+            <div>Car Info</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -232,7 +273,9 @@ function Photo_Frame({ url, ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
-  const name = getUuid(url);
+  const uuid = getUuid(url);
+  const name = props.data;
+
   useCursor(hovered);
   useFrame(() => {
     image.current.scale.x = THREE.MathUtils.lerp(
@@ -249,7 +292,7 @@ function Photo_Frame({ url, ...props }) {
   return (
     <group rotation={[0, 0, Math.PI * 0.5]} {...props}>
       <mesh
-        name={name}
+        name={uuid}
         onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
         scale={[1, 1.6, 0.05]}
@@ -271,6 +314,16 @@ function Photo_Frame({ url, ...props }) {
           url={url}
         />
       </mesh>
+      <Text
+        maxWidth={0.5}
+        anchorX="left"
+        anchorY="top"
+        position={[0.55, 1.6, 0]}
+        fontSize={0.08}
+        color="#c0c0c0"
+      >
+        {name}
+      </Text>
     </group>
   );
 }
