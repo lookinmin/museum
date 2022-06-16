@@ -162,6 +162,11 @@
     transition: 1s;
     padding: 50px;
 }
+.left_info{
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
 .left_info p{
 
 }
