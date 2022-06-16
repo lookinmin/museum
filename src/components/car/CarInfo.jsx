@@ -86,7 +86,6 @@ export const CarInfo = ({ images }) => {
         <ScrollControls pages={10}>
           <Car carpos={car_position}></Car>
         </ScrollControls>
-        <OrbitControls></OrbitControls>
         
        <rectAreaLight
 
@@ -120,7 +119,7 @@ export const CarInfo = ({ images }) => {
             <planeGeometry args={[250, 250]} />
             <MeshReflectorMaterial
               blur={[300, 100]}
-              resolution={2000}
+              resolution={3000}
               mixBlur={2}
               mixStrength={15}
               depthScale={1.2}
@@ -152,21 +151,6 @@ export const CarInfo = ({ images }) => {
     </>
   );
 };
-
-// const Move_camera=({pos,pos1})=> {//카메라 고정
-//   const p1 = new THREE.Vector3(0.18, 0.205, 3.61);
-//   useFrame((state)=>{
-//     state.camera.lookAt(p1);//카메라 표적 변환
-//   })
-//   // useFrame((state, dt) => {//화면 프레임에 따라 다름 144hz면 초당 144 60hz면 초당 60번 불림
-//   //   // state.camera.position.lerp(pos.current, 0.015)//부드러운 화면 카메라 위치 전환
-//   //   p1.lerp(pos1.current,0.015);//부드러운 카메라 표적 위치 변환
-
-//   // })
-//   return (
-
-//   )
-// }
 const ToHall = (path, setLocation) => {
   setLocation("/car/" + path);
   const timer = setTimeout(() => {
@@ -184,7 +168,6 @@ const ClickFrame = (current, object, setLocation) => {
 
 function Car_Museum({
   images,
-  q = new THREE.Vector3(0.18, 0.205, 3.61),
   modalClick,
   car_position,
   flag,
@@ -202,22 +185,14 @@ function Car_Museum({
     if (click) {
       flag.current = false;
       let num = click.parent.num;
-      console.log(click.parent.position);
-      console.log(num);
       if (num % 2 === 0) {
         frame_click.y = click.parent.position.y + 0.2;
         frame_click.x = click.parent.position.x - 1.5;
         frame_click.z = click.parent.position.z;
-        click.parent.updateWorldMatrix(true, true);
-        // click.parent.localToWorld(temp_pos.set(0, 0.8, 0));
-        var p = new THREE.Vector3();
-        click.parent.localToWorld(p.set(1, 1.6/2, 1.25));
       } else {
         frame_click.y = click.parent.position.y + 0.2;
         frame_click.x = click.parent.position.x + 1.5;
         frame_click.z = click.parent.position.z;
-        click.parent.updateWorldMatrix(true, true);
-        click.parent.localToWorld(temp_pos.set(0, 0.8, 0));
       }
       modalClick(num);
     } else {
@@ -227,23 +202,20 @@ function Car_Museum({
     }
   });
   
-  // useFrame((state) => {// 화면 자동차에 고정
-  //   if(flag.current){
-  //     camera_pos=car_position.current
-  //   // pos1.current.setX(0+state.mouse.x*4)
-  //   // pos1.current.setY(0-state.mouse.y*4)
-  //   state.camera.position.set(camera_pos.x+0.2,camera_pos.y+0.705,camera_pos.z)
-  //   temp_pos=new THREE.Vector3(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.49)
-  //   temp_pos.x=temp_pos.x+state.mouse.x*0.75
-  //   temp_pos.y=temp_pos.y+state.mouse.y*0.1
-  //   camerapoint.current.position.set(temp_pos.x,temp_pos.y,temp_pos.z)
-  //   state.camera.lookAt(temp_pos);
-  //   }
-  //   else{
-  //   // state.camera.position.lerp(frame_click, 0.025);
-  //   state.camera.lookAt(temp_pos);
-  //   }
-  // });
+  useFrame((state) => {// 화면 자동차에 고정
+    if(flag.current){
+      camera_pos=car_position.current
+      state.camera.position.set(camera_pos.x+0.2,camera_pos.y+0.705,camera_pos.z)
+      temp_pos=new THREE.Vector3(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.49)
+      temp_pos.x=temp_pos.x+state.mouse.x*0.75
+      temp_pos.y=temp_pos.y+state.mouse.y*0.1
+      camerapoint.current.position.set(temp_pos.x,temp_pos.y,temp_pos.z)
+      state.camera.lookAt(temp_pos);
+    }
+    else{
+    state.camera.lookAt(temp_pos);
+    }
+  });
   return (
     <>
       <group
