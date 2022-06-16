@@ -13,7 +13,8 @@ export default function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/model/door.glb");
   const beam_material = new THREE.MeshStandardMaterial({ color: "#101010", metalness: 0.5, roughness: 0.8 })
-  const colorMap = useLoader(TextureLoader, '/pic/Home/pic.png')
+  const colorMap1 = useLoader(TextureLoader, '/pic/Home/pic.png')
+  const colorMap2 = useLoader(TextureLoader, '/pic/Home/carhistory.png')
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, -1.5, 0]}>
@@ -129,7 +130,7 @@ export default function Model(props) {
             
           }}
           >
-          <meshPhongMaterial  map={colorMap}/>
+          <meshPhongMaterial  map={colorMap1}/>
         </mesh>
         <mesh
           castShadow
@@ -149,7 +150,8 @@ export default function Model(props) {
             }
             
           }}
-        >
+          >
+          <meshPhongMaterial  map={colorMap2}/>
         </mesh>
       </group>
     </group>
