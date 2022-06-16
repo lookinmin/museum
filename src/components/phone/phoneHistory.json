@@ -45,7 +45,7 @@
         {
             "Year": "June 29, 2007",
             "Company": "Apple",
-            "name" : "Apple Iphone",
+            "name" : "Apple iPhone",
             "Info": "Steve Jobs' masterpiece of first smartphone form. Iphone from Apple.\n The Most Innovative Product in Cell Phone History.",
             "Img": "./pic/Phone/Phone1_6.png"
         },
@@ -59,7 +59,7 @@
         {
             "Year": "September 12, 2012",
             "Company": "Apple",
-            "name" : "Iphone 5",
+            "name" : "iPhone 5",
             "Info": "Steve Jobs' first iPhone to be released after death. \n The first iPhone to break away from Steve Jobs' insistence.",
             "Img": "./pic/Phone/iPhone5_8.png"
         },

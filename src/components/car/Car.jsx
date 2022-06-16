@@ -14,7 +14,7 @@ export const Car = () => {
       position: [-2.5, 0, -28],
       rotation: [0, Math.PI*0.5, 0],
       url: "./pic/Home/hall.jpg",
-      data: -1,
+      data: "Go to Hall",
       name: -1,
       num : -1
     },

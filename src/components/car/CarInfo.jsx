@@ -26,7 +26,7 @@ const Car=({carpos})=>{
   const tmp=useRef()
 
   useFrame((state, delta) => {
-    tmp.current.position.z=scroll.scroll.current*-10+5
+    tmp.current.position.z=scroll.scroll.current*-36+9
     tmp.current.position.y=0
     tmp.current.position.x=0
     carpos.current=tmp.current.position
@@ -86,27 +86,6 @@ export const CarInfo = ({ images }) => {
         <ScrollControls pages={10}>
           <Car carpos={car_position}></Car>
         </ScrollControls>
-        
-       <rectAreaLight
-          width={10}
-          height={10}
-          color={"#0000ff"}
-          intensity={35}
-          position={[-20, 0, 0]}
-          lookAt={[0, 0, 0]}
-          rotation={[0, Math.PI * -0.5, 0]}
-          castShadow
-        />
-        <rectAreaLight
-          width={10}
-          height={10}
-          color={"#ff0000"}
-          intensity={35}
-          position={[20, 0, 0]}
-          lookAt={[0, 0, 0]}
-          rotation={[0, Math.PI * 0.5, 0]}
-          castShadow
-        />
 
         <color attach="background" args={["#191920"]} />
         <fog attach="fog" args={["#191920", 0, 15]} />
@@ -156,8 +135,8 @@ const ToHall = (path, setLocation) => {
   setLocation("/car/" + path);
   const timer = setTimeout(() => {
     setLocation("/car");
-    window.location.href = "/home";
-  }, 4000);
+    window.location.href = "/";
+  }, 2000);
   return () => {
     clearTimeout(timer);
   };
@@ -206,11 +185,13 @@ function Car_Museum({
   useFrame((state) => {// 화면 자동차에 고정
     if(flag.current){
       camera_pos=car_position.current
-      state.camera.position.set(camera_pos.x+0.2,camera_pos.y+0.705,camera_pos.z)
-      temp_pos=new THREE.Vector3(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.49)
-      temp_pos.x=temp_pos.x+state.mouse.x*0.75
-      temp_pos.y=temp_pos.y+state.mouse.y*0.1
-      camerapoint.current.position.set(temp_pos.x,temp_pos.y,temp_pos.z)
+      state.camera.position.set(camera_pos.x+0.18,camera_pos.y+0.705,camera_pos.z-0.1)
+      temp_pos=new THREE.Vector3(camera_pos.x+0.16,camera_pos.y+0.705,camera_pos.z-0.49)
+      
+      temp_pos.x=temp_pos.x+state.mouse.x*3
+      temp_pos.y=temp_pos.y+state.mouse.y*1
+      temp_pos.z=temp_pos.z+Math.abs(state.mouse.x)*3
+
       state.camera.lookAt(temp_pos);
     }
     else{
@@ -229,9 +210,6 @@ function Car_Museum({
         }
         onPointerMissed={() => setLocation("/car")}
       >
-        <Box args={[0.1,0.1,0.1]} ref={camerapoint} position={temp_pos}>
-      <meshBasicMaterial  color={"#ff0000"}></meshBasicMaterial>
-    </Box>
 
         {images.map((props) => (
           <Photo_Frame key={props.url} {...props} />

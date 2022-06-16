@@ -149,11 +149,11 @@
 }
 .inner_html .left_info{
     position: absolute;
-    left: -180%;
+    left: -200%;
     top: 10%;
     width: 150%;
     height: 80%;
-    transform: perspective(800px) rotateY(2deg);
+    transform: perspective(800px) rotateY(1deg);
     border: red 5px solid;
     border-radius: 60px;
     background-color: black;
@@ -166,6 +166,7 @@
 }
 .left_info{
     display: grid;
+    grid-template-rows: 1fr 3fr 1.5fr 2fr;
     justify-items: center;
     align-content: center;
 }
