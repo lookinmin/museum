@@ -94,9 +94,9 @@ const Message_in = ({ pos, pos1, pagenum, time }) => {
       >
         <img src={phone_his.phoneHistory[index].Img}></img>
         <div>
-          <p>{phone_his.phoneHistory[index].name}</p>
+          <p className="Oblique">{phone_his.phoneHistory[index].name}</p>
+          <p className="Oblique">{phone_his.phoneHistory[index].Company}</p>
           <p>{phone_his.phoneHistory[index].Year}</p>
-          <p>{phone_his.phoneHistory[index].Company}</p>
           <p>{phone_his.phoneHistory[index].Info}</p>
         </div>
       </div>
@@ -159,6 +159,7 @@ const Main_screen = ({ time, pagenum, chgpage }) => {
     </>
   );
 };
+
 export const Innerhtml = ({ pos, pos1 }) => {
   //휴대폰 화면 내부
   const [time, settime] = useState(realtime());
