@@ -16,23 +16,25 @@
 #modalContainer{
   width: 50%;
   height: 80%;
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(42, 42, 42);
   position: fixed;
   top: 10%;
   left: 45%;
   border-radius: 20px;
-  color: white;
+  color: #c0c0c0;
+  padding:15px;
 }
 
 #modalContainer2{
   width: 50%;
   height: 80%;
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(42, 42, 42);
   position: fixed;
   top: 10%;
   right: 45%;
   border-radius: 20px;
-  color: white;
+  color: #c0c0c0;
+  padding: 15px;
 }
 
 
@@ -72,8 +74,9 @@
   height: 100%;
   display: grid;
   justify-content: center;
-  grid-template-rows: .5fr 2fr 1fr;
-  color: black;
+  grid-template-rows: 20% 50% 30%;
+  border-radius: 20px;
+  border: 2px dotted #ccac00;
 }
 
 .topWrapper{
@@ -82,7 +85,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-
 }
 
 .topWrapper > div:nth-child(1){
@@ -117,7 +119,7 @@
 
 .bottomWrapper > div:nth-child(1){
   font-family: 'LeferiPoint-WhiteObliqueA';
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 650;
   display: grid;
   align-items: center;
@@ -127,7 +129,7 @@
   font-family: 'LeferiPoint-WhiteA';
   font-weight: 600;
   display: grid;
-  border-top: 2px dotted black;
+  border-top: 2px dotted #ccac00;
   justify-items: center;
   padding: 20px 30px 0 30px;
 }

@@ -20,6 +20,7 @@ import carData from "../car/carHistory.json";
 import React from "react";
 import Car_model from "./Car_model";
 
+
 const Car=({carpos})=>{
   const scroll = useScroll()
   const temp=useRef(new THREE.Vector3(0,0,4))
@@ -260,6 +261,7 @@ function Photo_Frame({ url, ...props }) {
       0.95 * (hovered ? 0.9 : 1),
       0.1
     );
+    image.current.material.zoom = 0.6
   });
   return (
     <group rotation={[0, 0, Math.PI * 0.5]} {...props}>
@@ -270,6 +272,8 @@ function Photo_Frame({ url, ...props }) {
         scale={[1, 1.6, 0.05]}
         position={[0, 0.8, 0]}
       >
+      <meshStandardMaterial color="#151515" metalness={0.5} roughness={0.5} envMapIntensity={2} />
+
         <boxGeometry />
         <mesh
           ref={frame}
@@ -292,7 +296,7 @@ function Photo_Frame({ url, ...props }) {
         anchorY="top"
         position={[0.55, 1.6, 0]}
         fontSize={0.08}
-        color="#c0c0c0"
+        color="#000000"
         font="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackObliqueA.woff"
       >
         {name}
