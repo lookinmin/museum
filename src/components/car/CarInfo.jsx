@@ -6,64 +6,86 @@ import {
   MeshReflectorMaterial,
   Image,
   Environment,
-  OrbitControls
-
+  OrbitControls,
+  Text,
+  Stars,
+  Box,
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
 import React from "react";
-import Car_model from './Car_model'
+import Car_model from "./Car_model";
+import Frame from "./Frame";
+
+const extrudeSettings = {
+  steps: 2,
+  depth: 0.5,
+  bevelSize: 0.5,
+  bevelOffset: 0,
+  bevelEnabled: true,
+  bevelSegments: 50,
+  bevelThickness: 0.25,
+};
 
 
-const extrudeSettings = { steps: 2, depth: 0.5, bevelSize: 0.5,
-	bevelOffset: 0,bevelEnabled: true,bevelSegments: 50,bevelThickness: 0.25, };
-  
-const Car=()=>{
-  return(
-    <Car_model></Car_model>
-  )
-}
+const newFrame = () => {
+  return <Frame></Frame>;
+};
+
+const Car = () => {
+  return <Car_model></Car_model>;
+};
 
 export const CarInfo = ({ images }) => {
-
+  const [set, reSet] = useState(false);
+  const modal = useRef();
   const [modalFlag, setModalFlag] = useState(false);
+  const carInfo = useRef();
+  const carImg = useRef();
+  const data = carData.carHistory;
+
+
 
   const modalClick = (num) => {
-    // if (!set) {
-    //   reSet(true);
-    // } else {
-    //   if (num === -2 || num === -1) {
-    //     modal.current.style = "display: none";
-    //   } else {
-    //     modal.current.style = "display: block"
-    //     carImg.current.src = "/pic/Car/"+data[num-1].Img;
-    //     var children = carInfo.current.childNodes;
-    //     children[0].innerText = data[num-1].Company;
-    //     children[1].innerText = data[num-1].Year;
-    //     children[2].innerText = data[num-1].Info;
-    //     if (num >= 5) {
-    //       setModalFlag(false);
-    //     } else {
-    //       setModalFlag(true);
-    //     }
-    //   }
-    // }
+    if (!set) {
+      reSet(true);
+    } else {
+      if (num === -2 || num === -1) {
+        modal.current.style = "display: none";
+      } else {
+        console.log(carImg.current.src);
+        modal.current.style = "display: block";
+        carImg.current.src = "/pic/Car/" + data[num - 1].Img;
+        console.log(carImg.current.src);
+        var children = carInfo.current.childNodes;
+        children[0].innerText = data[num - 1].name;
+        children[1].innerText = data[num - 1].Company;
+        children[2].innerText = data[num - 1].Year;
+        children[3].innerText = data[num - 1].Info;
+        if (num % 2 === 0) {
+          setModalFlag(false);
+        } else {
+          setModalFlag(true);
+        }
+      }
+    }
   };
 
   useEffect(() => {
     // console.log(carImg.current.src);
   }, [modalFlag]);
 
-  
-    
-      
   return (
     <>
-      <Canvas gl={{ alpha: false }} camera={{ fov: 70, position: [0.2, 0.205, 4.1] }}>
-        <Car></Car>  
-        <Move_camera/>
-       <rectAreaLight
+      <Canvas
+        gl={{ alpha: false }}
+        camera={{ fov: 70, position: [0.2, 0.205, 4.1] }}
+      >
+        <Car></Car>
+        <newFrame></newFrame>
+        <Move_camera />
+        <rectAreaLight
           width={10}
           height={10}
           color={"#0000ff"}
@@ -103,12 +125,31 @@ export const CarInfo = ({ images }) => {
             />
           </mesh>
         </group>
+        <Stars />
       </Canvas>
+      <div
+        className="text-focus-in"
+        ref={modal}
+        id={modalFlag ? "modalContainer" : "modalContainer2"}
+      >
+        <div className="modalWrapper">
+          <div className="modalImg">
+            <img src="/pic/Car/1.qunni.png" alt="" ref={carImg} />
+          </div>
+          <div className="modalInfo" ref={carInfo}>
+            <div>Car Name</div>
+            <div>Company</div>
+            <div>Year</div>
+            <div>Car Info</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
 
-const Move_camera=({pos,pos1})=> {//카메라 고정
+const Move_camera = ({ pos, pos1 }) => {
+  //카메라 고정
   const p1 = new THREE.Vector3(0.2, 0.205, 3);
   // useFrame((state)=>{
   //   state.camera.lookAt(p1);//카메라 표적 변환
@@ -116,10 +157,10 @@ const Move_camera=({pos,pos1})=> {//카메라 고정
   // useFrame((state, dt) => {//화면 프레임에 따라 다름 144hz면 초당 144 60hz면 초당 60번 불림
   //   state.camera.position.lerp(pos.current, 0.015)//부드러운 화면 카메라 위치 전환
   //   p1.lerp(pos1.current,0.015);//부드러운 카메라 표적 위치 변환
-    
+
   // })
-  return null
-}
+  return null;
+};
 const ToHall = (path, setLocation) => {
   setLocation("/car/" + path);
   const timer = setTimeout(() => {
@@ -150,7 +191,6 @@ function Car_Museum({
     if (click) {
       let num = click.parent.num;
       let vector = click.parent.position;
-      console.log(click.parent.position);
       if (num === -1) {
         click.parent.updateWorldMatrix(true, true);
         click.parent.localToWorld(p.set(0, 1.6 / 2, 1.25));
@@ -200,7 +240,9 @@ function Photo_Frame({ url, ...props }) {
   const [hovered, hover] = useState(false);
   const image = useRef();
   const frame = useRef();
-  const name = getUuid(url);
+  const uuid = getUuid(url);
+  const name = props.data;
+
   useCursor(hovered);
   useFrame(() => {
     image.current.scale.x = THREE.MathUtils.lerp(
@@ -217,7 +259,7 @@ function Photo_Frame({ url, ...props }) {
   return (
     <group rotation={[0, 0, Math.PI * 0.5]} {...props}>
       <mesh
-        name={name}
+        name={uuid}
         onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
         scale={[1, 1.6, 0.05]}
@@ -239,6 +281,16 @@ function Photo_Frame({ url, ...props }) {
           url={url}
         />
       </mesh>
+      <Text
+        maxWidth={0.5}
+        anchorX="left"
+        anchorY="top"
+        position={[0.55, 1.6, 0]}
+        fontSize={0.08}
+        color="#c0c0c0"
+      >
+        {name}
+      </Text>
     </group>
   );
 }
