@@ -6,21 +6,18 @@ import {
   MeshReflectorMaterial,
   Image,
   Environment,
-  OrbitControls,
   Box,
   ScrollControls,
   useScroll,
   OrbitControls,
   Text,
   Stars,
-  Box,
 } from "@react-three/drei";
 import { useRoute, useLocation } from "wouter";
 import getUuid from "uuid-by-string";
 import carData from "../car/carHistory.json";
 import React from "react";
 import Car_model from "./Car_model";
-import Frame from "./Frame";
 
 const extrudeSettings = {
   steps: 2,
