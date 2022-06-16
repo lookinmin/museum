@@ -2,10 +2,9 @@ import React, { Suspense } from 'react'
 import { useState } from 'react'
 import { Pay } from './pay/Pay';
 import { GoodsInner } from './GoodsInner.jsx';
-import { Link } from 'react-router-dom';  // 유병주 바보 멍청이 똥개 앙앙앙 사랑해 유병주 2400!! 사랑한다 유병주!! 사랑한다 유병주!!
-import { About } from './about/About';    // 야동 그만봐 병주야
-import { GoodsChart } from './about/GoodsChart'; // 7주년 축하해 병주야 시은이랑 결혼 꼭 하자...!! 화이팅!!! fighting fighting 
-
+import { Link } from 'react-router-dom';  
+import { About } from './about/About';    
+import { GoodsChart } from './about/GoodsChart'; 
 
 export const GoodsBody = (props) => {
   const [pic, setPic] = useState("./pic/Home/diamond.png");
