@@ -12,7 +12,6 @@ import Model from "./Model";
 import Holder from "./Holder";
 
 export const Phone = () => {
-  //
   return (
     <div className="three">
       <Cube></Cube>
@@ -25,8 +24,8 @@ function Move_camera({ pos, pos1 }) {
 
   useFrame((state, dt) => {
     //화면 프레임에 따라 다름 144hz면 초당 144 60hz면 초당 60번 불림
-    state.camera.position.lerp(pos.current, 0.015); //부드러운 화면 카메라 위치 전환
-    p1.lerp(pos1.current, 0.015); //부드러운 카메라 표적 위치 변환
+    state.camera.position.lerp(pos.current, 0.012); //부드러운 화면 카메라 위치 전환
+    p1.lerp(pos1.current, 0.012); //부드러운 카메라 표적 위치 변환
     state.camera.lookAt(p1); //카메라 표적 변환
   });
   return null;
@@ -49,20 +48,18 @@ const Cube = () => {
           width={300}
           height={300}
           color={"#ff0000"}
-          intensity={300}
+          intensity={500}
           position={[0, 150, 500]}
           lookAt={[0, 0, 0]}
-          penumbra={1}
           castShadow
         />
         <rectAreaLight
           width={300}
           height={300}
           color={"#0000ff"}
-          intensity={300}
+          intensity={500}
           position={[500, 150, 0]}
           lookAt={[0, 0, 0]}
-          penumbra={1}
           castShadow
         />
         {/*기준 거리 이상 뿌옇게 보이기*/}
@@ -71,10 +68,18 @@ const Cube = () => {
         {/*바닥 mesh*/}
         <mesh
           onDoubleClick={(e) => {
-            e.stopPropagation();
-            console.log("처음으로");
-            temp.current = new THREE.Vector3(150, 75, 150);
-            temp2.current = new THREE.Vector3(0, 100, 0);
+            if(temp.current.x<75){
+              e.stopPropagation();
+              temp.current = new THREE.Vector3(150, 75, 150);
+              temp2.current = new THREE.Vector3(0, 100, 0);
+            }else{
+              e.stopPropagation();
+              temp.current = new THREE.Vector3(300, 300, 300);
+              setTimeout(() => {
+                window.location.href = "/"
+              }, 1500);
+            }
+            
           }}
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0, 0]}
