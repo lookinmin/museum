@@ -14,7 +14,36 @@ const realtime = () => {
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
-  const month = date.getMonth() + 1;
+  const GetMonth = (num) => {
+    switch (num) {
+      case 1:
+        return "Jan";
+      case 2:
+        return "Feb";
+      case 3:
+        return "Mar";
+      case 4:
+        return "Apr";
+      case 5:
+        return "May";
+      case 6:
+        return "Jun";
+      case 7:
+        return "Jul";
+      case 8:
+        return "Aug";
+      case 9:
+        return "Sep";
+      case 10:
+        return "Oct";
+      case 11:
+        return "Nov";
+      case 12:
+        return "Dec";
+    }
+  };
+
+  const month = GetMonth(date.getMonth() + 1);
   const day = date.getDate();
   const WEEKDAY = [
     "SUN",
@@ -28,7 +57,7 @@ const realtime = () => {
   const week = WEEKDAY[date.getDay()];
   return {
     time: hours + ":" + minutes,
-    date: month + ". " + day + ". " + week,
+    date: month + ". " + day + " " + week,
   };
 };
 const Message = ({ setindex, index, setondetail }) => {
@@ -45,10 +74,7 @@ const Message = ({ setindex, index, setondetail }) => {
       <div className="message" index={index}>
         <img src={phone_his.phoneHistory[index].Img}></img>
         <br></br>
-        {phone_his.phoneHistory[index].Company +
-          "에서 " +
-          phone_his.phoneHistory[index].Img.slice(12, -6) +
-          "출시!!"}
+        {phone_his.phoneHistory[index].Img.slice(12, -6) +" is released from " +phone_his.phoneHistory[index].Company+"!!!!"}
         <br></br>
       </div>
     </div>
